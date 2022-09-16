@@ -1,0 +1,8 @@
+.app {
+  &.dark {
+    --bg-color: rgb(0, 0, 50);
+
+    --primary-color: rgb(7, 86, 7);
+    --secondary-color: green;
+  }
+}
