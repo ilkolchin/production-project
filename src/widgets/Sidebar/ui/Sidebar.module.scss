@@ -11,10 +11,12 @@
   width: var(--sidebar-width-colapsed);
 }
 
-.switchers{
+.switchers {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   position: absolute;
   bottom: 20px;
+  gap: 20px;
 }

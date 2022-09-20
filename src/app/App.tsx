@@ -5,7 +5,7 @@ import { classNames } from "shared/lib/classNames";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
 
-const App = () => {
+export const App = () => {
   const { theme } = useTheme();
 
   return (
@@ -18,5 +18,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
