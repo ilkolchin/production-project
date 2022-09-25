@@ -1,7 +1,7 @@
-import { AboutPage } from "pages/AboutPage";
-import { MainPage } from "pages/MainPage";
-import { RouteProps } from "react-router-dom";
-import { AppRoutes, RoutePath } from "shared/config/paths";
+import { AboutPage } from 'pages/AboutPage';
+import { MainPage } from 'pages/MainPage';
+import { RouteProps } from 'react-router-dom';
+import { AppRoutes, RoutePath } from 'shared/config/paths';
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.MAIN]: {
