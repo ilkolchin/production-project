@@ -28,10 +28,6 @@ module.exports = {
       'error',
       2
     ],
-    'linebreak-style': [
-      'error',
-      'windows'
-    ],
     'quotes': [
       'error',
       'single'
@@ -42,6 +38,6 @@ module.exports = {
     ],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
-    'i18next/no-literal-string': ['error', {markupOnly: true}]
+    'i18next/no-literal-string': ['error', { markupOnly: true }]
   }
 };
