@@ -24,10 +24,8 @@ module.exports = {
     'i18next'
   ],
   'rules': {
-    'indent': [
-      'error',
-      2
-    ],
+    'indent': 'off',
+    '@typescript-eslint/indent': ['error', 2],
     'quotes': [
       'error',
       'single'
