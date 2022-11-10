@@ -5,8 +5,14 @@
 
 .clear {
   padding: 0;
-  margin: 0;
   border: none;
   outline: none;
+  background: none;
+}
+
+.outlined {
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
   background: none;
 }
