@@ -11,7 +11,7 @@ export default {
   },
 } as ComponentMeta<typeof App>;
 
-const Template: ComponentStory<typeof App> = (args) => <App {...args} />;
+const Template: ComponentStory<typeof App> = (args) => <App {...args as Record<string, unknown>} />;
 
 export const Light = Template.bind({});
 Light.args = {};
