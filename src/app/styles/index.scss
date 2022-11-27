@@ -1,14 +1,17 @@
+@use './reset/reset';
 @use './fonts/fonts';
 @use './variables/global';
-@use './reset/reset';
 @use './themes/dark';
 @use './themes/light';
 
-.app {
+body {
   font: var(--font-m);
+}
+
+.app {
+  min-height: 100vh;
   background: var(--bg-color);
   color: var(--primary-color);
-  min-height: 100vh;
 }
 
 .content-page {

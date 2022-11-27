@@ -9,7 +9,8 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/jsx-runtime',
-    'plugin:i18next/recommended'
+    'plugin:i18next/recommended',
+    'prettier'
   ],
   'overrides': [
     {
@@ -25,7 +26,9 @@ module.exports = {
   'plugins': [
     'react',
     '@typescript-eslint',
-    'i18next'
+    'i18next',
+    'react-hooks',
+    'prettier'
   ],
   'rules': {
     'indent': 'off',
@@ -40,6 +43,8 @@ module.exports = {
     ],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid'] }]
+    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid'] }],
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'error' // Checks effect dependencies
   }
 };
