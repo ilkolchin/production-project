@@ -1,37 +1,23 @@
 export default {
   clearMocks: true,
   testEnvironment: 'jsdom',
-  coveragePathIgnorePatterns: [
-    '/node_modules/'
-  ],
-  moduleFileExtensions: [
-    'js',
-    'jsx',
-    'ts',
-    'tsx',
-    'json',
-    'node'
-  ],
-  moduleDirectories: [
-    'node_modules'
-  ],
-  modulePaths: [
-    '<rootDir>src'
-  ],
+  coveragePathIgnorePatterns: ['/node_modules/'],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
+  moduleDirectories: ['node_modules'],
+  modulePaths: ['<rootDir>src'],
   rootDir: '../../',
-  testMatch: [
-    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
-  ],
+  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
   preset: 'ts-jest',
   setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.ts'],
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
-    '\\.svg$': '<rootDir>/config/jest/jestEmptyComponent.tsx',
+    '\\.svg$': '<rootDir>/config/jest/jestEmptyComponent.tsx'
   },
   globals: {
     'ts-jest': {
-      'diagnostics': false
-    }
+      diagnostics: false
+    },
+    __IS_DEV__: true
   }
 };
 
@@ -45,7 +31,6 @@ export default {
 // coverageDirectory: undefined,
 
 // An array of regexp pattern strings used to skip coverage collection
-
 
 // Indicates which provider should be used to instrument code for coverage
 // coverageProvider: "babel",
@@ -84,9 +69,7 @@ export default {
 
 // An array of directory names to be searched recursively up from the requiring module's location
 
-
 // An array of file extensions your modules use
-
 
 // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
 // moduleNameMapper: {},
@@ -151,7 +134,6 @@ export default {
 // testLocationInResults: false,
 
 // The glob patterns Jest uses to detect test files
-
 
 // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
 // testPathIgnorePatterns: [
