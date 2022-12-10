@@ -1,10 +1,10 @@
-// eslint-disable-next-line no-undef
 module.exports = {
-  'env': {
-    'browser': true,
-    'es2021': true
+  env: {
+    browser: true,
+    es2021: true,
+    node: true
   },
-  'extends': [
+  extends: [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
@@ -12,39 +12,33 @@ module.exports = {
     'plugin:i18next/recommended',
     'prettier'
   ],
-  'overrides': [
+  overrides: [
     {
       files: ['**/src/**/*.test.{ts,tsx}'],
       rules: { 'i18next/no-literal-string': 'off' }
     }
   ],
-  'parser': '@typescript-eslint/parser',
-  'parserOptions': {
-    'ecmaVersion': 'latest',
-    'sourceType': 'module'
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module'
   },
-  'plugins': [
+  plugins: [
     'react',
     '@typescript-eslint',
     'i18next',
     'react-hooks',
     'prettier'
   ],
-  'rules': {
-    'indent': 'off',
-    '@typescript-eslint/indent': ['error', 2],
-    'quotes': [
-      'error',
-      'single'
-    ],
-    'semi': [
-      'error',
-      'always'
-    ],
+  rules: {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid'] }],
+    'i18next/no-literal-string': [
+      'error',
+      { markupOnly: true, ignoreAttribute: ['to', 'data-testid'] }
+    ],
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
-    'react-hooks/exhaustive-deps': 'error' // Checks effect dependencies
+    'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+    'react/display-name': 'off'
   }
 };

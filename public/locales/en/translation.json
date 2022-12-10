@@ -5,5 +5,11 @@
   "Короткий язык": "Ру",
   "Главная": "Main",
   "О сайте": "About",
-  "Log In": "Log In"
+  "Log In": "Log In",
+  "First Name": "First Name",
+  "Login": "Login",
+  "Password": "Password",
+  "Authorization form": "Authorization form",
+  "Login or password is invalid": "Login or password is invalid",
+  "Log Out": "Log Out"
 }

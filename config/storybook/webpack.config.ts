@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import path from 'path';
-import webpack from 'webpack';
+import webpack, { DefinePlugin } from 'webpack';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { BuildPaths } from '../build/types/config';
 
@@ -10,10 +10,10 @@ export default ({ config }: { config: webpack.Configuration }) => {
     build: '',
     entry: '',
     html: '',
-    src: path.resolve(__dirname, '..', '..', 'src'),
+    src: path.resolve(__dirname, '..', '..', 'src')
   };
 
-  config.resolve!.modules!.push(paths.src);
+  config.resolve!.modules = [paths.src, 'node_modules'];
   config.resolve!.extensions!.push('.ts', '.tsx');
 
   config.module!.rules = config.module!.rules!.map((rule: any) => {
@@ -25,10 +25,16 @@ export default ({ config }: { config: webpack.Configuration }) => {
   });
   config.module!.rules.push({
     test: /\.svg$/,
-    use: ['@svgr/webpack'],
+    use: ['@svgr/webpack']
   });
 
   config.module?.rules?.push(buildCssLoader(true));
+
+  config.plugins?.push(
+    new DefinePlugin({
+      __IS_DEV__: true
+    })
+  );
 
   return config;
 };
