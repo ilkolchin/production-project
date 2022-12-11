@@ -13,10 +13,10 @@ export default {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg$': '<rootDir>/config/jest/jestEmptyComponent.tsx'
   },
+  transform: {
+    transform_regex: ['ts-jest', { diagnostics: false }]
+  },
   globals: {
-    'ts-jest': {
-      diagnostics: false
-    },
     __IS_DEV__: true
   }
 };

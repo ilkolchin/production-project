@@ -35,7 +35,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
     'i18next/no-literal-string': [
       'error',
-      { markupOnly: true, ignoreAttribute: ['to', 'data-testid'] }
+      { markupOnly: true, ignoreAttribute: ['to', 'data-testid', 'name'] }
     ],
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
