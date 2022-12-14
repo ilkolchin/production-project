@@ -7,14 +7,10 @@ export default {
   modulePaths: ['<rootDir>src'],
   rootDir: '../../',
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
-  preset: 'ts-jest',
   setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.ts'],
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg$': '<rootDir>/config/jest/jestEmptyComponent.tsx'
-  },
-  transform: {
-    transform_regex: ['ts-jest', { diagnostics: false }]
   },
   globals: {
     __IS_DEV__: true
