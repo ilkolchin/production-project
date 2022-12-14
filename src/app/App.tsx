@@ -1,5 +1,5 @@
 import { AppRouter } from 'app/providers/router';
-import { userActons } from 'entities/User';
+import { userActions } from 'entities/User';
 import { Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { classNames } from 'shared/lib/classNames';
@@ -10,7 +10,7 @@ export const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(userActons.initAuthData());
+    dispatch(userActions.initAuthData());
   }, [dispatch]);
 
   return (

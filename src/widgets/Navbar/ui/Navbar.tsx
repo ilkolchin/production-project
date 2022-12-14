@@ -1,5 +1,5 @@
 /* eslint-disable i18next/no-literal-string */
-import { getUserAuthData, userActons } from 'entities/User';
+import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -27,7 +27,7 @@ export const Navbar = ({ className }: NavbarProps) => {
   }, []);
 
   const onLogout = useCallback(() => {
-    dispatch(userActons.logout());
+    dispatch(userActions.logout());
   }, [dispatch]);
 
   if (authData) {
