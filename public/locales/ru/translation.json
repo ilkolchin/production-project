@@ -11,5 +11,6 @@
   "Password": "Пароль",
   "Authorization form": "Форма авторизации",
   "Login or password is invalid": "Вы ввели неверный логин или пароль",
-  "Log Out": "Выйти"
+  "Log Out": "Выйти",
+  "Profile Page": "Страница профиля"
 }

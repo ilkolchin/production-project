@@ -7,12 +7,14 @@ import {
 } from '@reduxjs/toolkit';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
+import { ProfileSchema } from 'pages/ProfilePage';
 
 export interface StateSchema {
   user: UserSchema;
 
   //Асинхронные редьюсеры
   loginForm?: LoginSchema;
+  profile?: ProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

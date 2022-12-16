@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Ilya",
+    "lastname": "Kolchin",
+    "age": 25,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Saint-Petersburg",
+    "username": "admin",
+    "avatat": "https://gogotraining.com/blog/wp-content/uploads/2016/10/Become-a-Computer-Programmer.jpg"
+  }
 }

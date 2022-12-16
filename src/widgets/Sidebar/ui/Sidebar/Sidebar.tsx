@@ -1,24 +1,19 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/paths';
+import { memo, useState } from 'react';
 import { classNames } from 'shared/lib/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { ButtonSize } from 'shared/ui/Button/ui/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { SidebarItemsList } from '../../model/items';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
-import AboutIcon from 'shared/assets/icons/about.svg';
-import HomeIcon from 'shared/assets/icons/home.svg';
 
 interface SidebarProps {
   className?: string;
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
-
-  const { t } = useTranslation();
 
   const toggleCollapsed = () => {
     setCollapsed((prev) => !prev);
@@ -32,22 +27,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
       ])}
     >
       <div className={cls.items}>
-        <AppLink
-          theme={AppLinkTheme.INVERTED}
-          to={RoutePath.main}
-          className={cls.item}
-        >
-          <HomeIcon className={cls.icon} />
-          <span className={cls.link}>{t('Главная')}</span>
-        </AppLink>
-        <AppLink
-          theme={AppLinkTheme.INVERTED}
-          to={RoutePath.about}
-          className={cls.item}
-        >
-          <AboutIcon className={cls.icon} />
-          <span className={cls.link}>{t('О сайте')}</span>
-        </AppLink>
+        {SidebarItemsList.map((item) => (
+          <SidebarItem item={item} key={item.path} collapsed={collapsed} />
+        ))}
       </div>
 
       <div className={cls.switchers}>
@@ -67,4 +49,4 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </Button>
     </div>
   );
-};
+});
