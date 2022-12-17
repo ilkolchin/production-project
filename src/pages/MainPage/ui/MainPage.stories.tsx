@@ -7,11 +7,13 @@ export default {
   title: 'pages/MainPage',
   component: MainPage,
   argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+    backgroundColor: { control: 'color' }
+  }
 } as ComponentMeta<typeof MainPage>;
 
-const Template: ComponentStory<typeof MainPage> = (args) => <MainPage {...args as Record<string, unknown>} />;
+const Template: ComponentStory<typeof MainPage> = (args) => (
+  <MainPage {...(args as Record<string, unknown>)} />
+);
 
 export const Light = Template.bind({});
 Light.args = {};

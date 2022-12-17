@@ -1,1 +1,1 @@
-export { classNames } from './ui/classNames';
+export { classNames, Mods } from './ui/classNames';

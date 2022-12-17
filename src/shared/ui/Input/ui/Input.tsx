@@ -9,7 +9,7 @@ type HTMLInputProps = Omit<
 
 interface InputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (value: string) => void;
   placeholder?: string;
 }
@@ -29,9 +29,7 @@ export const Input = memo((props: InputProps) => {
 
   return (
     <div className={classNames(cls.InputWrapper, {}, [className])}>
-      {placeholder && (
-        <span className={cls.placeholder}>{placeholder}</span>
-      )}
+      {placeholder && <span className={cls.placeholder}>{placeholder}</span>}
       <input
         type={type}
         value={value}

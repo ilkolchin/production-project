@@ -13,7 +13,7 @@ export default {
 } as ComponentMeta<typeof ProfilePage>;
 
 const Template: ComponentStory<typeof ProfilePage> = (args) => (
-  <ProfilePage {...args} />
+  <ProfilePage {...(args as Record<string, unknown>)} />
 );
 
 export const Light = Template.bind({});

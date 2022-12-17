@@ -1,0 +1,22 @@
+.ProfileCard {
+  border: 2px solid var(--inverted-bg-color);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.btn {
+  border-radius: 12px;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

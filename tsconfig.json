@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "strict": true,
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "ESNext",
@@ -24,9 +25,5 @@
       "module": "CommonJS"
     }
   },
-  "include": [
-    "./config/jest/jest-setup.ts",
-    "./src/**/*.ts",
-    "./src/**/*.tsx"
-  ]
+  "include": ["./config/jest/jest-setup.ts", "./src/**/*.ts", "./src/**/*.tsx"]
 }
