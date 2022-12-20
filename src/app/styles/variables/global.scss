@@ -10,13 +10,12 @@
   --font-size-xl: 32px;
   --font-line-xl: 40px;
   /* stylelint-disable-next-line declaration-colon-newline-after */
-  --font-xl: var(--font-size-xl) / var(--font-line-xl)
-    var(--font-family-main);
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
 
   // Размеры
   --navbar-height: 50px;
-  --sidebar-width: 300px;
-  --sidebar-width-colapsed: 80px;
+  --sidebar-width: 200px;
+  --sidebar-width-colapsed: 90px;
 
   // Z-indexes
   --modal-z-index: 10;

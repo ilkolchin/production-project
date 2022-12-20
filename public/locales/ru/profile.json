@@ -6,5 +6,10 @@
   "Country": "Страна",
   "City": "Город",
   "Currency": "Валюта",
-  "First Name": "Имя"
+  "First Name": "Имя",
+  "Cancel": "Отменить",
+  "Save": "Сохранить",
+  "Username": "Имя пользователя",
+  "Profile avatar link": "Ссылка на аватар пользователя",
+  "Profile": "Профиль"
 }

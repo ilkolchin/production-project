@@ -4,11 +4,11 @@
   border-radius: 12px;
 }
 
-.header {
+.avatarWrapper {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 .btn {
@@ -19,4 +19,24 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.inputWrapper {
+  display: flex;
+  gap: 10px;
+
+  .input {
+    flex: 1;
+  }
+}
+
+.isLoading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editing {
+  border: 2px solid var(--red-dark);
 }

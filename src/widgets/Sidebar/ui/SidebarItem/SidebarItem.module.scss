@@ -1,28 +1,28 @@
-.items {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-  margin-top: 10px;
-}
-
 .item {
   display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+  align-items: flex-end;
+  width: 180px;
+  padding: 6px 12px;
+  border-radius: 12px;
+
+  &:hover {
+    background: var(--inverted-bg-color-brighter);
+  }
 }
 
 .link {
-  margin-left: 10px;
+  padding-left: 10px;
   opacity: 1;
-  text-decoration: none;
 }
 
 .icon {
   fill: var(--inverted-primary-color);
+  width: 32px;
+  height: 32px;
 }
 
 .collapsed {
-  width: var(--sidebar-width-colapsed);
+  width: 65px;
 
   .link {
     opacity: 0;

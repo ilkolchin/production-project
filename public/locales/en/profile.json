@@ -6,5 +6,10 @@
   "Country": "Country",
   "Currency": "Currency",
   "Last Name": "Surname",
-  "First Name": "Name"
+  "First Name": "Name",
+  "Cancel": "Cancel",
+  "Profile": "Profile",
+  "Profile avatar link": "User avatar link",
+  "Save": "Save",
+  "Username": "Username"
 }
