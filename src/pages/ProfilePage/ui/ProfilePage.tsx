@@ -6,17 +6,21 @@ import {
   getProfileForm,
   getProfileIsLoading,
   getProfileReadonly,
+  getProfileValidateErrors,
   profileActions,
   ProfileCard,
-  profileReducer
+  profileReducer,
+  ValidateProfileError
 } from 'entities/Profile';
 import { memo, useCallback, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
   DynamicModuleLoader,
   ReducersList
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Text, TextTheme } from 'shared/ui/Text';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -25,10 +29,21 @@ const reducers: ReducersList = {
 
 const ProfilePage = memo(() => {
   const dispatch = useAppDispatch();
+  const { t } = useTranslation('profile');
+
   const formData = useSelector(getProfileForm);
   const error = useSelector(getProfileError);
   const isLoading = useSelector(getProfileIsLoading);
   const readonly = useSelector(getProfileReadonly);
+  const validateErrors = useSelector(getProfileValidateErrors);
+
+  const validateErrorsTranslate = {
+    [ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера при сохранении'),
+    [ValidateProfileError.INCORRECT_AGE]: t('Укажите возраст'),
+    [ValidateProfileError.INCORRECT_CITY]: t('Укажите город'),
+    [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательные'),
+    [ValidateProfileError.NO_DATA]: t('Данные не указаны')
+  };
 
   useEffect(() => {
     dispatch(fetchProfileData());
@@ -93,6 +108,14 @@ const ProfilePage = memo(() => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <ProfilePageHeader />
+      {validateErrors?.length &&
+        validateErrors.map((err) => (
+          <Text
+            theme={TextTheme.ERROR}
+            text={validateErrorsTranslate[err]}
+            key={err}
+          />
+        ))}
       <ProfileCard
         data={formData}
         isLoading={isLoading}
