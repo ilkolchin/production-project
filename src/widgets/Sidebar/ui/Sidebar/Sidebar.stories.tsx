@@ -22,5 +22,8 @@ Light.decorators = [StoreDecorator({})];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+
+export const Authed = Template.bind({});
+Authed.args = {};
+Authed.decorators = [StoreDecorator({ user: { authData: {} } })];
