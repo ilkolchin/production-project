@@ -5,7 +5,7 @@ import { ProfilePage } from 'pages/ProfilePage';
 import { RouteProps } from 'react-router-dom';
 import { AppRoutes, RoutePath } from 'shared/config/paths';
 
-type AppRouterProps = RouteProps & {
+export type AppRouterProps = RouteProps & {
   authOnly?: boolean;
 };
 
