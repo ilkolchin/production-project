@@ -14,6 +14,7 @@ export const ArticleImageBlockComponent = (
   return (
     <div
       className={classNames(cls.ArticleImageBlockComponent, {}, [className])}
+      // eslint-disable-next-line i18next/no-literal-string
     >
       ArticleImageBlockComponent
     </div>
