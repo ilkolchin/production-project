@@ -1,8 +1,5 @@
 .ArticleDetails {
   min-height: 100%;
-}
-
-.contentLoading {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -11,4 +8,15 @@
 
 .avatar {
   margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.articleInfo {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 6px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }

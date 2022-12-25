@@ -1,20 +1,23 @@
-import { useTranslation } from 'react-i18next';
+import { ArticleCodeBlock } from 'entities/Article/model/types/article';
+import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames';
+import { Code } from 'shared/ui/Code';
 import cls from './ArticleCodeBlockComponent.module.scss';
 
 interface ArticleCodeBlockComponentProps {
   className?: string;
+  block: ArticleCodeBlock;
 }
-export const ArticleCodeBlockComponent = (
-  props: ArticleCodeBlockComponentProps
-) => {
-  const { className } = props;
-  const { t } = useTranslation();
+export const ArticleCodeBlockComponent = memo(
+  (props: ArticleCodeBlockComponentProps) => {
+    const { className, block } = props;
 
-  return (
-    // eslint-disable-next-line i18next/no-literal-string
-    <div className={classNames(cls.ArticleCodeBlockComponent, {}, [className])}>
-      ArticleCodeBlockComponent
-    </div>
-  );
-};
+    return (
+      <div
+        className={classNames(cls.ArticleCodeBlockComponent, {}, [className])}
+      >
+        <Code text={block.code} />
+      </div>
+    );
+  }
+);

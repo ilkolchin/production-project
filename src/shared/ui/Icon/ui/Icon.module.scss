@@ -1,0 +1,19 @@
+.Icon {
+  &.default {
+    fill: var(--primary-color);
+  }
+
+  &.inverted {
+    fill: var(--inverted-primary-color);
+  }
+}
+
+.size_M {
+  width: 24px;
+  height: 24px;
+}
+
+.size_L {
+  width: 32px;
+  height: 32px;
+}

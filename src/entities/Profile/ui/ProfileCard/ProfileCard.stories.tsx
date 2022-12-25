@@ -17,45 +17,31 @@ const Template: ComponentStory<typeof ProfileCard> = (args) => (
   <ProfileCard {...args} />
 );
 
+const data = {
+  first: 'Ilya',
+  lastname: 'Kolchin',
+  username: 'admin',
+  age: 22,
+  country: Country.Russia,
+  city: 'Saint-Petersburg',
+  currency: Currency.RUB
+};
+
 export const Light = Template.bind({});
 Light.args = {
-  data: {
-    first: 'Ilya',
-    lastname: 'Kolchin',
-    username: 'admin',
-    age: 22,
-    country: Country.Russia,
-    city: 'Saint-Petersburg',
-    currency: Currency.RUB
-  },
+  data: data,
   readonly: true
 };
 
 export const Editable = Template.bind({});
 Editable.args = {
-  data: {
-    first: 'Ilya',
-    lastname: 'Kolchin',
-    username: 'admin',
-    age: 22,
-    country: Country.Russia,
-    city: 'Saint-Petersburg',
-    currency: Currency.RUB
-  },
+  data: data,
   readonly: false
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
-  data: {
-    first: 'Ilya',
-    lastname: 'Kolchin',
-    username: 'admin',
-    age: 22,
-    country: Country.Russia,
-    city: 'Saint-Petersburg',
-    currency: Currency.RUB
-  },
+  data: data,
   readonly: true
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
