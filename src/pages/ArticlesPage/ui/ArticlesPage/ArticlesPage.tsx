@@ -18,7 +18,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
       {t('Articles Page')}
       <AppLink to={'./1'}>
         <br />
-        <Button>Статья 1</Button>
+        <Button>{t('Article')}</Button>
       </AppLink>
     </div>
   );
