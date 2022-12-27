@@ -5,10 +5,19 @@ interface LoaderProps {
   className?: string;
 }
 export const Loader = ({ className }: LoaderProps) => {
-
   return (
-    <div className={classNames(cls['lds-roller'], {}, [className])}>
-      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div
+      data-testid="Loader"
+      className={classNames(cls['lds-roller'], {}, [className])}
+    >
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   );
 };

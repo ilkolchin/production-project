@@ -17,8 +17,10 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     <div className={classNames(cls.ArticlesPage, {}, [className])}>
       {t('Articles Page')}
       <AppLink to={'./1'}>
-        <br />
-        <Button>{t('Article')}</Button>
+        <Button>{t('Article') + ' 1'}</Button>
+      </AppLink>
+      <AppLink to={'./2'}>
+        <Button>{t('Article') + ' 2'}</Button>
       </AppLink>
     </div>
   );

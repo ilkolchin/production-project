@@ -6,7 +6,7 @@ export enum ArticleBlockType {
 
 export interface ArticleBlockBase {
   id: string;
-  type: ArticleBlockType;
+  // type: ArticleBlockType;
 }
 export interface ArticleTextBlock extends ArticleBlockBase {
   type: ArticleBlockType.TEXT;

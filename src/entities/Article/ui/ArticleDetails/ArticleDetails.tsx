@@ -10,7 +10,7 @@ import { classNames } from 'shared/lib/classNames';
 import {
   DynamicModuleLoader,
   ReducersList
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+} from 'shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from 'shared/ui/Avatar';
 import { Icon } from 'shared/ui/Icon';
@@ -98,7 +98,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
           text={article?.subtitle}
           size={TextSize.L}
         />
-        <div>
+        <div data-testid="articleBody">
           <div className={cls.articleInfo}>
             <Icon Svg={EyeIcon} />
             <Text text={String(article?.views)} />
@@ -115,7 +115,10 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.ArticleDetails, {}, [className])}>
+      <div
+        data-testid="ArticleDetailsComponent"
+        className={classNames(cls.ArticleDetails, {}, [className])}
+      >
         {content}
       </div>
     </DynamicModuleLoader>

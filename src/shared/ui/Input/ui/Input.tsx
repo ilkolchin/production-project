@@ -34,7 +34,10 @@ export const Input = memo((props: InputProps) => {
   };
 
   return (
-    <div className={classNames(cls.InputWrapper, mods, [className])}>
+    <div
+      data-testid="CustomInput"
+      className={classNames(cls.InputWrapper, mods, [className])}
+    >
       {placeholder && <span className={cls.placeholder}>{placeholder}</span>}
       <input
         type={type}
