@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "t7dLh5D"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Big comment",
+      "id": "CiZpppz"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Привет, как дела?",
+      "id": "3w4sZX_"
     }
   ],
   "users": [
@@ -118,14 +138,28 @@
       "avatar": "https://mobimg.b-cdn.net/v3/fetch/ef/ef1a150a151d666c3ddd6222b12998b5.jpeg"
     }
   ],
-  "profile": {
-    "first": "Ilya",
-    "lastname": "Kolchin",
-    "age": 25,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Saint-Petersburg",
-    "username": "admin",
-    "avatar": "https://gogotraining.com/blog/wp-content/uploads/2016/10/Become-a-Computer-Programmer.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "username": "admin",
+      "first": "Ilya",
+      "lastname": "Kolchin",
+      "age": 25,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Saint-Petersburg",
+      "avatar": "https://gogotraining.com/blog/wp-content/uploads/2016/10/Become-a-Computer-Programmer.jpg"
+    },
+    {
+      "id": "2",
+      "username": "Waze",
+      "first": "Ilya",
+      "lastname": "Kolchin",
+      "age": 26,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Saint-Petersburg",
+      "avatar": "https://mobimg.b-cdn.net/v3/fetch/ef/ef1a150a151d666c3ddd6222b12998b5.jpeg"
+    }
+  ]
 }

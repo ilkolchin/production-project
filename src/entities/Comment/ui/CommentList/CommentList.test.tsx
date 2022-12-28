@@ -22,6 +22,6 @@ describe('CommentList.test', () => {
 
   test('should render while loading', () => {
     componentRender(<CommentList isLoading={true} />);
-    expect(screen.getByText('No comments')).toBeInTheDocument();
+    expect(screen.getByTestId('CommentListLoading')).toBeInTheDocument();
   });
 });
