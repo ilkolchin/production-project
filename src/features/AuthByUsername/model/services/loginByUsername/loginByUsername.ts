@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
-import { User, userActions } from 'entities/User';
+import { getUserAuthData, User, userActions } from 'entities/User';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 
 interface LoginByUsernameProps {
@@ -14,7 +14,7 @@ export const loginByUsername = createAsyncThunk<
   ThunkConfig<string>
 >(
   'login/loginByUsername',
-  async (authData, { extra, rejectWithValue, dispatch }) => {
+  async (authData, { extra, rejectWithValue, dispatch, getState }) => {
     try {
       const response = await extra.api.post<User>('/login', authData);
 
@@ -27,11 +27,11 @@ export const loginByUsername = createAsyncThunk<
         JSON.stringify(response.data)
       );
       dispatch(userActions.setAuthData(response.data));
-      extra.navigate?.('/profile');
+      const userData = getUserAuthData(getState());
+      extra.navigate?.(`/profile/${userData?.id}`);
 
       return response.data;
     } catch (e) {
-      // console.log(e);
       return rejectWithValue('error: ' + e);
     }
   }
