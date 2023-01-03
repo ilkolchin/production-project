@@ -7,9 +7,10 @@ interface AvatarProps {
   src?: string;
   size?: number;
   alt?: string;
+  rounded?: boolean;
 }
 export const Avatar = (props: AvatarProps) => {
-  const { className, src, size, alt } = props;
+  const { className, src, size, alt, rounded = true } = props;
 
   const styles = useMemo<CSSProperties>(
     () => ({
@@ -21,7 +22,9 @@ export const Avatar = (props: AvatarProps) => {
 
   return (
     <img
-      className={classNames(cls.Avatar, {}, [className])}
+      className={classNames(cls.Avatar, { [cls.rounded]: rounded }, [
+        className
+      ])}
       src={src}
       style={styles}
       alt={alt}

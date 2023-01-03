@@ -5,7 +5,7 @@ import {
   updateProfileData
 } from 'entities/Profile';
 import { getUserAuthData } from 'entities/User';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames';
@@ -38,6 +38,25 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
   const onSave = useCallback(() => {
     dispatch(updateProfileData());
   }, [dispatch]);
+
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Enter') {
+        onSave();
+      } else if (e.key === 'Escape') {
+        onCancelEdit();
+      }
+    },
+    [onCancelEdit, onSave]
+  );
+
+  useEffect(() => {
+    window.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [onKeyDown]);
 
   return (
     <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
