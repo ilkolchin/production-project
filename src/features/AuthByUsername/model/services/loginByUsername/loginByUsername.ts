@@ -27,7 +27,7 @@ export const loginByUsername = createAsyncThunk<
         JSON.stringify(response.data)
       );
       dispatch(userActions.setAuthData(response.data));
-      extra.navigate?.(`/profile/${response.data.id}`);
+      extra.navigate?.('/articles');
 
       return response.data;
     } catch (e) {

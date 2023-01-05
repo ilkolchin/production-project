@@ -1,6 +1,7 @@
 // UI
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 export { ArticlesList } from './ui/ArticlesList/ArticlesList';
+export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
 
 // Types
 export { Article, ArticleView } from './model/types/article';

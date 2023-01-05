@@ -1,0 +1,9 @@
+.ArticleViewSelector {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Selected {
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+}

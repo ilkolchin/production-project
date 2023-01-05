@@ -1,13 +1,11 @@
-/* eslint-disable i18next/no-literal-string */
 import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames';
-import { Avatar } from 'shared/ui/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button';
-import { Text, TextTheme } from 'shared/ui/Text';
+import { UserBar } from 'widgets/UserBar';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -35,10 +33,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <div className={classNames(cls.Navbar, {}, [className])}>
-        <div className={cls.userBar}>
-          <Avatar src={authData.avatar} alt="avatar" size={35} />
-          <Text text={authData.username} theme={TextTheme.INVERTED} />
-        </div>
+        <UserBar user={authData} />
         <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onLogout}>
           {t('Log Out')}
         </Button>

@@ -1,7 +1,7 @@
 import { ArticleDetails } from 'entities/Article';
+import { getArticleDetailsError } from 'entities/Article/model/selectors/articleDetails';
 import { CommentList } from 'entities/Comment';
 import { AddNewComment } from 'features/AddNewComment';
-import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -17,6 +17,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Text } from 'shared/ui/Text';
 import { getArticleDetailsCommentIsLoading } from '../../model/selectors/comments';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import {
   articleDetailsCommentsReducer,
@@ -41,6 +42,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   const comments = useSelector(getArticleComments.selectAll);
   const isLoading = useSelector(getArticleDetailsCommentIsLoading);
+  const error = useSelector(getArticleDetailsError);
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
@@ -68,13 +70,21 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <Button theme={ButtonTheme.BACKGROUND_INVERTED} onClick={onBackToList}>
+        <Button
+          theme={ButtonTheme.OUTLINED}
+          onClick={onBackToList}
+          className={cls.btn}
+        >
           {t('Back to list')}
         </Button>
         <ArticleDetails id={id} />
-        <Text title={t('Comments')} />
-        <AddNewComment onSendComment={onSendComment} />
-        <CommentList isLoading={isLoading} comments={comments} />
+        {error ? null : (
+          <>
+            <Text title={t('Comments')} />
+            <AddNewComment onSendComment={onSendComment} />
+            <CommentList isLoading={isLoading} comments={comments} />
+          </>
+        )}
       </div>
     </DynamicModuleLoader>
   );
