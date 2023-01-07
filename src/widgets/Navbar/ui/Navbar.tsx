@@ -42,13 +42,13 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
 
   return (
-    <div className={classNames(cls.Navbar, {}, [cls.logOut])}>
+    <header className={classNames(cls.Navbar, {}, [cls.logOut])}>
       <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
         {t('Log In')}
       </Button>
       {isAuthModal && (
         <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
       )}
-    </div>
+    </header>
   );
 });

@@ -25,17 +25,22 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
     return <ArticlesListItem view={view} article={article} key={article.id} />;
   };
 
-  if (isLoading) {
-    return (
-      <div className={classNames(cls.ArticlesList, {}, [className, cls[view]])}>
-        {getSkeletons(view)}
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <>
+  //       {view === ArticleView.SMALL ? (
+  //         <div className={cls.ArticlesList}>{getSkeletons(view)}</div>
+  //       ) : (
+  //         <>{getSkeletons(view)}</>
+  //       )}
+  //     </>
+  //   );
+  // }
 
   return (
     <div className={classNames(cls.ArticlesList, {}, [className, cls[view]])}>
       {articles.length > 0 ? articles.map(renderArticles) : null}
+      {isLoading && getSkeletons(view)}
     </div>
   );
 });

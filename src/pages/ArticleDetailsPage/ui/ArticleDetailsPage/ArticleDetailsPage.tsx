@@ -15,6 +15,7 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { Button, ButtonTheme } from 'shared/ui/Button';
+import { Page } from 'shared/ui/Page';
 import { Text } from 'shared/ui/Text';
 import { getArticleDetailsCommentIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
@@ -61,15 +62,15 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   if (!id) {
     return (
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         {t('Статья не найдена')}
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <Button
           theme={ButtonTheme.OUTLINED}
           onClick={onBackToList}
@@ -85,7 +86,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             <CommentList isLoading={isLoading} comments={comments} />
           </>
         )}
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };
