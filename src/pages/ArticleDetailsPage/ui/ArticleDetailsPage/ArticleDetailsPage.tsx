@@ -8,10 +8,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { RoutePath } from 'shared/config/paths';
 import { classNames } from 'shared/lib/classNames';
-import {
-  DynamicModuleLoader,
-  ReducersList
-} from 'shared/lib/components/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { Button, ButtonTheme } from 'shared/ui/Button';
@@ -71,11 +68,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <Button
-          theme={ButtonTheme.OUTLINED}
-          onClick={onBackToList}
-          className={cls.btn}
-        >
+        <Button theme={ButtonTheme.OUTLINED} onClick={onBackToList} className={cls.btn}>
           {t('Back to list')}
         </Button>
         <ArticleDetails id={id} />

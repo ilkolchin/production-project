@@ -1,4 +1,6 @@
 .BIG {
+  width: 100%;
+
   .card {
     display: flex;
     flex-direction: column;
@@ -42,7 +44,7 @@
 
 .SMALL {
   width: 230px;
-  transition: 300ms;
+  transition: scale 300ms;
   cursor: pointer;
 
   .imgWrapper {
@@ -100,11 +102,5 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-  }
-}
-
-.ArticlesListItemSkeleton {
-  .card {
-    flex: 1;
   }
 }

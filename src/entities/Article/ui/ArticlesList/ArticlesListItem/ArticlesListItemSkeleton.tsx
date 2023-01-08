@@ -9,58 +9,41 @@ interface ArticlesListItemSkeletonProps {
   className?: string;
   view: ArticleView;
 }
-export const ArticlesListItemSkeleton = memo(
-  (props: ArticlesListItemSkeletonProps) => {
-    const { className, view } = props;
+export const ArticlesListItemSkeleton = memo((props: ArticlesListItemSkeletonProps) => {
+  const { className, view } = props;
 
-    if (view === ArticleView.BIG) {
-      return (
-        <div
-          className={classNames(cls.ArticlesListItemSkeleton, {}, [
-            className,
-            cls[view]
-          ])}
-        >
-          <Card className={cls.card}>
-            <div className={cls.header}>
-              <Skeleton border={'50%'} width={30} height={30} />
-              <Skeleton width={200} height={20} className={cls.username} />
-            </div>
-            <Skeleton width={700} height={30} />
-            <Skeleton width={700} height={25} className={cls.types} />
-            <Skeleton
-              width={250}
-              height={250}
-              border={'50%'}
-              className={cls.img}
-            />
-            <Skeleton height={250} className={cls.textBlock} />
-            <div className={cls.footer}>
-              <Skeleton width={130} height={40} />
-              <Skeleton width={80} height={24} className={cls.views} />
-            </div>
-          </Card>
-        </div>
-      );
-    }
-
+  if (view === ArticleView.BIG) {
     return (
-      <div
-        className={classNames(cls.ArticlesListItemSkeleton, {}, [
-          className,
-          cls[view]
-        ])}
-      >
-        <Card>
-          <div className={cls.imgWrapper}>
-            <Skeleton width={200} height={200} className={cls.img} />
+      <div className={classNames(cls.ArticlesListItemSkeleton, {}, [className, cls[view]])}>
+        <Card className={cls.card}>
+          <div className={cls.header}>
+            <Skeleton border={'50%'} width={30} height={30} />
+            <Skeleton width={200} height={20} className={cls.username} />
           </div>
-          <div className={cls.infoWrapper}>
-            <Skeleton width={130} height={16} />
+          <Skeleton width={'100%'} height={30} />
+          <Skeleton width={'100%'} height={25} className={cls.types} />
+          <Skeleton width={250} height={250} border={'50%'} className={cls.img} />
+          <Skeleton height={250} className={cls.textBlock} />
+          <div className={cls.footer}>
+            <Skeleton width={130} height={40} />
+            <Skeleton width={80} height={24} className={cls.views} />
           </div>
-          <Skeleton width={150} height={16} className={cls.title} />
         </Card>
       </div>
     );
   }
-);
+
+  return (
+    <div className={classNames(cls.ArticlesListItemSkeleton, {}, [className, cls[view]])}>
+      <Card>
+        <div className={cls.imgWrapper}>
+          <Skeleton width={200} height={200} className={cls.img} />
+        </div>
+        <div className={cls.infoWrapper}>
+          <Skeleton width={130} height={16} />
+        </div>
+        <Skeleton width={150} height={16} className={cls.title} />
+      </Card>
+    </div>
+  );
+});
