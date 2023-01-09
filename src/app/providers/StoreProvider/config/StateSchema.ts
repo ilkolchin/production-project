@@ -11,11 +11,13 @@ import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { AddNewCommentSchema } from 'features/AddNewComment';
 import { LoginSchema } from 'features/AuthByUsername';
+import { ScrollSavingSchema } from 'features/ScrollSaving';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 
 export interface StateSchema {
   user: UserSchema;
+  scrollSaving: ScrollSavingSchema;
 
   //Асинхронные редьюсеры
   loginForm?: LoginSchema;

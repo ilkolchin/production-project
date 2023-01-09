@@ -1,10 +1,6 @@
-import {
-  CombinedState,
-  configureStore,
-  Reducer,
-  ReducersMapObject
-} from '@reduxjs/toolkit';
+import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
+import { scrollSavingReducer } from 'features/ScrollSaving';
 import { $api } from 'shared/api/api';
 import { createReducerManager } from './reducerManager';
 import { StateSchema } from './StateSchema';
@@ -15,7 +11,8 @@ export function createReduxStore(
 ) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
-    user: userReducer
+    user: userReducer,
+    scrollSaving: scrollSavingReducer
   };
 
   const reducerManager = createReducerManager(rootReducers);

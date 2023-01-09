@@ -16,13 +16,10 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import {
-  DynamicModuleLoader,
-  ReducersList
-} from 'shared/lib/components/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 import { Text, TextTheme } from 'shared/ui/Text';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -117,11 +114,7 @@ const ProfilePage = memo(() => {
         <ProfilePageHeader />
         {validateErrors?.length &&
           validateErrors.map((err) => (
-            <Text
-              theme={TextTheme.ERROR}
-              text={validateErrorsTranslate[err]}
-              key={err}
-            />
+            <Text theme={TextTheme.ERROR} text={validateErrorsTranslate[err]} key={err} />
           ))}
         <ProfileCard
           data={formData}
