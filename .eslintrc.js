@@ -39,5 +39,10 @@ module.exports = {
     'react/display-name': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-explicit-any': 'off'
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
 };
