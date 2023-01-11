@@ -3,7 +3,9 @@ import { LoginModal } from 'features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { RoutePath } from 'shared/config/paths';
 import { classNames } from 'shared/lib/classNames';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { UserBar } from 'widgets/UserBar';
 import cls from './Navbar.module.scss';
@@ -34,6 +36,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     return (
       <div className={classNames(cls.Navbar, {}, [className])}>
         <UserBar user={authData} />
+        <AppLink theme={AppLinkTheme.INVERTED} to={RoutePath.article_create}>
+          {t('Create new article')}
+        </AppLink>
         <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onLogout}>
           {t('Log Out')}
         </Button>
@@ -46,9 +51,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
         {t('Log In')}
       </Button>
-      {isAuthModal && (
-        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
-      )}
+      {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
     </header>
   );
 });
