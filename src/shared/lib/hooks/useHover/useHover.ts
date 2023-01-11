@@ -5,6 +5,7 @@ interface UseHoverBind {
   onMouseLeave: () => void;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type UseHoverResult = [boolean, UseHoverBind];
 
 export const useHover = () => {

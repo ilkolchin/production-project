@@ -1,0 +1,14 @@
+.Tabs {
+  display: flex;
+  gap: 20px;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 6px 18px;
+
+  &:hover {
+    background: var(--primary-color);
+    color: var(--inverted-primary-color);
+  }
+}
