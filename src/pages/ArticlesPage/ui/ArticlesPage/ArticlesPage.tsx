@@ -29,7 +29,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const { className } = props;
   const dispatch = useAppDispatch();
   const [searchParams] = useSearchParams();
-  console.log(searchParams);
 
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticlesPageIsLoading);

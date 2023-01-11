@@ -23,13 +23,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'i18next',
-    'react-hooks',
-    'prettier'
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'prettier'],
   rules: {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
@@ -37,7 +31,7 @@ module.exports = {
       'error',
       {
         markupOnly: true,
-        ignoreAttribute: ['to', 'data-testid', 'name', 'alt']
+        ignoreAttribute: ['to', 'data-testid', 'name', 'alt', 'target']
       }
     ],
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks

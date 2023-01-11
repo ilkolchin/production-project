@@ -1,8 +1,28 @@
 .ArticleDetailsPage {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+  min-height: 100%;
 }
 
 .btn {
   width: 250px;
+}
+
+.recommendationsTitle {
+  margin-bottom: 20px;
+}
+
+.recommendations {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-bottom: 20px;
+}
+
+.commentsTitle {
+  margin-bottom: 20px;
+}
+
+.comments {
+  margin-bottom: 20px;
 }
