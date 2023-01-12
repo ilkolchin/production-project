@@ -1,5 +1,5 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { User } from 'entities/User/model/types/user';
+import { User } from '../../types/user';
 import { getUserAuthData } from './getUserAuthData';
 
 describe('getUserAuthData.test', () => {

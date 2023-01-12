@@ -2,7 +2,7 @@ import { ArticleDetails, ArticlesList, ArticleView } from 'entities/Article';
 import { getArticleDetailsError } from 'entities/Article/model/selectors/articleDetails';
 import { CommentList } from 'entities/Comment';
 import { AddNewComment } from 'features/AddNewComment';
-import { ArticleDetailsPageHeader } from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';

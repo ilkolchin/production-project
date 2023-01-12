@@ -1,7 +1,7 @@
 import {
   ArticleType,
   ArticleBlockType
-} from 'entities/Article/model/types/article';
+} from '../../types/article';
 import { TestAsyncThunk } from 'shared/config/tests/TestAsyncThunk';
 import { fetchArticleById } from './fetchArticleById';
 

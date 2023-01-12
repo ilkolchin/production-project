@@ -2,7 +2,7 @@ import {
   Article,
   ArticleBlockType,
   ArticleType
-} from 'entities/Article/model/types/article';
+} from '../types/article';
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
 import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 import { articleDetailsReducer } from './articleDetailsSlice';

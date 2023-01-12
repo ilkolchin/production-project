@@ -20,7 +20,10 @@
       "views": 102,
       "createdAt": "03.02.2022",
       "userId": "1",
-      "type": ["IT", "ECONOMICS"],
+      "type": [
+        "IT",
+        "ECONOMICS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -67,7 +70,9 @@
       "views": 1026,
       "createdAt": "04.03.2022",
       "userId": "1",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -114,7 +119,9 @@
       "views": 2210,
       "createdAt": "14.04.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -161,7 +168,9 @@
       "views": 6737,
       "createdAt": "27.04.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -208,7 +217,9 @@
       "views": 3618,
       "createdAt": "02.06.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -255,7 +266,9 @@
       "views": 9119,
       "createdAt": "14.07.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -302,7 +315,9 @@
       "views": 8346,
       "createdAt": "02.08.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -349,7 +364,9 @@
       "views": 9699,
       "createdAt": "28.09.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -396,7 +413,9 @@
       "views": 514,
       "createdAt": "06.10.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -443,7 +462,9 @@
       "views": 4927,
       "createdAt": "15.11.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -490,7 +511,9 @@
       "views": 6782,
       "createdAt": "24.11.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -537,7 +560,9 @@
       "views": 4767,
       "createdAt": "28.11.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -584,7 +609,9 @@
       "views": 6641,
       "createdAt": "22.12.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -631,7 +658,9 @@
       "views": 6538,
       "createdAt": "28.12.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -678,7 +707,9 @@
       "views": 6278,
       "createdAt": "29.12.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -766,7 +797,7 @@
       "username": "admin",
       "first": "Ilya",
       "lastname": "Kolchin",
-      "age": 25,
+      "age": 26,
       "currency": "RUB",
       "country": "Russia",
       "city": "Saint-Petersburg",

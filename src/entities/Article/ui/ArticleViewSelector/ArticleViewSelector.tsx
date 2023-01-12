@@ -1,4 +1,4 @@
-import { ArticleView } from 'entities/Article/model/types/article';
+import { ArticleView } from '../../model/types/article';
 import { memo } from 'react';
 import BigViewIcon from 'shared/assets/icons/big_articles.svg';
 import SmallViewIcon from 'shared/assets/icons/small_articles.svg';

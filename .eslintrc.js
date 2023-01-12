@@ -23,7 +23,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'prettier'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'prettier', 'fsd-stable'],
   rules: {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
@@ -38,7 +38,8 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
     'react/display-name': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
-    '@typescript-eslint/no-explicit-any': 'off'
+    '@typescript-eslint/no-explicit-any': 'off',
+    'fsd-stable/fsd-paths-checker': 'error'
   },
   settings: {
     react: {
