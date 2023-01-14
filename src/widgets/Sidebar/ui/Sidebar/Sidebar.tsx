@@ -8,6 +8,7 @@ import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
+import { VStack } from 'shared/ui/Stack';
 
 interface SidebarProps {
   className?: string;
@@ -33,9 +34,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   return (
     <menu
       data-testid="sidebar"
-      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
-        className
-      ])}
+      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
     >
       <div className={cls.items}>
         <Button
@@ -51,7 +50,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         {/* {sidebarItemsList.map((item) => (
           <SidebarItem item={item} key={item.path} collapsed={collapsed} />
         ))} */}
-        {itemsList}
+        <VStack gap="8">{itemsList}</VStack>
       </div>
 
       <div className={cls.switchers}>

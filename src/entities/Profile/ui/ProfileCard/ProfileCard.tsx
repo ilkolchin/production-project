@@ -5,6 +5,7 @@ import { classNames, Mods } from 'shared/lib/classNames';
 import { Avatar } from 'shared/ui/Avatar';
 import { Input } from 'shared/ui/Input';
 import { Loader } from 'shared/ui/Loader';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { Text, TextTheme } from 'shared/ui/Text';
 import { TextAlign } from 'shared/ui/Text/ui/Text';
 import { Profile } from '../../model/types/profile';
@@ -45,27 +46,17 @@ export const ProfileCard = (props: ProfileCardProps) => {
   const { t } = useTranslation('profile');
 
   if (isLoading) {
-    return (
-      <div
-        className={classNames(cls.ProfileCard, { [cls.isLoading]: true }, [
-          className
-        ])}
-      >
-        <Loader />
-      </div>
-    );
+    return <Loader />;
   }
 
   if (error) {
     return (
-      <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
-        <Text
-          theme={TextTheme.ERROR}
-          align={TextAlign.CENTER}
-          title={t('Произошла ошибка при загрузке профиля :(')}
-          text={t('Попробуйте обновить страницу!')}
-        />
-      </div>
+      <Text
+        theme={TextTheme.ERROR}
+        align={TextAlign.CENTER}
+        title={t('Произошла ошибка при загрузке профиля :(')}
+        text={t('Попробуйте обновить страницу!')}
+      />
     );
   }
 
@@ -74,14 +65,10 @@ export const ProfileCard = (props: ProfileCardProps) => {
   };
 
   return (
-    <div className={classNames(cls.ProfileCard, mods, [className])}>
-      {data?.avatar && (
-        <div className={cls.avatarWrapper}>
-          <Avatar src={data.avatar} />
-        </div>
-      )}
-      <div className={cls.data}>
-        <div className={cls.inputWrapper}>
+    <VStack gap="16" max className={classNames(cls.ProfileCard, mods, [className])}>
+      {data?.avatar && <Avatar src={data.avatar} />}
+      <VStack gap="8" max>
+        <HStack gap="8" max>
           <Input
             readonly={readonly}
             placeholder={t('Username')}
@@ -96,9 +83,9 @@ export const ProfileCard = (props: ProfileCardProps) => {
             onChange={onChangeAge}
             className={cls.input}
           />
-        </div>
+        </HStack>
 
-        <div className={cls.inputWrapper}>
+        <HStack gap="8" max>
           <Input
             readonly={readonly}
             placeholder={t('First Name')}
@@ -113,9 +100,9 @@ export const ProfileCard = (props: ProfileCardProps) => {
             onChange={onChangeLastName}
             className={cls.input}
           />
-        </div>
+        </HStack>
 
-        <div className={cls.inputWrapper}>
+        <HStack gap="8" max>
           <Input
             readonly={readonly}
             placeholder={t('City')}
@@ -129,9 +116,9 @@ export const ProfileCard = (props: ProfileCardProps) => {
             onChange={onChangeCountry}
             readonly={readonly}
           />
-        </div>
+        </HStack>
 
-        <div className={cls.inputWrapper}>
+        <HStack gap="8" max>
           <CurrencySelect
             className={cls.input}
             value={data?.currency}
@@ -145,8 +132,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
             value={data?.avatar}
             onChange={onChangeAvatar}
           />
-        </div>
-      </div>
-    </div>
+        </HStack>
+      </VStack>
+    </VStack>
   );
 };

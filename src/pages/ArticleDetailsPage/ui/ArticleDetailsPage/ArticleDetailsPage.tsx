@@ -22,6 +22,7 @@ import { articleDetailsPageReducer } from '../../model/slices';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { getArticleRecommendations } from '../../model/slices/articleDetailsPageRecommendationsSlice';
 import cls from './ArticleDetailsPage.module.scss';
+import { VStack } from 'shared/ui/Stack';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -66,23 +67,25 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <ArticleDetailsPageHeader />
-        <ArticleDetails id={id} />
-        <Text title={t('Recommend')} className={cls.recommendationsTitle} />
-        <ArticlesList
-          articles={recommendations}
-          isLoading={recommendationsIsLoading}
-          view={ArticleView.SMALL}
-          className={cls.recommendations}
-          target="_blank"
-        />
-        {error ? null : (
-          <>
-            <Text title={t('Comments')} className={cls.commentsTitle} />
-            <AddNewComment onSendComment={onSendComment} className={cls.comments} />
-            <CommentList isLoading={isLoading} comments={comments} />
-          </>
-        )}
+        <VStack gap="32" max align="stretch">
+          <ArticleDetailsPageHeader />
+          <ArticleDetails id={id} />
+          <Text title={t('Recommend')} />
+          <ArticlesList
+            articles={recommendations}
+            isLoading={recommendationsIsLoading}
+            view={ArticleView.SMALL}
+            className={cls.recommendations}
+            target="_blank"
+          />
+          {error ? null : (
+            <>
+              <Text title={t('Comments')} />
+              <AddNewComment onSendComment={onSendComment} />
+              <CommentList isLoading={isLoading} comments={comments} />
+            </>
+          )}
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

@@ -2,10 +2,12 @@
   cursor: pointer;
   color: var(--primary-color);
   padding: 8px 16px;
+  border-radius: 12px;
 }
 
 .clear,
-.clearInverted {
+.clearInverted,
+.cancel {
   padding: 0;
   border: none;
   outline: none;
@@ -40,8 +42,17 @@
   border: none;
 }
 
+.cancel {
+  color: var(--red-dark);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .square {
   padding: 0;
+  border-radius: 0;
 
   &.size_M {
     width: var(--font-line-m);

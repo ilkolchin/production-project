@@ -2,10 +2,10 @@ import { ArticlesListItemSkeleton } from './ArticlesListItem/ArticlesListItemSke
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import { Article, ArticleView } from '../../model/types/article';
-import cls from './ArticlesList.module.scss';
 import { ArticlesListItem } from './ArticlesListItem/ArticlesListItem';
 import { Text } from 'shared/ui/Text';
 import { useTranslation } from 'react-i18next';
+import { HStack } from 'shared/ui/Stack';
 
 interface ArticlesListProps {
   className?: string;
@@ -31,16 +31,16 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
 
   if (!isLoading && !articles.length) {
     return (
-      <div className={classNames(cls.ArticlesList, {}, [className, cls[view]])}>
+      <HStack gap="16" className={classNames('', {}, [className])}>
         <Text title={t('Articles not found')} />
-      </div>
+      </HStack>
     );
   }
 
   return (
-    <div className={classNames(cls.ArticlesList, {}, [className, cls[view]])}>
+    <HStack gap="16" wrap max className={classNames('', {}, [className])}>
       {articles.length > 0 ? articles.map(renderArticles) : null}
       {isLoading && getSkeletons(view)}
-    </div>
+    </HStack>
   );
 });

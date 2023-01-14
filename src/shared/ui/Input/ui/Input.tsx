@@ -19,6 +19,7 @@ interface InputProps extends HTMLInputProps {
   placeholder?: string;
   placeholderType?: PlaceholderType;
   readonly?: boolean;
+  widthMax?: boolean;
 }
 export const Input = memo((props: InputProps) => {
   const {
@@ -29,6 +30,7 @@ export const Input = memo((props: InputProps) => {
     placeholder,
     placeholderType = PlaceholderType.OUTSIDE,
     readonly,
+    widthMax,
     ...otherProps
   } = props;
 
@@ -37,16 +39,14 @@ export const Input = memo((props: InputProps) => {
   };
 
   const mods: Mods = {
-    [cls.readonly]: readonly
+    [cls.readonly]: readonly,
+    [cls.widthMax]: widthMax
   };
 
   switch (placeholderType) {
     case PlaceholderType.OUTSIDE:
       return (
-        <div
-          data-testid="CustomInput"
-          className={classNames(cls.InputWrapper, mods, [className])}
-        >
+        <div data-testid="CustomInput" className={classNames(cls.InputWrapper, mods, [className])}>
           <span className={cls.placeholder}>{placeholder}</span>
           <input
             type={type}
@@ -62,10 +62,7 @@ export const Input = memo((props: InputProps) => {
 
     case PlaceholderType.INSIDE:
       return (
-        <div
-          data-testid="CustomInput"
-          className={classNames(cls.InputWrapper, mods, [className])}
-        >
+        <div data-testid="CustomInput" className={classNames(cls.InputWrapper, mods, [className])}>
           <input
             type={type}
             value={value}

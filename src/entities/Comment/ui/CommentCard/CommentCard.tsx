@@ -4,6 +4,7 @@ import { classNames } from 'shared/lib/classNames';
 import { AppLink } from 'shared/ui/AppLink';
 import { Avatar } from 'shared/ui/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text';
 import { Comment } from '../../model/types/comment';
 import cls from './CommentCard.module.scss';
@@ -18,16 +19,17 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
   if (isLoading) {
     return (
-      <div
-        data-testid="CommentCardLoading"
+      <VStack
+        gap="16"
+        align="stretch"
         className={classNames(cls.CommentCard, {}, [className, cls.loading])}
       >
-        <div className={cls.header}>
-          <Skeleton width={42} height={42} border={'50%'} />
+        <HStack gap="8">
+          <Skeleton testID="CommentCardLoading" width={42} height={42} border={'50%'} />
           <Skeleton width={100} height={32} />
-        </div>
+        </HStack>
         <Skeleton width={'100%'} height={50} />
-      </div>
+      </VStack>
     );
   }
 
@@ -36,20 +38,19 @@ export const CommentCard = memo((props: CommentCardProps) => {
   }
 
   return (
-    <div
-      data-testid="CommentCard"
+    <VStack
+      testID="CommentCardElement"
+      gap="16"
+      align="stretch"
       className={classNames(cls.CommentCard, {}, [className])}
     >
-      <AppLink
-        to={`${RoutePath.profile}${comment.user.id}`}
-        className={cls.header}
-      >
-        {comment.user.avatar ? (
-          <Avatar src={comment.user.avatar} size={42} />
-        ) : null}
-        <Text title={comment.user.username} />
+      <AppLink to={`${RoutePath.profile}${comment.user.id}`}>
+        <HStack gap="8">
+          {comment.user.avatar ? <Avatar src={comment.user.avatar} size={42} /> : null}
+          <Text title={comment.user.username} />
+        </HStack>
       </AppLink>
       <Text text={comment.text} />
-    </div>
+    </VStack>
   );
 });

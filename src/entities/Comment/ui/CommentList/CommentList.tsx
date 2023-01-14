@@ -3,8 +3,8 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames';
 import { Text } from 'shared/ui/Text';
-import cls from './CommentList.module.scss';
 import { Comment } from '../../model/types/comment';
+import { VStack } from 'shared/ui/Stack';
 
 interface CommentListProps {
   className?: string;
@@ -17,9 +17,7 @@ export const CommentList = memo((props: CommentListProps) => {
 
   if (isLoading) {
     return (
-      <div 
-      data-testid="CommentListLoading"
-      className={classNames(cls.CommentList, {}, [className])}>
+      <div data-testid="CommentListLoading" className={classNames('', {}, [className])}>
         <CommentCard isLoading />
         <CommentCard isLoading />
         <CommentCard isLoading />
@@ -28,7 +26,7 @@ export const CommentList = memo((props: CommentListProps) => {
   }
 
   return (
-    <div className={classNames(cls.CommentList, {}, [className])}>
+    <VStack gap="16" align="stretch" className={classNames('', {}, [className])}>
       {comments?.length ? (
         comments.map((comment) => (
           <div key={comment.id} data-testid="CommentListItem">
@@ -38,6 +36,6 @@ export const CommentList = memo((props: CommentListProps) => {
       ) : (
         <Text text={t('No comments')} />
       )}
-    </div>
+    </VStack>
   );
 });

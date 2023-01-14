@@ -11,8 +11,8 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button';
+import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text';
-import cls from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -59,38 +59,26 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
   }, [onKeyDown]);
 
   return (
-    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
-      <Text title={t('Profile')} className={cls.profileText} />
+    <HStack gap="16" justify="between" max className={classNames('', {}, [className])}>
+      <Text title={t('Profile')} />
       {canEdit && (
         <>
           {readonly ? (
-            <Button
-              theme={ButtonTheme.OUTLINED}
-              onClick={onEdit}
-              className={cls.btn}
-            >
+            <Button theme={ButtonTheme.OUTLINED} onClick={onEdit}>
               {t('Edit')}
             </Button>
           ) : (
-            <>
-              <Button
-                theme={ButtonTheme.CLEAR}
-                onClick={onCancelEdit}
-                className={cls.cancelBtn}
-              >
+            <HStack gap="16">
+              <Button theme={ButtonTheme.CANCEL} onClick={onCancelEdit}>
                 {t('Cancel')}
               </Button>
-              <Button
-                theme={ButtonTheme.OUTLINED}
-                onClick={onSave}
-                className={cls.btn}
-              >
+              <Button theme={ButtonTheme.OUTLINED} onClick={onSave}>
                 {t('Save')}
               </Button>
-            </>
+            </HStack>
           )}
         </>
       )}
-    </div>
+    </HStack>
   );
 };

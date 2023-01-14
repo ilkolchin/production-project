@@ -15,7 +15,7 @@ const comment: Comment = {
 describe('CommentCard.test', () => {
   test('should render', () => {
     componentRender(<CommentCard comment={comment} />);
-    expect(screen.getByTestId('CommentCard')).toBeInTheDocument();
+    expect(screen.getByTestId('CommentCardElement')).toBeInTheDocument();
   });
 
   test('should render while loading', () => {

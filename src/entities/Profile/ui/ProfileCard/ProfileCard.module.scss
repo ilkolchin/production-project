@@ -4,37 +4,8 @@
   border-radius: 12px;
 }
 
-.avatarWrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-.btn {
-  border-radius: 12px;
-}
-
-.data {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.inputWrapper {
-  display: flex;
-  gap: 10px;
-
-  .input {
-    flex: 1;
-  }
-}
-
-.isLoading,
-.error {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.input {
+  flex: 1;
 }
 
 .editing {

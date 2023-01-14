@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/paths';
 import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
-import cls from './ArticleDetailsPageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
@@ -29,15 +29,15 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
   }, [article?.id, navigate]);
 
   return (
-    <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
+    <HStack justify="between" className={classNames('', {}, [className])}>
       <Button theme={ButtonTheme.OUTLINED} onClick={onBackToList}>
         {t('Back to list')}
       </Button>
       {canEdit && (
-        <Button theme={ButtonTheme.OUTLINED} onClick={onEditArticle} className={cls.editBtn}>
+        <Button theme={ButtonTheme.OUTLINED} onClick={onEditArticle}>
           {t('Edit')}
         </Button>
       )}
-    </div>
+    </HStack>
   );
 });

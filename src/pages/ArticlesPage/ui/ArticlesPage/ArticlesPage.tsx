@@ -15,7 +15,7 @@ import {
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
-import cls from './ArticlesPage.module.scss';
+import { VStack } from 'shared/ui/Stack';
 
 interface ArticlesPageProps {
   className?: string;
@@ -44,9 +44,11 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <Page onScrollEnd={onLoadNextPart} className={classNames(cls.ArticlesPage, {}, [className])}>
-        <ArticlesPageFilters />
-        <ArticlesList isLoading={isLoading} view={view} articles={articles} />
+      <Page onScrollEnd={onLoadNextPart} className={classNames('', {}, [className])}>
+        <VStack gap="32">
+          <ArticlesPageFilters />
+          <ArticlesList isLoading={isLoading} view={view} articles={articles} />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

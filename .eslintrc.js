@@ -31,7 +31,18 @@ module.exports = {
       'error',
       {
         markupOnly: true,
-        ignoreAttribute: ['to', 'data-testid', 'name', 'alt', 'target']
+        ignoreAttribute: [
+          'to',
+          'data-testid',
+          'name',
+          'alt',
+          'target',
+          'justify',
+          'align',
+          'direction',
+          'gap',
+          'testID'
+        ]
       }
     ],
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks

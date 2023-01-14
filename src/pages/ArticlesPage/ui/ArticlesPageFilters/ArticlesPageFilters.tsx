@@ -6,7 +6,6 @@ import {
   ArticleViewSelector
 } from 'entities/Article';
 import { ArticleType } from 'entities/Article/model/types/article';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -14,8 +13,9 @@ import { classNames } from 'shared/lib/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useDebounce } from 'shared/lib/hooks/useDebounce';
 import { SortOrder } from 'shared/types';
-import { Card } from 'shared/ui/Card';
 import { Input } from 'shared/ui/Input';
+import { PlaceholderType } from 'shared/ui/Input/ui/Input';
+import { HStack, VStack } from 'shared/ui/Stack';
 import {
   getArticlesPageOrder,
   getArticlesPageSearch,
@@ -23,8 +23,8 @@ import {
   getArticlesPageType,
   getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
-import cls from './ArticlesPageFilters.module.scss';
 
 interface ArticlesPageFiltersProps {
   className?: string;
@@ -90,8 +90,8 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
   );
 
   return (
-    <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
-      <div className={cls.sortWrapper}>
+    <VStack gap="16" max className={classNames('', {}, [className])}>
+      <HStack justify="between" max>
         <ArticleSortSelector
           onChangeOrder={onChangeOrder}
           onChangeSort={onChangeSort}
@@ -99,11 +99,17 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
           sort={sort}
         />
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
-      </div>
-      <Card className={cls.search}>
-        <Input placeholder={t('poisk')} value={search} onChange={onChangeSearch} />
-      </Card>
-      <ArticleTabTypes onChangeType={onChangeType} value={type} className={cls.tabs} />
-    </div>
+      </HStack>
+      <Input
+        placeholderType={PlaceholderType.INSIDE}
+        placeholder={t('poisk')}
+        value={search}
+        onChange={onChangeSearch}
+        widthMax
+      />
+      <HStack max justify="start">
+        <ArticleTabTypes onChangeType={onChangeType} value={type} />
+      </HStack>
+    </VStack>
   );
 });
