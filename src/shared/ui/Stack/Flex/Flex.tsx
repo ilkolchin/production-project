@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames';
 import cls from './Flex.module.scss';
 
@@ -6,6 +6,7 @@ export type FlexJustify = 'start' | 'center' | 'end' | 'between';
 export type FlexAlign = 'start' | 'center' | 'end' | 'stretch';
 export type FlexDirection = 'row' | 'column';
 export type FlexGap = '4' | '8' | '16' | '32';
+export type FlexTag = 'div' | 'section';
 
 const justifyClasses: Record<FlexJustify, string> = {
   start: cls.justifyStart,
@@ -33,9 +34,12 @@ const gapClasses: Record<FlexGap, string> = {
   '32': cls.gap32
 };
 
-export interface FlexProps {
-  className?: string;
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+
+export interface FlexProps extends DivProps {
   children: ReactNode;
+  tag?: FlexTag;
+  className?: string;
   justify?: FlexJustify;
   align?: FlexAlign;
   direction?: FlexDirection;
@@ -46,8 +50,9 @@ export interface FlexProps {
 }
 export const Flex = (props: FlexProps) => {
   const {
-    className,
     children,
+    className,
+    tag = 'div',
     justify = 'start',
     align = 'center',
     direction = 'row',
@@ -65,14 +70,16 @@ export const Flex = (props: FlexProps) => {
     gap && gapClasses[gap]
   ];
 
+  const FlexTag = tag;
+
   const mods: Mods = {
     [cls.max]: max,
     [cls.wrap]: wrap
   };
 
   return (
-    <div data-testid={testID} className={classNames(cls.Flex, mods, classes)}>
+    <FlexTag data-testid={testID} className={classNames(cls.Flex, mods, classes)}>
       {children}
-    </div>
+    </FlexTag>
   );
 };

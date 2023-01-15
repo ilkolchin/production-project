@@ -67,7 +67,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <VStack gap="32" max align="stretch">
+        <VStack tag="section" gap="32" max align="stretch">
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
           <Text title={t('Recommend')} />

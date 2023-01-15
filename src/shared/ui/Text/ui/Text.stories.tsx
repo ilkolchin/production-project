@@ -13,10 +13,18 @@ export default {
 
 const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
-export const Light = Template.bind({});
-Light.args = {
+export const SizeS = Template.bind({});
+SizeS.args = {
   title: 'Title',
-  text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
+  text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
+  size: TextSize.S
+};
+
+export const SizeM = Template.bind({});
+SizeM.args = {
+  title: 'Title',
+  text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
+  size: TextSize.M
 };
 
 export const SizeL = Template.bind({});
@@ -24,6 +32,12 @@ SizeL.args = {
   title: 'Title',
   text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
   size: TextSize.L
+};
+
+export const Light = Template.bind({});
+Light.args = {
+  title: 'Title',
+  text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
 };
 
 export const Dark = Template.bind({});

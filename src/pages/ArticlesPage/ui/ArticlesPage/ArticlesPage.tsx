@@ -45,7 +45,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={onLoadNextPart} className={classNames('', {}, [className])}>
-        <VStack gap="32">
+        <VStack tag="section" gap="32">
           <ArticlesPageFilters />
           <ArticlesList isLoading={isLoading} view={view} articles={articles} />
         </VStack>

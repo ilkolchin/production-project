@@ -41,7 +41,9 @@ module.exports = {
           'align',
           'direction',
           'gap',
-          'testID'
+          'testID',
+          'role',
+          'tag'
         ]
       }
     ],
