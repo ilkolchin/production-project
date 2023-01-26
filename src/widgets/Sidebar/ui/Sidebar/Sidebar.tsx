@@ -46,9 +46,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         >
           {collapsed ? '>' : '<'}
         </Button>
-        <VStack role="navigation" gap="8">
-          {itemsList}
-        </VStack>
+        <VStack role="navigation">{itemsList}</VStack>
       </div>
 
       <footer className={cls.switchers}>

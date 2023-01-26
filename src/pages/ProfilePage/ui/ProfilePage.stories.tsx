@@ -5,6 +5,7 @@ import { Currency } from 'entities/Currency';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import ProfilePage from './ProfilePage';
+import Avatar from 'shared/assets/tests/storybook.jpeg';
 
 export default {
   title: 'pages/ProfilePage',
@@ -30,7 +31,8 @@ Light.decorators = [
         age: 22,
         country: Country.Russia,
         city: 'Saint-Petersburg',
-        currency: Currency.RUB
+        currency: Currency.RUB,
+        avatar: Avatar
       },
       readonly: true
     }
@@ -49,7 +51,8 @@ Editable.decorators = [
         age: 22,
         country: Country.Russia,
         city: 'Saint-Petersburg',
-        currency: Currency.RUB
+        currency: Currency.RUB,
+        avatar: Avatar
       },
       readonly: false
     }
@@ -69,7 +72,8 @@ Dark.decorators = [
         age: 22,
         country: Country.Russia,
         city: 'Saint-Petersburg',
-        currency: Currency.RUB
+        currency: Currency.RUB,
+        avatar: Avatar
       },
       readonly: true
     }

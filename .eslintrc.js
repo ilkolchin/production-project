@@ -43,7 +43,8 @@ module.exports = {
           'gap',
           'testID',
           'role',
-          'tag'
+          'tag',
+          'as'
         ]
       }
     ],

@@ -66,26 +66,28 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   return (
     <VStack gap="16" max className={classNames(cls.ProfileCard, mods, [className])}>
-      {data?.avatar && <Avatar src={data.avatar} />}
-      <VStack gap="8" max>
-        <HStack gap="8" max>
+      <HStack gap="32" max>
+        {data?.avatar && <Avatar src={data.avatar} />}
+        <VStack gap="8">
           <Input
             readonly={readonly}
-            placeholder={t('Username')}
+            placeholder={t('Никнейм')}
             value={data?.username}
             onChange={onChangeUsername}
             className={cls.input}
           />
           <Input
             readonly={readonly}
-            placeholder={t('Age')}
-            value={data?.age}
-            onChange={onChangeAge}
+            placeholder={t('Profile avatar link')}
             className={cls.input}
+            value={data?.avatar}
+            onChange={onChangeAvatar}
           />
-        </HStack>
+        </VStack>
+      </HStack>
 
-        <HStack gap="8" max>
+      <VStack gap="8" max align="start">
+        <HStack gap="8">
           <Input
             readonly={readonly}
             placeholder={t('First Name')}
@@ -101,38 +103,32 @@ export const ProfileCard = (props: ProfileCardProps) => {
             className={cls.input}
           />
         </HStack>
-
-        <HStack gap="8" max>
-          <Input
-            readonly={readonly}
-            placeholder={t('City')}
-            className={cls.input}
-            value={data?.city}
-            onChange={onChangeCity}
-          />
-          <CountrySelect
-            className={cls.input}
-            value={data?.country}
-            onChange={onChangeCountry}
-            readonly={readonly}
-          />
-        </HStack>
-
-        <HStack gap="8" max>
-          <CurrencySelect
-            className={cls.input}
-            value={data?.currency}
-            onChange={onChangeCurrency}
-            readonly={readonly}
-          />
-          <Input
-            readonly={readonly}
-            placeholder={t('Profile avatar link')}
-            className={cls.input}
-            value={data?.avatar}
-            onChange={onChangeAvatar}
-          />
-        </HStack>
+        <Input
+          readonly={readonly}
+          placeholder={t('Age')}
+          value={data?.age}
+          onChange={onChangeAge}
+          className={cls.input}
+        />
+        <Input
+          readonly={readonly}
+          placeholder={t('City')}
+          className={cls.input}
+          value={data?.city}
+          onChange={onChangeCity}
+        />
+        <CountrySelect
+          className={cls.input}
+          value={data?.country}
+          onChange={onChangeCountry}
+          readonly={readonly}
+        />
+        <CurrencySelect
+          className={cls.input}
+          value={data?.currency}
+          onChange={onChangeCurrency}
+          readonly={readonly}
+        />
       </VStack>
     </VStack>
   );

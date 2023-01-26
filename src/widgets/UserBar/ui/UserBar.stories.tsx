@@ -3,6 +3,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { UserBar } from './UserBar';
 import Avatar from 'shared/assets/tests/storybook.jpeg';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 
 export default {
   title: 'widgets/UserBar',
@@ -12,18 +13,16 @@ export default {
   }
 } as ComponentMeta<typeof UserBar>;
 
-const Template: ComponentStory<typeof UserBar> = (args) => (
-  <UserBar {...args} />
-);
+const Template: ComponentStory<typeof UserBar> = (args) => <UserBar {...args} />;
 
 export const Light = Template.bind({});
 Light.args = { user: { id: '1', username: 'Waze', avatar: Avatar } };
-Light.decorators = [];
+Light.decorators = [StoreDecorator({})];
 
 export const Dark = Template.bind({});
 Dark.args = { user: { id: '1', username: 'Waze', avatar: Avatar } };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 
 export const Orange = Template.bind({});
 Orange.args = { user: { id: '1', username: 'Waze', avatar: Avatar } };
-Orange.decorators = [ThemeDecorator(Theme.ORANGE)];
+Orange.decorators = [ThemeDecorator(Theme.ORANGE), StoreDecorator({})];

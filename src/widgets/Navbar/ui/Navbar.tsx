@@ -1,12 +1,11 @@
-import { getUserAuthData, userActions } from 'entities/User';
+import { getUserAuthData } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
-import { RoutePath } from 'shared/config/paths';
+import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button';
+import { Text, TextTheme } from 'shared/ui/Text';
 import { UserBar } from 'widgets/UserBar';
 import cls from './Navbar.module.scss';
 
@@ -18,7 +17,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
-  const dispatch = useDispatch();
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -28,20 +26,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     setIsAuthModal(true);
   }, []);
 
-  const onLogout = useCallback(() => {
-    dispatch(userActions.logout());
-  }, [dispatch]);
-
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
+        <Text title={t('Waze App')} theme={TextTheme.INVERTED} />
         <UserBar user={authData} />
-        <AppLink theme={AppLinkTheme.INVERTED} to={RoutePath.article_create}>
-          {t('Create new article')}
-        </AppLink>
-        <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onLogout}>
-          {t('Log Out')}
-        </Button>
       </header>
     );
   }
