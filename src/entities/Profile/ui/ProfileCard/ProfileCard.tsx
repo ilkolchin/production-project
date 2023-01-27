@@ -103,32 +103,36 @@ export const ProfileCard = (props: ProfileCardProps) => {
             className={cls.input}
           />
         </HStack>
-        <Input
-          readonly={readonly}
-          placeholder={t('Age')}
-          value={data?.age}
-          onChange={onChangeAge}
-          className={cls.input}
-        />
-        <Input
-          readonly={readonly}
-          placeholder={t('City')}
-          className={cls.input}
-          value={data?.city}
-          onChange={onChangeCity}
-        />
-        <CountrySelect
-          className={cls.input}
-          value={data?.country}
-          onChange={onChangeCountry}
-          readonly={readonly}
-        />
-        <CurrencySelect
-          className={cls.input}
-          value={data?.currency}
-          onChange={onChangeCurrency}
-          readonly={readonly}
-        />
+        <HStack gap="8">
+          <Input
+            readonly={readonly}
+            placeholder={t('Age')}
+            value={data?.age}
+            onChange={onChangeAge}
+            className={cls.input}
+          />
+          <Input
+            readonly={readonly}
+            placeholder={t('City')}
+            className={cls.input}
+            value={data?.city}
+            onChange={onChangeCity}
+          />
+        </HStack>
+        <HStack gap="8" align="stretch" justify="center">
+          <CountrySelect
+            className={cls.input}
+            value={data?.country}
+            onChange={onChangeCountry}
+            readonly={readonly}
+          />
+          <CurrencySelect
+            className={cls.input}
+            value={data?.currency}
+            onChange={onChangeCurrency}
+            readonly={readonly}
+          />
+        </HStack>
       </VStack>
     </VStack>
   );

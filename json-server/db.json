@@ -797,6 +797,12 @@
       "userId": "1",
       "text": "asdawd",
       "id": 8
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Привет всем! 👋 ",
+      "id": 9
     }
   ],
   "users": [
@@ -832,7 +838,7 @@
       "username": "Waze",
       "first": "Ilya",
       "lastname": "Kolchin",
-      "age": 26,
+      "age": 32,
       "currency": "RUB",
       "country": "Russia",
       "city": "Saint-Petersburg",

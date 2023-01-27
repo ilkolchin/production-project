@@ -1,28 +1,18 @@
-import { ArticleDetails, ArticlesList, ArticleView } from 'entities/Article';
+import { ArticleDetails } from 'entities/Article';
 import { getArticleDetailsError } from 'entities/Article/model/selectors/articleDetails';
-import { CommentList } from 'entities/Comment';
-import { AddNewComment } from 'features/AddNewComment';
-import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import { memo, useCallback } from 'react';
+import { ArticleRecommendationsList } from 'features/ArticleRecommendationsList';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { Text } from 'shared/ui/Text';
-import { Page } from 'widgets/Page';
-import { getArticleDetailsCommentIsLoading } from '../../model/selectors/comments';
-import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
-import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { articleDetailsPageReducer } from '../../model/slices';
-import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
-import { getArticleRecommendations } from '../../model/slices/articleDetailsPageRecommendationsSlice';
-import cls from './ArticleDetailsPage.module.scss';
 import { VStack } from 'shared/ui/Stack';
+import { Page } from 'widgets/Page';
+import { articleDetailsPageReducer } from '../../model/slices';
+import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -35,26 +25,9 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { className } = props;
   const { t } = useTranslation();
-  const dispatch = useAppDispatch();
   const { id } = useParams<{ id: string }>();
 
-  const comments = useSelector(getArticleComments.selectAll);
-  const isLoading = useSelector(getArticleDetailsCommentIsLoading);
   const error = useSelector(getArticleDetailsError);
-  const recommendations = useSelector(getArticleRecommendations.selectAll);
-  const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
-
-  useInitialEffect(() => {
-    dispatch(fetchCommentsByArticleId(id));
-    dispatch(fetchArticleRecommendations());
-  });
-
-  const onSendComment = useCallback(
-    (text: string) => {
-      dispatch(addCommentForArticle(text));
-    },
-    [dispatch]
-  );
 
   if (!id) {
     return (
@@ -70,21 +43,8 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         <VStack tag="section" gap="32" max align="stretch">
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          <Text title={t('Recommend')} />
-          <ArticlesList
-            articles={recommendations}
-            isLoading={recommendationsIsLoading}
-            view={ArticleView.SMALL}
-            className={cls.recommendations}
-            target="_blank"
-          />
-          {error ? null : (
-            <>
-              <Text title={t('Comments')} />
-              <AddNewComment onSendComment={onSendComment} />
-              <CommentList isLoading={isLoading} comments={comments} />
-            </>
-          )}
+          <ArticleRecommendationsList />
+          {error ? null : <ArticleDetailsComments id={id} />}
         </VStack>
       </Page>
     </DynamicModuleLoader>

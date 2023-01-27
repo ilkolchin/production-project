@@ -49,5 +49,12 @@
   "order": "order",
   "date": "date",
   "name": "name",
-  "views": "views"
+  "views": "views",
+  "An unpredictable error occur": "An unexpected error has occurred",
+  "Refresh Page": "Reload page",
+  "Server error while saving": "Server error on save",
+  "Please add your age": "Please enter your age",
+  "Please add your city": "Please enter a city",
+  "Please add your name and surname": "Please enter your first and last name",
+  "Empty spaces": "Please fill in all fields"
 }

@@ -49,5 +49,12 @@
   "order": "порядок",
   "date": "дате",
   "name": "названию",
-  "views": "просмотрам"
+  "views": "просмотрам",
+  "An unpredictable error occur": "Произошла непредвиденная ошибка",
+  "Refresh Page": "Перезагрузить страницу",
+  "Server error while saving": "Ошибка сервера при сохранении",
+  "Please add your age": "Пожалуйста, укажите возраст",
+  "Please add your city": "Пожалуйста, укажите город",
+  "Please add your name and surname": "Пожалуйста, укажите имя и фамилию",
+  "Empty spaces": "Пожайлуйста, заполните все поля"
 }

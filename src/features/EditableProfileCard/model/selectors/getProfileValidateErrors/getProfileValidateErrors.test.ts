@@ -1,13 +1,10 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { ValidateProfileError } from '../../types/profile';
+import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 import { getProfileValidateErrors } from './getProfileValidateErrors';
 
 describe('getProfileValidateErrors .test', () => {
   test('should return isLoading', () => {
-    const errors = [
-      ValidateProfileError.SERVER_ERROR,
-      ValidateProfileError.INCORRECT_USER_DATA
-    ];
+    const errors = [ValidateProfileError.SERVER_ERROR, ValidateProfileError.INCORRECT_USER_DATA];
     const state: DeepPartial<StateSchema> = {
       profile: {
         validateErrors: errors
