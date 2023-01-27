@@ -94,6 +94,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
             value={data?.first}
             onChange={onChangeFirstName}
             className={cls.input}
+            data-testid={'ProfileCard.FirstName'}
           />
           <Input
             readonly={readonly}
@@ -101,6 +102,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
             value={data?.lastname}
             onChange={onChangeLastName}
             className={cls.input}
+            data-testid={'ProfileCard.LastName'}
           />
         </HStack>
         <HStack gap="8">
