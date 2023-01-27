@@ -3,15 +3,15 @@ import { useTranslation } from 'react-i18next';
 import { Page } from 'widgets/Page';
 
 const MainPage = memo(() => {
-  const { t } = useTranslation('main');
+  const { t } = useTranslation();
 
   return (
     <Page>
-      <div>{t('Главная страница')}</div>
-      <div>{t('Главная страница')}</div>
-      <div>{t('Главная страница')}</div>
-      <div>{t('Главная страница')}</div>
-      <div>{t('Главная страница')}</div>
+      <div>{t('Main Page')}</div>
+      <div>{t('Main Page')}</div>
+      <div>{t('Main Page')}</div>
+      <div>{t('Main Page')}</div>
+      <div>{t('Main Page')}</div>
     </Page>
   );
 });

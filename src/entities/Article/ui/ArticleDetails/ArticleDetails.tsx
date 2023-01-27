@@ -78,7 +78,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       </>
     );
   } else if (error) {
-    content = <Text align={TextAlign.CENTER} title={t('Произошла ошибка при загрузке статьи')} />;
+    content = <Text align={TextAlign.CENTER} title={t('Error while loading page')} />;
   } else {
     content = (
       <>

@@ -25,7 +25,7 @@ export const UserBar = memo((props: UserBarProps) => {
   const items = useMemo<DropdownItem[]>(
     () => [
       {
-        content: t('Профиль'),
+        content: t('Profile'),
         href: RoutePath.profile + user.id,
         key: '1'
       },

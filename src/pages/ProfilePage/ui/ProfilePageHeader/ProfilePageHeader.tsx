@@ -19,7 +19,7 @@ interface ProfilePageHeaderProps {
 }
 export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
   const { className } = props;
-  const { t } = useTranslation('profile');
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
   const readonly = useSelector(getProfileReadonly);

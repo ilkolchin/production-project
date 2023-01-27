@@ -29,7 +29,7 @@ const reducers: ReducersList = {
 };
 
 const ProfilePage = memo(() => {
-  const { t } = useTranslation('profile');
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const { id } = useParams<{ id: string }>();
 
@@ -40,11 +40,11 @@ const ProfilePage = memo(() => {
   const validateErrors = useSelector(getProfileValidateErrors);
 
   const validateErrorsTranslate = {
-    [ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера при сохранении'),
-    [ValidateProfileError.INCORRECT_AGE]: t('Укажите возраст'),
-    [ValidateProfileError.INCORRECT_CITY]: t('Укажите город'),
-    [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательные'),
-    [ValidateProfileError.NO_DATA]: t('Данные не указаны')
+    [ValidateProfileError.SERVER_ERROR]: t('Server error while saving'),
+    [ValidateProfileError.INCORRECT_AGE]: t('Pleasee add your age'),
+    [ValidateProfileError.INCORRECT_CITY]: t('Please add your city'),
+    [ValidateProfileError.INCORRECT_USER_DATA]: t('Please add your name and surname'),
+    [ValidateProfileError.NO_DATA]: t('Empty spaces')
   };
 
   useInitialEffect(() => {

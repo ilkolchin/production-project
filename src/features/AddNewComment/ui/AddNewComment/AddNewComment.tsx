@@ -2,10 +2,7 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames';
-import {
-  DynamicModuleLoader,
-  ReducersList
-} from 'shared/lib/components/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
@@ -15,10 +12,7 @@ import {
   getAddNewCommentError,
   getAddNewCommentText
 } from '../../model/selectors/addNewCommentSelectors';
-import {
-  addNewCommentActions,
-  addNewCommentReducer
-} from '../../model/slice/addNewCommentSlice';
+import { addNewCommentActions, addNewCommentReducer } from '../../model/slice/addNewCommentSlice';
 import cls from './AddNewComment.module.scss';
 
 export interface AddNewCommentProps {
@@ -32,7 +26,7 @@ const reducers: ReducersList = {
 
 const AddNewComment = memo((props: AddNewCommentProps) => {
   const { className, onSendComment } = props;
-  const { t } = useTranslation('article');
+  const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
 

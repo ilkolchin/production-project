@@ -24,7 +24,8 @@ const mapDirectionClass: Record<DropdownDirection, string> = {
   'top left': cls.optionsTopLeft,
   'top right': cls.optionsTopRight,
   'bottom left': cls.optionsBottomLeft,
-  'bottom right': cls.optionsBottomRight
+  'bottom right': cls.optionsBottomRight,
+  bottom: cls.optionsBottom
 };
 
 export function Dropdown(props: DropdownProps) {

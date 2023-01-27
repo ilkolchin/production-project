@@ -23,7 +23,7 @@ const getSkeletons = (view: ArticleView) => {
 
 export const ArticlesList = memo((props: ArticlesListProps) => {
   const { className, articles, isLoading, view, target } = props;
-  const { t } = useTranslation('article');
+  const { t } = useTranslation();
 
   const renderArticles = (article: Article) => {
     return <ArticlesListItem target={target} view={view} article={article} key={article.id} />;

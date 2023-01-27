@@ -31,7 +31,7 @@ interface ArticlesPageFiltersProps {
 }
 export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
   const { className } = props;
-  const { t } = useTranslation('article');
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
   const view = useSelector(getArticlesPageView);
@@ -102,7 +102,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
       </HStack>
       <Input
         placeholderType={PlaceholderType.INSIDE}
-        placeholder={t('poisk')}
+        placeholder={t('Find...')}
         value={search}
         onChange={onChangeSearch}
         widthMax

@@ -43,7 +43,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     onChangeCurrency,
     onChangeCountry
   } = props;
-  const { t } = useTranslation('profile');
+  const { t } = useTranslation();
 
   if (isLoading) {
     return <Loader />;
@@ -54,8 +54,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
       <Text
         theme={TextTheme.ERROR}
         align={TextAlign.CENTER}
-        title={t('Произошла ошибка при загрузке профиля :(')}
-        text={t('Попробуйте обновить страницу!')}
+        title={t('Error while profile loading')}
+        text={t('Please refresh page')}
       />
     );
   }
@@ -71,7 +71,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         <VStack gap="8">
           <Input
             readonly={readonly}
-            placeholder={t('Никнейм')}
+            placeholder={t('Username')}
             value={data?.username}
             onChange={onChangeUsername}
             className={cls.input}

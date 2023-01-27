@@ -8,12 +8,17 @@ export default {
   component: CountrySelect,
   argTypes: {
     backgroundColor: { control: 'color' }
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ padding: '100px' }}>
+        <Story />
+      </div>
+    )
+  ]
 } as ComponentMeta<typeof CountrySelect>;
 
-const Template: ComponentStory<typeof CountrySelect> = (args) => (
-  <CountrySelect {...args} />
-);
+const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};
