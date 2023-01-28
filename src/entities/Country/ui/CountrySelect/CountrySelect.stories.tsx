@@ -8,21 +8,18 @@ export default {
   component: CountrySelect,
   argTypes: {
     backgroundColor: { control: 'color' }
-  },
-  decorators: [
-    (Story) => (
-      <div style={{ padding: '100px' }}>
-        <Story />
-      </div>
-    )
-  ]
+  }
 } as ComponentMeta<typeof CountrySelect>;
 
 const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect {...args} />;
 
 export const Light = Template.bind({});
-Light.args = {};
+Light.args = { direction: 'bottom right' };
 
 export const Dark = Template.bind({});
-Dark.args = {};
+Dark.args = { direction: 'bottom right' };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Orange = Template.bind({});
+Orange.args = { direction: 'bottom right' };
+Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

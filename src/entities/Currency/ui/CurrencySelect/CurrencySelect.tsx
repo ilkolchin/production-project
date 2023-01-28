@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames';
+import { DropdownDirection } from 'shared/types/ui';
 import { ListBox } from 'shared/ui/ListBox';
 import { Currency } from '../../model/types/currency';
 
@@ -9,6 +10,7 @@ interface CurrencySelectProps {
   value?: Currency;
   onChange?: (value: Currency) => void;
   readonly?: boolean;
+  direction: DropdownDirection;
 }
 
 const options = [
@@ -18,7 +20,7 @@ const options = [
 ];
 
 export const CurrencySelect = (props: CurrencySelectProps) => {
-  const { className, value, onChange, readonly } = props;
+  const { className, value, onChange, readonly, direction = 'top right' } = props;
   const { t } = useTranslation();
 
   const onChangeHadler = useCallback(
@@ -37,7 +39,7 @@ export const CurrencySelect = (props: CurrencySelectProps) => {
       value={value}
       readonly={readonly}
       label={t('Currency')}
-      direction="top right"
+      direction={direction}
     />
   );
 

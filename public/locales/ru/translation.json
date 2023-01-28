@@ -56,5 +56,8 @@
   "Please add your age": "Пожалуйста, укажите возраст",
   "Please add your city": "Пожалуйста, укажите город",
   "Please add your name and surname": "Пожалуйста, укажите имя и фамилию",
-  "Empty spaces": "Пожайлуйста, заполните все поля"
+  "Empty spaces": "Пожайлуйста, заполните все поля",
+  "AdminPanelPage": "Страница с панелью администратора",
+  "Admin panel": "Админка",
+  "You dont have permission": "У Вас нет прав для просмотра этой страницы"
 }

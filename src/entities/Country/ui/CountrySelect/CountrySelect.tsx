@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames';
+import { DropdownDirection } from 'shared/types/ui';
 import { ListBox } from 'shared/ui/ListBox';
 import { Country } from '../../model/types/country';
 
@@ -9,6 +10,7 @@ interface CountrySelectProps {
   value?: Country;
   onChange?: (value: Country) => void;
   readonly?: boolean;
+  direction: DropdownDirection;
 }
 
 const options = [
@@ -19,7 +21,7 @@ const options = [
 ];
 
 export const CountrySelect = (props: CountrySelectProps) => {
-  const { className, value, onChange, readonly } = props;
+  const { className, value, onChange, readonly, direction = 'top right' } = props;
   const { t } = useTranslation();
 
   const onChangeHadler = useCallback(
@@ -37,7 +39,7 @@ export const CountrySelect = (props: CountrySelectProps) => {
       readonly={readonly}
       value={value}
       className={classNames('', {}, [className])}
-      direction="top right"
+      direction={direction}
       label={t('Country')}
     />
   );

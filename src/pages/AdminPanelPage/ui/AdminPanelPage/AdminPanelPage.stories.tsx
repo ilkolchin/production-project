@@ -2,27 +2,21 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-import { EditableProfileCard } from './EditableProfileCard';
+import AdminPanelPage from './AdminPanelPage';
 
 export default {
-  title: 'features/EditableProfileCard',
-  component: EditableProfileCard,
+  title: 'pages/AdminPanelPage',
+  component: AdminPanelPage,
   argTypes: {
     backgroundColor: { control: 'color' }
   }
-} as ComponentMeta<typeof EditableProfileCard>;
+} as ComponentMeta<typeof AdminPanelPage>;
 
-const Template: ComponentStory<typeof EditableProfileCard> = (args) => (
-  <EditableProfileCard {...args} />
-);
+const Template: ComponentStory<typeof AdminPanelPage> = (args) => <AdminPanelPage {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};
 Light.decorators = [StoreDecorator({})];
-
-export const Edit = Template.bind({});
-Edit.args = {};
-Edit.decorators = [StoreDecorator({ profile: { readonly: false } })];
 
 export const Dark = Template.bind({});
 Dark.args = {};

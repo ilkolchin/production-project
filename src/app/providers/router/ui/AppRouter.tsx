@@ -6,16 +6,14 @@ import { AppRouterProps, routeConfig } from '../config/routeConfig';
 
 const AppRouter = () => {
   const renderWithWrapper = useCallback((route: AppRouterProps) => {
-    const element = (
-      <Suspense fallback={<PageLoader />}>{route.element}</Suspense>
-    );
+    const element = <Suspense fallback={<PageLoader />}>{route.element}</Suspense>;
 
     return (
       <Route
         key={route.path}
         path={route.path}
         element={
-          route.authOnly ? <RequireAuth>{element}</RequireAuth> : element
+          route.authOnly ? <RequireAuth roles={route.roles}>{element}</RequireAuth> : element
         }
       />
     );

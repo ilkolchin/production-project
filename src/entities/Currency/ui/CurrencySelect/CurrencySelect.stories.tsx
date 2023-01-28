@@ -11,13 +11,15 @@ export default {
   }
 } as ComponentMeta<typeof CurrencySelect>;
 
-const Template: ComponentStory<typeof CurrencySelect> = (args) => (
-  <CurrencySelect {...args} />
-);
+const Template: ComponentStory<typeof CurrencySelect> = (args) => <CurrencySelect {...args} />;
 
 export const Light = Template.bind({});
-Light.args = {};
+Light.args = { direction: 'bottom right' };
 
 export const Dark = Template.bind({});
-Dark.args = {};
+Dark.args = { direction: 'bottom right' };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Orange = Template.bind({});
+Orange.args = { direction: 'bottom right' };
+Orange.decorators = [ThemeDecorator(Theme.ORANGE)];
