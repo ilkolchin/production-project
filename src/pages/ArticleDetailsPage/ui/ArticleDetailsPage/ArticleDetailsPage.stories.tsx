@@ -1,8 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
-
-import { Article } from 'entities/Article';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import { Article, ArticleType } from 'entities/Article';
+import { ArticleBlockType } from 'entities/Article/model/consts/articleConsts';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
@@ -12,6 +11,16 @@ export default {
   component: ArticleDetailsPage,
   argTypes: {
     backgroundColor: { control: 'color' }
+  },
+  parameters: {
+    mockData: [
+      {
+        url: __API__ + '/articles?_limit=3',
+        method: 'GET',
+        status: 200,
+        response: []
+      }
+    ]
   }
 } as ComponentMeta<typeof ArticleDetailsPage>;
 

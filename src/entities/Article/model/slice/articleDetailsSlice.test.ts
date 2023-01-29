@@ -1,11 +1,8 @@
-import {
-  Article,
-  ArticleBlockType,
-  ArticleType
-} from '../types/article';
+import { Article } from '../types/article';
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
 import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 import { articleDetailsReducer } from './articleDetailsSlice';
+import { ArticleType, ArticleBlockType } from '../consts/articleConsts';
 
 const article = {
   id: '1',
@@ -36,12 +33,7 @@ describe('articleDetailsSlice.test', () => {
       isLoading: false,
       error: ''
     };
-    expect(
-      articleDetailsReducer(
-        state as ArticleDetailsSchema,
-        fetchArticleById.pending
-      )
-    ).toEqual({
+    expect(articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.pending)).toEqual({
       isLoading: true,
       error: undefined
     });

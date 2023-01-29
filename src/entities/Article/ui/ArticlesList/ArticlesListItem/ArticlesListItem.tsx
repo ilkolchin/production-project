@@ -1,3 +1,4 @@
+import { ArticleBlockType, ArticleView } from '../../../model/consts/articleConsts';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import EyeIcon from 'shared/assets/icons/eye.svg';
@@ -9,12 +10,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Card } from 'shared/ui/Card';
 import { Icon } from 'shared/ui/Icon';
 import { Text } from 'shared/ui/Text';
-import {
-  Article,
-  ArticleBlockType,
-  ArticleTextBlock,
-  ArticleView
-} from '../../../model/types/article';
+import { Article, ArticleTextBlock } from '../../../model/types/article';
 import { ArticleTextBlockComponent } from '../../ArticleComponents/ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticlesListItem.module.scss';
 

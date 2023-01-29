@@ -1,4 +1,4 @@
-import { ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/articleConsts';
 import { memo } from 'react';
 import BigViewIcon from 'shared/assets/icons/big_articles.svg';
 import SmallViewIcon from 'shared/assets/icons/small_articles.svg';
@@ -34,11 +34,7 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
   return (
     <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
       {viewTypes.map((viewType) => (
-        <Button
-          key={viewType.view}
-          theme={ButtonTheme.CLEAR}
-          onClick={onClick(viewType.view)}
-        >
+        <Button key={viewType.view} theme={ButtonTheme.CLEAR} onClick={onClick(viewType.view)}>
           <Icon
             Svg={viewType.icon}
             size={IconSize.L}

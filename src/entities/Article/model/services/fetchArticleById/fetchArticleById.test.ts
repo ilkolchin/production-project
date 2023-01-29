@@ -1,7 +1,4 @@
-import {
-  ArticleType,
-  ArticleBlockType
-} from '../../types/article';
+import { ArticleType, ArticleBlockType } from '../../consts/articleConsts';
 import { TestAsyncThunk } from 'shared/config/tests/TestAsyncThunk';
 import { fetchArticleById } from './fetchArticleById';
 

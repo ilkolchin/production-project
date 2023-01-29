@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
+import { ArticleType, ArticleBlockType } from '../../model/consts/articleConsts';
 import { componentRender } from 'shared/config/tests/componentRender';
-import { ArticleBlockType, ArticleType } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';
 
 const article = {
