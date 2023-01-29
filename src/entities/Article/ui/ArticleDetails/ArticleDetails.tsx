@@ -26,7 +26,7 @@ import { HStack, VStack } from 'shared/ui/Stack';
 
 interface ArticleDetailsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const { className, id } = props;

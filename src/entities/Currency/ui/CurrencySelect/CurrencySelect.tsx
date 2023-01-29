@@ -10,7 +10,7 @@ interface CurrencySelectProps {
   value?: Currency;
   onChange?: (value: Currency) => void;
   readonly?: boolean;
-  direction: DropdownDirection;
+  direction?: DropdownDirection;
 }
 
 const options = [

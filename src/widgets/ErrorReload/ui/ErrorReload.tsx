@@ -17,8 +17,8 @@ export const ErrorReload = memo((props: ErrorReloadProps) => {
   };
 
   return (
-    <VStack max gap="32" className={classNames('', {}, [className])}>
-      <Text title={t('An unpredictable error occur')} />;
+    <VStack max gap="16" className={classNames('', {}, [className])}>
+      <Text title={t('An unpredictable error occur')} />
       <Button onClick={reloadPage}>{t('Refresh Page')}</Button>
     </VStack>
   );

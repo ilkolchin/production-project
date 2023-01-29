@@ -10,7 +10,7 @@ interface CountrySelectProps {
   value?: Country;
   onChange?: (value: Country) => void;
   readonly?: boolean;
-  direction: DropdownDirection;
+  direction?: DropdownDirection;
 }
 
 const options = [
