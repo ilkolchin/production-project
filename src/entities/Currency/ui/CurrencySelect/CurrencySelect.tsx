@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames';
 import { DropdownDirection } from 'shared/types/ui';
-import { ListBox } from 'shared/ui/ListBox';
+import { ListBox } from 'shared/ui/Popups';
 import { Currency } from '../../model/types/currency';
 
 interface CurrencySelectProps {
@@ -42,15 +42,4 @@ export const CurrencySelect = (props: CurrencySelectProps) => {
       direction={direction}
     />
   );
-
-  // return (
-  //   <Select
-  //     className={classNames('', {}, [className])}
-  //     label={t('Currency')}
-  //     options={options}
-  //     value={value}
-  //     onChange={onChangeHadler}
-  //     readonly={readonly}
-  //   />
-  // );
 };

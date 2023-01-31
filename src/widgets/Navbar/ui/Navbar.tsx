@@ -1,12 +1,14 @@
 import { getUserAuthData } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
+import { NotificationButton } from 'features/NotificationButton';
+import { UserBarDropdown } from 'features/UserBarDropdown';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
+import { HStack } from 'shared/ui/Stack';
 import { Text, TextTheme } from 'shared/ui/Text';
-import { UserBar } from 'widgets/UserBar';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -30,7 +32,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
         <Text title={t('Waze App')} theme={TextTheme.INVERTED} />
-        <UserBar user={authData} />
+        <HStack gap="16">
+          <NotificationButton />
+          <UserBarDropdown user={authData} />
+        </HStack>
       </header>
     );
   }

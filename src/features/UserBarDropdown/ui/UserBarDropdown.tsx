@@ -3,19 +3,18 @@ import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { RoutePath } from 'shared/config/paths';
-import { classNames } from 'shared/lib/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Avatar } from 'shared/ui/Avatar';
-import { Dropdown, DropdownItem } from 'shared/ui/Dropdown';
+import { Dropdown } from 'shared/ui/Popups';
+import { DropdownItem } from 'shared/ui/Popups/ui/Dropdown/Dropdown';
 import { Text, TextTheme } from 'shared/ui/Text';
-import cls from './UserBar.module.scss';
+import cls from './UserBarDropdown.module.scss';
 
-interface UserBarProps {
-  className?: string;
+interface UserBarDropdownProps {
   user: User;
 }
-export const UserBar = memo((props: UserBarProps) => {
-  const { className, user } = props;
+
+export const UserBarDropdown = memo(({ user }: UserBarDropdownProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const isAdmin = useSelector(isUserAdmin);
@@ -43,17 +42,15 @@ export const UserBar = memo((props: UserBarProps) => {
   );
 
   return (
-    <div className={classNames('', {}, [className])}>
-      <Dropdown
-        trigger={
-          <div className={cls.UserBar}>
-            <Avatar src={user?.avatar} alt="avatar" size={35} />
-            <Text text={user?.username} theme={TextTheme.INVERTED} />
-          </div>
-        }
-        items={items}
-        direction="bottom left"
-      />
-    </div>
+    <Dropdown
+      trigger={
+        <div className={cls.UserBarDropdown}>
+          <Avatar src={user?.avatar} alt="avatar" size={35} />
+          <Text text={user?.username} theme={TextTheme.INVERTED} />
+        </div>
+      }
+      items={items}
+      direction="bottom left"
+    />
   );
 });

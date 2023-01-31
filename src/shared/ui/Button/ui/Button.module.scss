@@ -3,6 +3,10 @@
   color: var(--primary-color);
   padding: 8px 16px;
   border-radius: 12px;
+
+  &:focus-visible {
+    outline: 1px solid var(--inverted-primary-color);
+  }
 }
 
 .clear,

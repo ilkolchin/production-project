@@ -1,19 +1,19 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-import { UserBar } from './UserBar';
+import { UserBarDropdown } from './UserBarDropdown';
 import Avatar from 'shared/assets/tests/storybook.jpeg';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 
 export default {
-  title: 'widgets/UserBar',
-  component: UserBar,
+  title: 'widgets/UserBarDropdown',
+  component: UserBarDropdown,
   argTypes: {
     backgroundColor: { control: 'color' }
   }
-} as ComponentMeta<typeof UserBar>;
+} as ComponentMeta<typeof UserBarDropdown>;
 
-const Template: ComponentStory<typeof UserBar> = (args) => <UserBar {...args} />;
+const Template: ComponentStory<typeof UserBarDropdown> = (args) => <UserBarDropdown {...args} />;
 
 export const Light = Template.bind({});
 Light.args = { user: { id: '1', username: 'Waze', avatar: Avatar } };
