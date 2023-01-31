@@ -1,12 +1,7 @@
 import { useTheme } from 'app/providers/ThemeProvider';
-import React, {
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-  useState
-} from 'react';
+import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames';
+import { Overlay } from '../../Overlay';
 import { Portal } from '../../Portal';
 import cls from './Modal.module.scss';
 
@@ -49,10 +44,6 @@ export const Modal = (props: ModalProps) => {
     [closeHandler]
   );
 
-  const onContentClickHandler = (e: React.MouseEvent) => {
-    e.stopPropagation();
-  };
-
   useEffect(() => {
     if (isOpen) {
       setIsMounted(true);
@@ -85,15 +76,9 @@ export const Modal = (props: ModalProps) => {
 
   return (
     <Portal>
-      <div
-        data-testid="Modal"
-        className={classNames(cls.Modal, mods, [className, theme])}
-      >
-        <div className={cls.overlay} onClick={closeHandler}>
-          <div className={cls.content} onClick={onContentClickHandler}>
-            {children}
-          </div>
-        </div>
+      <div data-testid="Modal" className={classNames(cls.Modal, mods, [className, theme])}>
+        <Overlay onClick={closeHandler} />
+        <div className={cls.content}>{children}</div>
       </div>
     </Portal>
   );

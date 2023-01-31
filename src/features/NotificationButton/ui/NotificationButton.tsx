@@ -1,7 +1,10 @@
 import { NotificationList } from 'entities/Notification';
-import { memo } from 'react';
+import { memo, useCallback, useState } from 'react';
+import { BrowserView, MobileView } from 'react-device-detect';
 import NotificationIcon from 'shared/assets/icons/notification.svg';
 import { classNames } from 'shared/lib/classNames';
+import { Button, ButtonTheme } from 'shared/ui/Button';
+import { Drawer } from 'shared/ui/Drawer';
 import { Icon, IconSize, IconTheme } from 'shared/ui/Icon';
 import { Popover } from 'shared/ui/Popups';
 import cls from './NotificationButton.module.scss';
@@ -12,13 +15,39 @@ interface NotificationButtonProps {
 export const NotificationButton = memo((props: NotificationButtonProps) => {
   const { className } = props;
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onOpenDrawer = useCallback(() => {
+    setIsOpen(true);
+  }, []);
+
+  const onCloseDrawer = useCallback(() => {
+    setIsOpen(false);
+  }, []);
+
+  const trigger = (
+    <Button onClick={onOpenDrawer} theme={ButtonTheme.CLEAR}>
+      <Icon theme={IconTheme.INVERTED} size={IconSize.L} Svg={NotificationIcon} />
+    </Button>
+  );
+
   return (
-    <Popover
-      className={classNames('', {}, [className])}
-      trigger={<Icon theme={IconTheme.INVERTED} size={IconSize.L} Svg={NotificationIcon} />}
-      direction={'bottom left'}
-    >
-      <NotificationList className={cls.NotificationButton} />
-    </Popover>
+    <div>
+      <BrowserView>
+        <Popover
+          className={classNames('', {}, [className])}
+          trigger={trigger}
+          direction={'bottom left'}
+        >
+          <NotificationList className={cls.NotificationButton} />
+        </Popover>
+      </BrowserView>
+      <MobileView>
+        {trigger}
+        <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+          <NotificationList className={cls.NotificationButton} />
+        </Drawer>
+      </MobileView>
+    </div>
   );
 });
