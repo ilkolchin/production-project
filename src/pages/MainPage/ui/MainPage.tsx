@@ -8,10 +8,6 @@ const MainPage = memo(() => {
   return (
     <Page>
       <div>{t('Main Page')}</div>
-      <div>{t('Main Page')}</div>
-      <div>{t('Main Page')}</div>
-      <div>{t('Main Page')}</div>
-      <div>{t('Main Page')}</div>
     </Page>
   );
 });

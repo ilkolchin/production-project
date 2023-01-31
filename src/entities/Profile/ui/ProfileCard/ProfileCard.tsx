@@ -1,3 +1,4 @@
+import { Age } from 'entities/Age';
 import { Country, CountrySelect } from 'entities/Country';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { useTranslation } from 'react-i18next';
@@ -86,7 +87,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         </VStack>
       </HStack>
 
-      <VStack gap="8" max align="start">
+      <VStack gap="16" max align="start">
         <HStack gap="8">
           <Input
             readonly={readonly}
@@ -106,13 +107,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           />
         </HStack>
         <HStack gap="8">
-          <Input
-            readonly={readonly}
-            placeholder={t('Age')}
-            value={data?.age}
-            onChange={onChangeAge}
-            className={cls.input}
-          />
+          <Age readonly={readonly} value={data?.age} onChange={onChangeAge} />
           <Input
             readonly={readonly}
             placeholder={t('City')}
