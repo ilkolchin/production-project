@@ -3,6 +3,7 @@ import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import NotificationIcon from 'shared/assets/icons/notification.svg';
 import { classNames } from 'shared/lib/classNames';
+import { AnimationProvider } from 'shared/lib/components/AnimationProvider';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Drawer } from 'shared/ui/Drawer';
 import { Icon, IconSize, IconTheme } from 'shared/ui/Icon';
@@ -39,14 +40,16 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
           trigger={trigger}
           direction={'bottom left'}
         >
-          <NotificationList className={cls.NotificationButton} />
+          <NotificationList className={classNames(cls.NotificationList, {}, [cls.desktop])} />
         </Popover>
       </BrowserView>
       <MobileView>
         {trigger}
-        <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-          <NotificationList className={cls.NotificationButton} />
-        </Drawer>
+        <AnimationProvider>
+          <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+            <NotificationList className={cls.NotificationList} />
+          </Drawer>
+        </AnimationProvider>
       </MobileView>
     </div>
   );
