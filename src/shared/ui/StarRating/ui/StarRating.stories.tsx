@@ -1,17 +1,19 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Popover } from './Popover';
+import { StarRating } from './StarRating';
 
 export default {
-  title: '?/Popover',
-  component: Popover,
+  title: 'shared/StarRating',
+  component: StarRating,
   argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-} as ComponentMeta<typeof Popover>;
+    backgroundColor: { control: 'color' }
+  }
+} as ComponentMeta<typeof StarRating>;
 
-const Template: ComponentStory<typeof Popover> = (args) => <Popover {...args} />;
+const Template: ComponentStory<typeof StarRating> = (args) => (
+  <StarRating {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = {};
@@ -19,8 +21,8 @@ Light.decorators = [];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), ];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Orange = Template.bind({});
 Orange.args = {};
-Orange.decorators = [ThemeDecorator(Theme.ORANGE), ];
+Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

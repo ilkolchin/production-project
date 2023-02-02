@@ -12,5 +12,8 @@ export default defineConfig({
     __IS_DEV__: JSON.stringify(true),
     __API__: JSON.stringify('http://localhost:8000'),
     __PROJECT__: JSON.stringify('frontend')
+  },
+  css: {
+    devSourcemap: true
   }
 });

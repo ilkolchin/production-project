@@ -1,11 +1,9 @@
-.Icon {
-  &.default {
-    fill: var(--primary-color);
-  }
+.default {
+  fill: var(--primary-color);
+}
 
-  &.inverted {
-    fill: var(--inverted-primary-color);
-  }
+.inverted {
+  fill: var(--inverted-primary-color);
 }
 
 .size_M {

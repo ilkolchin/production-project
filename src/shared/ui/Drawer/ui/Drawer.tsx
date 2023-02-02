@@ -1,7 +1,10 @@
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { memo, ReactNode, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames';
-import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import {
+  AnimationProvider,
+  useAnimationLibs
+} from '@/shared/lib/components/AnimationProvider';
 import { Overlay } from '../../Overlay';
 import { Portal } from '../../Portal';
 import cls from './Drawer.module.scss';
@@ -42,7 +45,13 @@ export const DrawerContent = memo((props: DrawerProps) => {
   };
 
   const bind = Gesture.useDrag(
-    ({ last, velocity: [, vy], direction: [, dy], movement: [, my], cancel }) => {
+    ({
+      last,
+      velocity: [, vy],
+      direction: [, dy],
+      movement: [, my],
+      cancel
+    }) => {
       if (my < -70) cancel();
 
       if (last) {
@@ -98,7 +107,7 @@ const DrawerAsync = (props: DrawerProps) => {
 export const Drawer = (props: DrawerProps) => {
   return (
     <AnimationProvider>
-      <DrawerAsync {...props} />;
+      <DrawerAsync {...props} />
     </AnimationProvider>
   );
 };

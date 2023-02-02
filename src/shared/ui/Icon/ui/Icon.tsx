@@ -11,7 +11,7 @@ export enum IconTheme {
   INVERTED = 'inverted'
 }
 
-interface IconProps {
+interface IconProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
   Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
   size?: IconSize;
@@ -22,12 +22,14 @@ export const Icon = (props: IconProps) => {
     className,
     Svg,
     size = IconSize.M,
-    theme = IconTheme.DEFAULT
+    theme = IconTheme.DEFAULT,
+    ...otherProps
   } = props;
 
   return (
     <Svg
-      className={classNames(cls.Icon, {}, [className, cls[size], cls[theme]])}
+      className={classNames('', {}, [className, cls[size], cls[theme]])}
+      {...otherProps}
     />
   );
 };

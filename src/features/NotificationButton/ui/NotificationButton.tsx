@@ -1,6 +1,7 @@
 import { NotificationList } from '@/entities/Notification';
 import NotificationIcon from '@/shared/assets/icons/notification.svg';
 import { classNames } from '@/shared/lib/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Drawer } from '@/shared/ui/Drawer';
 import { Icon, IconSize, IconTheme } from '@/shared/ui/Icon';
@@ -11,9 +12,10 @@ import cls from './NotificationButton.module.scss';
 
 interface NotificationButtonProps {
   className?: string;
+  direction?: DropdownDirection;
 }
 export const NotificationButton = memo((props: NotificationButtonProps) => {
-  const { className } = props;
+  const { className, direction = 'bottom left' } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,7 +29,11 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
 
   const trigger = (
     <Button onClick={onOpenDrawer} theme={ButtonTheme.CLEAR}>
-      <Icon theme={IconTheme.INVERTED} size={IconSize.L} Svg={NotificationIcon} />
+      <Icon
+        theme={IconTheme.INVERTED}
+        size={IconSize.L}
+        Svg={NotificationIcon}
+      />
     </Button>
   );
 
@@ -37,9 +43,11 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
         <Popover
           className={classNames('', {}, [className])}
           trigger={trigger}
-          direction={'bottom left'}
+          direction={direction}
         >
-          <NotificationList className={classNames(cls.NotificationList, {}, [cls.desktop])} />
+          <NotificationList
+            className={classNames(cls.NotificationList, {}, [cls.desktop])}
+          />
         </Popover>
       </BrowserView>
       <MobileView>
