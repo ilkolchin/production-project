@@ -1,10 +1,10 @@
-import { getUserAuthData } from 'entities/User';
+import { getUserAuthData } from '@/entities/User';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { classNames } from 'shared/lib/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
-import { Icon, IconSize, IconTheme } from 'shared/ui/Icon';
+import { classNames } from '@/shared/lib/classNames';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
+import { Icon, IconSize, IconTheme } from '@/shared/ui/Icon';
 import { SidebarItemType } from '../../model/types/sidebar';
 import cls from './SidebarItem.module.scss';
 

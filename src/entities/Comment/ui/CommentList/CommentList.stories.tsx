@@ -1,8 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { CommentList } from './CommentList';
-import Avatar from 'shared/config/storybook/img/image.jpeg';
+import Avatar from '@/shared/config/storybook/img/image.jpeg';
 
 export default {
   title: 'entities/Comment/CommentList',

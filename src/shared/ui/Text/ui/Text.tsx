@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { classNames, Mods } from 'shared/lib/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames';
 import cls from './Text.module.scss';
 
 export enum TextTheme {

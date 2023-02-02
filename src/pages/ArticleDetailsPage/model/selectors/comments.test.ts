@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { getArticleDetailsCommentError, getArticleDetailsCommentIsLoading } from './comments';
 
 describe('articleDetails.test', () => {

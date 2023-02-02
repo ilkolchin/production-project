@@ -1,13 +1,13 @@
-import { isUserAdmin, isUserManager, User, userActions } from 'entities/User';
+import { isUserAdmin, isUserManager, User, userActions } from '@/entities/User';
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { RoutePath } from 'shared/config/paths';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { Avatar } from 'shared/ui/Avatar';
-import { Dropdown } from 'shared/ui/Popups';
-import { DropdownItem } from 'shared/ui/Popups/ui/Dropdown/Dropdown';
-import { Text, TextTheme } from 'shared/ui/Text';
+import { RoutePath } from '@/shared/config/paths';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Dropdown } from '@/shared/ui/Popups';
+import { DropdownItem } from '@/shared/ui/Popups/ui/Dropdown/Dropdown';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import cls from './UserBarDropdown.module.scss';
 
 interface UserBarDropdownProps {

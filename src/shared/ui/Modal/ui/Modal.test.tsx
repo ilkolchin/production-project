@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { componentRender } from 'shared/config/tests/componentRender';
+import { componentRender } from '@/shared/config/tests/componentRender';
 import { Modal } from './Modal';
 
 describe('Modal', () => {

@@ -1,4 +1,4 @@
-import { componentRender } from 'shared/config/tests/componentRender';
+import { componentRender } from '@/shared/config/tests/componentRender';
 import { screen } from '@testing-library/react';
 import { Input } from './Input';
 

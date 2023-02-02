@@ -1,8 +1,8 @@
 /* eslint-disable fsd-stable/fsd-paths-checker */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-import { Button } from 'shared/ui/Button';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { Button } from '@/shared/ui/Button';
 import { Dropdown } from './Dropdown';
 
 export default {

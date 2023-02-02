@@ -5,17 +5,17 @@ import {
   ArticleType,
   ArticleView,
   ArticleViewSelector
-} from 'entities/Article';
+} from '@/entities/Article';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { classNames } from 'shared/lib/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useDebounce } from 'shared/lib/hooks/useDebounce';
-import { SortOrder } from 'shared/types';
-import { Input } from 'shared/ui/Input';
-import { PlaceholderType } from 'shared/ui/Input/ui/Input';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce';
+import { SortOrder } from '@/shared/types';
+import { Input } from '@/shared/ui/Input';
+import { PlaceholderType } from '@/shared/ui/Input/ui/Input';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import {
   getArticlesPageOrder,
   getArticlesPageSearch,

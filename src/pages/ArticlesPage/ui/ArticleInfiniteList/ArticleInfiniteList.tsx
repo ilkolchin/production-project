@@ -1,11 +1,11 @@
-import { ArticlesList } from 'entities/Article';
+import { ArticlesList } from '@/entities/Article';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { classNames } from 'shared/lib/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { ErrorReload } from 'widgets/ErrorReload';
+import { classNames } from '@/shared/lib/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { ErrorReload } from '@/widgets/ErrorReload';
 import {
   getArticlesPageError,
   getArticlesPageIsLoading,

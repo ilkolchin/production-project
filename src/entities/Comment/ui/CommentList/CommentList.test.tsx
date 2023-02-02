@@ -1,5 +1,5 @@
 import { CommentList } from './CommentList';
-import { componentRender } from 'shared/config/tests/componentRender';
+import { componentRender } from '@/shared/config/tests/componentRender';
 import { Comment } from '../../model/types/comment';
 import { screen } from '@testing-library/react';
 

@@ -1,10 +1,10 @@
 import { ArticleView } from '../../model/consts/articleConsts';
 import { memo } from 'react';
-import BigViewIcon from 'shared/assets/icons/big_articles.svg';
-import SmallViewIcon from 'shared/assets/icons/small_articles.svg';
-import { classNames } from 'shared/lib/classNames';
-import { Button, ButtonTheme } from 'shared/ui/Button';
-import { Icon, IconSize } from 'shared/ui/Icon';
+import BigViewIcon from '@/shared/assets/icons/big_articles.svg';
+import SmallViewIcon from '@/shared/assets/icons/small_articles.svg';
+import { classNames } from '@/shared/lib/classNames';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Icon, IconSize } from '@/shared/ui/Icon';
 import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {
