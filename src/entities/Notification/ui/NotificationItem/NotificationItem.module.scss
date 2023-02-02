@@ -1,4 +1,10 @@
 .NotificationItem,
 .link {
   width: 100%;
+  opacity: 0.9;
+
+  &:hover {
+    border-radius: 12px;
+    opacity: 1;
+  }
 }
