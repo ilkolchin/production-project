@@ -1,22 +1,23 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { PageLoader } from './PageLoader';
+import { Icon, IconSize, IconTheme } from './Icon';
+import Svg from '@/shared/assets/icons/book.svg';
 
 export default {
-  title: 'widgets/PageLoader',
-  component: PageLoader,
+  title: 'shared/Icon',
+  component: Icon,
   argTypes: {
     backgroundColor: { control: 'color' }
-  }
-} as ComponentMeta<typeof PageLoader>;
+  },
+  args: { Svg: Svg }
+} as ComponentMeta<typeof Icon>;
 
-const Template: ComponentStory<typeof PageLoader> = (args) => (
-  <PageLoader {...args} />
-);
+const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};
+Light.decorators = [];
 
 export const Dark = Template.bind({});
 Dark.args = {};
@@ -25,3 +26,9 @@ Dark.decorators = [ThemeDecorator(Theme.DARK)];
 export const Orange = Template.bind({});
 Orange.args = {};
 Orange.decorators = [ThemeDecorator(Theme.ORANGE)];
+
+export const SizeL = Template.bind({});
+SizeL.args = { size: IconSize.L };
+
+export const Inverted = Template.bind({});
+Inverted.args = { theme: IconTheme.INVERTED };

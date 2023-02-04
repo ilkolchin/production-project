@@ -10,7 +10,17 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' }
   },
-  decorators: [StoreDecorator({})]
+  decorators: [StoreDecorator({})],
+  parameters: {
+    mockData: [
+      {
+        url: __API__ + '/profile-ratings?userId=1&profileId=1',
+        method: 'GET',
+        status: 200,
+        response: []
+      }
+    ]
+  }
 } as ComponentMeta<typeof ProfileRating>;
 
 const Template: ComponentStory<typeof ProfileRating> = (args) => (
@@ -28,3 +38,16 @@ Dark.decorators = [ThemeDecorator(Theme.DARK)];
 export const Orange = Template.bind({});
 Orange.args = {};
 Orange.decorators = [ThemeDecorator(Theme.ORANGE)];
+
+export const WithRate = Template.bind({});
+WithRate.args = {};
+WithRate.parameters = {
+  mockData: [
+    {
+      url: __API__ + '/profile-ratings?userId=1&profileId=1',
+      method: 'GET',
+      status: 200,
+      response: [{ rate: 4 }]
+    }
+  ]
+};

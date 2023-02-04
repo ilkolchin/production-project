@@ -1,12 +1,12 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import ArticleRating from './ArticleRating';
+import { NotificationList } from './NotificationList';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 
 export default {
-  title: 'features/ArticleRating',
-  component: ArticleRating,
+  title: 'entities/Notification/NotificationList',
+  component: NotificationList,
   argTypes: {
     backgroundColor: { control: 'color' }
   },
@@ -14,17 +14,33 @@ export default {
   parameters: {
     mockData: [
       {
-        url: __API__ + '/article-ratings?userId=&articleId=',
+        url: __API__ + '/notifications',
         method: 'GET',
         status: 200,
-        response: []
+        response: [
+          {
+            id: '1',
+            title: 'Title 1',
+            description: 'Description'
+          },
+          {
+            id: '2',
+            title: 'Title 2',
+            description: 'Description'
+          },
+          {
+            id: '3',
+            title: 'Title 3',
+            description: 'Description'
+          }
+        ]
       }
     ]
   }
-} as ComponentMeta<typeof ArticleRating>;
+} as ComponentMeta<typeof NotificationList>;
 
-const Template: ComponentStory<typeof ArticleRating> = (args) => (
-  <ArticleRating {...args} />
+const Template: ComponentStory<typeof NotificationList> = (args) => (
+  <NotificationList {...args} />
 );
 
 export const Light = Template.bind({});
@@ -38,16 +54,3 @@ Dark.decorators = [ThemeDecorator(Theme.DARK)];
 export const Orange = Template.bind({});
 Orange.args = {};
 Orange.decorators = [ThemeDecorator(Theme.ORANGE)];
-
-export const WithRate = Template.bind({});
-WithRate.args = {};
-WithRate.parameters = {
-  mockData: [
-    {
-      url: __API__ + '/article-ratings?userId=&articleId=',
-      method: 'GET',
-      status: 200,
-      response: [{ rate: 4 }]
-    }
-  ]
-};
