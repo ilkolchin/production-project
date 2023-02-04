@@ -19,6 +19,12 @@ export default {
         method: 'GET',
         status: 200,
         response: []
+      },
+      {
+        url: __API__ + '/article-ratings?userId=&articleId=',
+        method: 'GET',
+        status: 200,
+        response: []
       }
     ]
   }

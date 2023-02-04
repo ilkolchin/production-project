@@ -26,7 +26,8 @@ export default {
         publicPath: '<rootDir>/reports/unit',
         filename: 'report.html',
         openReport: true,
-        inlineSource: true
+        inlineSource: true,
+        darkTheme: true
       }
     ]
   ]
