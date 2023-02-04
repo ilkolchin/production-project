@@ -5,7 +5,10 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList
+} from '@/shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { VStack } from '@/shared/ui/Stack';
@@ -44,7 +47,9 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     [ValidateProfileError.SERVER_ERROR]: t('Server error while saving'),
     [ValidateProfileError.INCORRECT_AGE]: t('Please add your age'),
     [ValidateProfileError.INCORRECT_CITY]: t('Please add your city'),
-    [ValidateProfileError.INCORRECT_USER_DATA]: t('Please add your name and surname'),
+    [ValidateProfileError.INCORRECT_USER_DATA]: t(
+      'Please add your name and surname'
+    ),
     [ValidateProfileError.NO_DATA]: t('Empty spaces')
   };
 
@@ -112,7 +117,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <VStack gap="32" max className={classNames('', {}, [className])}>
+      <VStack gap="16" max className={classNames('', {}, [className])}>
         <EditableProfileCardHeader />
         {validateErrors?.length &&
           validateErrors.map((err: ValidateProfileError) => (

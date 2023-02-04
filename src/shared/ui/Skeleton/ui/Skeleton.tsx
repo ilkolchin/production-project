@@ -6,7 +6,7 @@ interface SkeletonProps {
   className?: string;
   height?: string | number;
   width?: string | number;
-  border?: string;
+  border?: string | number;
   testID?: string;
 }
 export const Skeleton = (props: SkeletonProps) => {

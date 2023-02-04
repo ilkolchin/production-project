@@ -934,22 +934,35 @@
       "rate": 5,
       "feedback": "Замечательно!",
       "id": "NA0dhw_"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 4,
+      "feedback": "",
+      "id": "b6ANofs"
     }
   ],
   "profile-ratings": [
     {
-      "id": "1",
-      "rate": 4,
-      "feedback": "Хорошая статья",
+      "profileId": "1",
       "userId": "1",
-      "profileId": "1"
+      "rate": 4,
+      "feedback": "",
+      "id": 1
     },
     {
-      "id": "2",
-      "rate": 4,
-      "feedback": "Хорошая статья",
+      "profileId": "2",
       "userId": "1",
-      "profileId": "2"
+      "rate": 2,
+      "feedback": "фыв",
+      "id": 2
+    },
+    {
+      "profileId": "2",
+      "userId": "2",
+      "rate": 3,
+      "id": 3
     }
   ]
 }

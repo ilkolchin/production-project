@@ -62,5 +62,6 @@
   "You dont have permission": "У Вас нет прав для просмотра этой страницы",
   "Waze App": "Waze App",
   "Your review": "Ваш отзыв",
-  "Close": "Закрыть"
+  "Close": "Закрыть",
+  "Error while profile loading": "Ошибка при загрузке профиля"
 }

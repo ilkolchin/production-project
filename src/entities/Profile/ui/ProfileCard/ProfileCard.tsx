@@ -1,14 +1,15 @@
 import { Age } from '@/entities/Age';
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
-import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from '@/shared/lib/classNames';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Input } from '@/shared/ui/Input';
-import { Loader } from '@/shared/ui/Loader';
+import { RefreshBtn } from '@/shared/ui/RefreshBtn';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { TextAlign } from '@/shared/ui/Text/ui/Text';
+import { useTranslation } from 'react-i18next';
 import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 
@@ -47,17 +48,19 @@ export const ProfileCard = (props: ProfileCardProps) => {
   const { t } = useTranslation();
 
   if (isLoading) {
-    return <Loader />;
+    return <Skeleton width={'100%'} height={400} border={12} />;
   }
 
   if (error) {
     return (
-      <Text
-        theme={TextTheme.ERROR}
-        align={TextAlign.CENTER}
-        title={t('Error while profile loading')}
-        text={t('Please refresh page')}
-      />
+      <VStack gap="16">
+        <Text
+          theme={TextTheme.ERROR}
+          align={TextAlign.CENTER}
+          title={t('Error while profile loading')}
+        />
+        <RefreshBtn />
+      </VStack>
     );
   }
 
@@ -66,7 +69,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
   };
 
   return (
-    <VStack gap="16" max className={classNames(cls.ProfileCard, mods, [className])}>
+    <VStack
+      gap="16"
+      max
+      className={classNames(cls.ProfileCard, mods, [className])}
+    >
       <HStack gap="32" max>
         {data?.avatar && <Avatar src={data.avatar} />}
         <VStack gap="8">
