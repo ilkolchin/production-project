@@ -1,8 +1,10 @@
-import { ArticleBlockType, ArticleView } from '../../../model/consts/articleConsts';
+import {
+  ArticleBlockType,
+  ArticleView
+} from '../../../model/consts/articleConsts';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
-import { RoutePath } from '@/shared/config/paths';
 import { classNames } from '@/shared/lib/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -13,6 +15,7 @@ import { Text } from '@/shared/ui/Text';
 import { Article, ArticleTextBlock } from '../../../model/types/article';
 import { ArticleTextBlockComponent } from '../../ArticleComponents/ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticlesListItem.module.scss';
+import { RoutePath } from '@/shared/const/router';
 
 interface ArticlesListItemProps {
   className?: string;
@@ -47,9 +50,17 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
           <Text title={article.title} />
           <Text text={article.type.join(', ')} className={cls.types} />
           <img src={article.img} className={cls.img} alt={article.title} />
-          {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
+          {textBlock && (
+            <ArticleTextBlockComponent
+              block={textBlock}
+              className={cls.textBlock}
+            />
+          )}
           <div className={cls.footer}>
-            <AppLink target={target} to={RoutePath.article_details + article.id}>
+            <AppLink
+              target={target}
+              to={RoutePath.article_details + article.id}
+            >
               <Button theme={ButtonTheme.OUTLINED}>{t('Read article')}</Button>
             </AppLink>
             {views}

@@ -7,14 +7,9 @@ import { ArticlesPage } from '@/pages/ArticlesPage';
 import { MainPage } from '@/pages/MainPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
-import { RouteProps } from 'react-router-dom';
-import { AppRoutes, RoutePath } from '@/shared/config/paths';
 import { UserRole } from '@/entities/User';
-
-export type AppRouterProps = RouteProps & {
-  authOnly?: boolean;
-  roles?: UserRole[];
-};
+import { AppRoutes, RoutePath } from '@/shared/const/router';
+import { AppRouterProps } from '@/shared/types/router';
 
 export const routeConfig: Record<AppRoutes, AppRouterProps> = {
   [AppRoutes.MAIN]: {

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:webpack": "concurrently \"webpack serve --env port=3000\" \"npm run start:server\"",
-    "start": "concurrently \"vite\" \"npm run start:server\"",
+    "start": "concurrently \"webpack serve --env port=3000\" \"npm run start:server\"",
+    "start:vite": "concurrently \"vite\" \"npm run start:server\"",
     "start:server": "node ./json-server/index.js",
     "build:prod": "webpack --env mode=production apiUrl=https://production-server-sepia.vercel.app/",
     "build:dev": "webpack --env mode=development",

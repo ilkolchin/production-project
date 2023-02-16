@@ -2,18 +2,25 @@ import { RequireAuth } from '@/app/providers/router/ui/RequireAuth';
 import { memo, Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { PageLoader } from '@/widgets/PageLoader';
-import { AppRouterProps, routeConfig } from '../config/routeConfig';
+import { routeConfig } from '../config/routeConfig';
+import { AppRouterProps } from '@/shared/types/router';
 
 const AppRouter = () => {
   const renderWithWrapper = useCallback((route: AppRouterProps) => {
-    const element = <Suspense fallback={<PageLoader />}>{route.element}</Suspense>;
+    const element = (
+      <Suspense fallback={<PageLoader />}>{route.element}</Suspense>
+    );
 
     return (
       <Route
         key={route.path}
         path={route.path}
         element={
-          route.authOnly ? <RequireAuth roles={route.roles}>{element}</RequireAuth> : element
+          route.authOnly ? (
+            <RequireAuth roles={route.roles}>{element}</RequireAuth>
+          ) : (
+            element
+          )
         }
       />
     );

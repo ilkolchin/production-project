@@ -2,13 +2,15 @@ import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { NotificationButton } from '@/features/NotificationButton';
 import { UserBarDropdown } from '@/features/UserBarDropdown';
-import { memo, useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames';
+import { AppLink } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 import { Text, TextTheme } from '@/shared/ui/Text';
+import { memo, useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -31,7 +33,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
-        <Text title={t('Waze App')} theme={TextTheme.INVERTED} />
+        <AppLink to={RoutePath.main}>
+          <Text title={t('Waze App')} theme={TextTheme.INVERTED} />
+        </AppLink>
         <HStack gap="16">
           <NotificationButton />
           <UserBarDropdown user={authData} />
@@ -45,7 +49,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
         {t('Log In')}
       </Button>
-      {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+      {isAuthModal && (
+        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+      )}
     </header>
   );
 });
