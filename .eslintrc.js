@@ -16,8 +16,7 @@ module.exports = {
     {
       files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
       rules: {
-        'i18next/no-literal-string': 'off',
-        'fsd-stable/public-api-imports-only': 'off'
+        'i18next/no-literal-string': 'off'
       }
     }
   ],
@@ -73,7 +72,12 @@ module.exports = {
     'fsd-stable/public-api-imports-only': [
       'error',
       {
-        alias: '@'
+        alias: '@',
+        testFilesPatterns: [
+          '**/*.test.ts',
+          '**/*.test.ts',
+          '**/StoreDecorator.tsx'
+        ]
       }
     ]
   },

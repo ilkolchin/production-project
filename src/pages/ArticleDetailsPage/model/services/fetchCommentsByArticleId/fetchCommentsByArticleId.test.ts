@@ -1,5 +1,4 @@
-import { ArticleType } from '@/entities/Article';
-import { ArticleBlockType } from '@/entities/Article/model/consts/articleConsts';
+import { ArticleBlockType, ArticleType } from '@/entities/Article';
 import { TestAsyncThunk } from '@/shared/config/tests/TestAsyncThunk';
 import { fetchCommentsByArticleId } from './fetchCommentsByArticleId';
 
