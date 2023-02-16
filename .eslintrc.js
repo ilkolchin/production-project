@@ -15,7 +15,10 @@ module.exports = {
   overrides: [
     {
       files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
-      rules: { 'i18next/no-literal-string': 'off' }
+      rules: {
+        'i18next/no-literal-string': 'off',
+        'fsd-stable/public-api-imports-only': 'off'
+      }
     }
   ],
   parser: '@typescript-eslint/parser',
@@ -61,7 +64,18 @@ module.exports = {
     'react/display-name': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    'fsd-stable/fsd-paths-checker': 'error'
+    'fsd-stable/fsd-paths-checker': [
+      'error',
+      {
+        alias: '@'
+      }
+    ],
+    'fsd-stable/public-api-imports-only': [
+      'error',
+      {
+        alias: '@'
+      }
+    ]
   },
   settings: {
     react: {

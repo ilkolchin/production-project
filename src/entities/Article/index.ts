@@ -6,9 +6,18 @@ export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelecto
 export { ArticleTabTypes } from './ui/ArticleTabTypes/ArticleTabTypes';
 
 // Types
-export { ArticleView, ArticleSortField, ArticleType } from './model/consts/articleConsts';
+export {
+  ArticleView,
+  ArticleSortField,
+  ArticleType,
+  ArticleBlockType
+} from './model/consts/articleConsts';
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 export type { Article } from './model/types/article';
 
 // Selectors
-export { getArticleDetailsData } from './model/selectors/articleDetails';
+export {
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsIsLoading
+} from './model/selectors/articleDetails';

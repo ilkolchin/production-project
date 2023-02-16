@@ -1,5 +1,5 @@
 import { ArticleDetails } from '@/entities/Article';
-import { getArticleDetailsError } from '@/entities/Article/model/selectors/articleDetails';
+import { getArticleDetailsError } from '@/entities/Article';
 import { ArticleRating } from '@/features/ArticleRating';
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
 import { classNames } from '@/shared/lib/classNames';

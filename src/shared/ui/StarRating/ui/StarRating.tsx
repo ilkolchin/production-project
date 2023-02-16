@@ -1,6 +1,6 @@
 import StarIcon from '@/shared/assets/icons/star.svg';
 import { classNames } from '@/shared/lib/classNames';
-import { Icon, IconSize } from '@/shared/ui/Icon';
+import { Icon, IconSize } from '../../Icon';
 import { memo, useState } from 'react';
 import cls from './StarRating.module.scss';
 

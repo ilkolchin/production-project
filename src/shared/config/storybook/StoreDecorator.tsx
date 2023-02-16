@@ -1,3 +1,4 @@
+/* eslint-disable fsd-stable/public-api-imports-only */
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
@@ -16,7 +17,8 @@ const defaultAsyncReducers: ReducersList = {
 };
 
 export const StoreDecorator =
-  (state: DeepPartial<StateSchema>, asyncReducers?: ReducersList) => (StoryComponent: Story) =>
+  (state: DeepPartial<StateSchema>, asyncReducers?: ReducersList) =>
+  (StoryComponent: Story) =>
     (
       <StoreProvider
         initialState={state}

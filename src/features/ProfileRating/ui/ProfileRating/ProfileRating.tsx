@@ -1,6 +1,6 @@
 import { RatingCard } from '@/entities/Rating';
 import { getUserAuthData } from '@/entities/User';
-import { getProfileError } from '@/features/EditableProfileCard/model/selectors/getProfileError/getProfileError';
+import { getProfileError } from '@/features/EditableProfileCard';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
