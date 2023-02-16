@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { ButtonSize } from '@/shared/ui/Button/ui/Button';
-import { LangSwitcher } from '@/widgets/LangSwitcher';
+import { LangSwitcher } from '@/features/LangSwitcher';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
-import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
 import { VStack } from '@/shared/ui/Stack';
@@ -34,7 +34,9 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   return (
     <section
       data-testid="sidebar"
-      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
+      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
+        className
+      ])}
     >
       <div className={cls.items}>
         <Button

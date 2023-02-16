@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import ArticleEditPage from './ArticleEditPage';
@@ -13,7 +13,9 @@ export default {
   decorators: [StoreDecorator({})]
 } as ComponentMeta<typeof ArticleEditPage>;
 
-const Template: ComponentStory<typeof ArticleEditPage> = (args) => <ArticleEditPage {...args} />;
+const Template: ComponentStory<typeof ArticleEditPage> = (args) => (
+  <ArticleEditPage {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = {};

@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { UserBarDropdown } from './UserBarDropdown';
 import Avatar from '@/shared/assets/tests/storybook.jpeg';
@@ -13,7 +13,9 @@ export default {
   }
 } as ComponentMeta<typeof UserBarDropdown>;
 
-const Template: ComponentStory<typeof UserBarDropdown> = (args) => <UserBarDropdown {...args} />;
+const Template: ComponentStory<typeof UserBarDropdown> = (args) => (
+  <UserBarDropdown {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = { user: { id: '1', username: 'Waze', avatar: Avatar } };

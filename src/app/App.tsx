@@ -1,4 +1,4 @@
-import { AppRouter } from '@/app/providers/router';
+import AppRouter from './providers/router/ui/AppRouter';
 import { getUserInited, userActions } from '@/entities/User';
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';

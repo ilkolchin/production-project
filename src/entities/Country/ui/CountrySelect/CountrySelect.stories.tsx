@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { CountrySelect } from './CountrySelect';
 
@@ -11,7 +11,9 @@ export default {
   }
 } as ComponentMeta<typeof CountrySelect>;
 
-const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect {...args} />;
+const Template: ComponentStory<typeof CountrySelect> = (args) => (
+  <CountrySelect {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = { direction: 'bottom right' };

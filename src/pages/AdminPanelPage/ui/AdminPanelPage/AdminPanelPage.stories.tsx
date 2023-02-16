@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import AdminPanelPage from './AdminPanelPage';
@@ -12,7 +12,9 @@ export default {
   }
 } as ComponentMeta<typeof AdminPanelPage>;
 
-const Template: ComponentStory<typeof AdminPanelPage> = (args) => <AdminPanelPage {...args} />;
+const Template: ComponentStory<typeof AdminPanelPage> = (args) => (
+  <AdminPanelPage {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = {};

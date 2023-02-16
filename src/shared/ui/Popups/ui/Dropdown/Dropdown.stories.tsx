@@ -1,8 +1,7 @@
-/* eslint-disable fsd-stable/fsd-paths-checker */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Button } from '@/shared/ui/Button';
+import { Button } from '../../../Button';
 import { Dropdown } from './Dropdown';
 
 export default {
@@ -13,7 +12,9 @@ export default {
   }
 } as ComponentMeta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
+const Template: ComponentStory<typeof Dropdown> = (args) => (
+  <Dropdown {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = {

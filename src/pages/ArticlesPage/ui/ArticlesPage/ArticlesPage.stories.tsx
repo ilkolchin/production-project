@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 import { ArticleDetailsSchema } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
@@ -94,7 +94,9 @@ export default {
   parameters: {
     mockData: [
       {
-        url: __API__ + '/articles?_expand=user&_limit=9&_page=2&_sort=views&_order=desc&q=',
+        url:
+          __API__ +
+          '/articles?_expand=user&_limit=9&_page=2&_sort=views&_order=desc&q=',
         method: 'GET',
         status: 200,
         response: []
@@ -103,7 +105,9 @@ export default {
   }
 } as ComponentMeta<typeof ArticlesPage>;
 
-const Template: ComponentStory<typeof ArticlesPage> = (args) => <ArticlesPage {...args} />;
+const Template: ComponentStory<typeof ArticlesPage> = (args) => (
+  <ArticlesPage {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = {};
@@ -111,8 +115,14 @@ Light.decorators = [StoreDecorator({ articleDetails: article })];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ articleDetails: article })];
+Dark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({ articleDetails: article })
+];
 
 export const Orange = Template.bind({});
 Orange.args = {};
-Orange.decorators = [ThemeDecorator(Theme.ORANGE), StoreDecorator({ articleDetails: article })];
+Orange.decorators = [
+  ThemeDecorator(Theme.ORANGE),
+  StoreDecorator({ articleDetails: article })
+];

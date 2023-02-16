@@ -79,6 +79,10 @@ module.exports = {
           '**/StoreDecorator.tsx'
         ]
       }
+    ],
+    'fsd-stable/fsd-layer-imports': [
+      'error',
+      { alias: '@', ignoreImportPatterns: ['**/StoreProvider', '**/testing'] }
     ]
   },
   settings: {

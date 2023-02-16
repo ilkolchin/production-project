@@ -1,10 +1,13 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 import { Article } from '../../model/types/article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { ArticleDetails } from './ArticleDetails';
-import { ArticleType, ArticleBlockType } from '../../model/consts/articleConsts';
+import {
+  ArticleType,
+  ArticleBlockType
+} from '../../model/consts/articleConsts';
 
 export default {
   title: 'entities/Article/ArticleDetails',
@@ -14,7 +17,9 @@ export default {
   }
 } as ComponentMeta<typeof ArticleDetails>;
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
+const Template: ComponentStory<typeof ArticleDetails> = (args) => (
+  <ArticleDetails {...args} />
+);
 
 const article: Article = {
   id: '1',
