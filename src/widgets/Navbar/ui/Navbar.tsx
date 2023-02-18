@@ -2,7 +2,7 @@ import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { NotificationButton } from '@/features/NotificationButton';
 import { UserBarDropdown } from '@/features/UserBarDropdown';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteMain } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
@@ -33,7 +33,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
-        <AppLink to={RoutePath.main}>
+        <AppLink to={getRouteMain()}>
           <Text title={t('Waze App')} theme={TextTheme.INVERTED} />
         </AppLink>
         <HStack gap="16">

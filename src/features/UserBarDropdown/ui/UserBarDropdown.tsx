@@ -1,14 +1,14 @@
 import { isUserAdmin, isUserManager, User, userActions } from '@/entities/User';
-import { memo, useCallback, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Dropdown } from '@/shared/ui/Popups';
 import { DropdownItem } from '@/shared/ui/Popups/ui/Dropdown/Dropdown';
 import { Text, TextTheme } from '@/shared/ui/Text';
+import { memo, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import cls from './UserBarDropdown.module.scss';
-import { RoutePath } from '@/shared/const/router';
 
 interface UserBarDropdownProps {
   user: User;
@@ -29,11 +29,11 @@ export const UserBarDropdown = memo(({ user }: UserBarDropdownProps) => {
   const items = useMemo<DropdownItem[]>(
     () => [
       ...(isAdminPanelAvailable
-        ? [{ content: t('Admin panel'), href: RoutePath.admin_panel, key: '1' }]
+        ? [{ content: t('Admin panel'), href: getRouteAdminPanel(), key: '1' }]
         : []),
       {
         content: t('Profile'),
-        href: RoutePath.profile + user.id,
+        href: getRouteProfile(user.id),
         key: '2'
       },
       { content: t('Log Out'), onClick: onLogOut, key: '3' }
