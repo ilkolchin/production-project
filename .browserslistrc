@@ -1,5 +1,11 @@
 # Browsers that we support
 
+[production]
 defaults and supports es6-module
 not IE 11
 not dead
+
+[development]
+last 2 Chrome verions
+last 2 Firefox verions
+last 1 Safari verion
