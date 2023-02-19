@@ -1,9 +1,6 @@
 // UI
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 export { ArticlesList } from './ui/ArticlesList/ArticlesList';
-export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
-export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
-export { ArticleTabTypes } from './ui/ArticleTabTypes/ArticleTabTypes';
 
 // Types
 export {

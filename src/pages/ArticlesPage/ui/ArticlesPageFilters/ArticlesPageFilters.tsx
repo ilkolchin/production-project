@@ -1,11 +1,3 @@
-import {
-  ArticleSortField,
-  ArticleSortSelector,
-  ArticleTabTypes,
-  ArticleType,
-  ArticleView,
-  ArticleViewSelector
-} from '@/entities/Article';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -25,6 +17,10 @@ import {
 } from '../../model/selectors/articlesPageSelectors';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
+import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleViewSelector } from '@/features/ArticleViewSelector';
+import { ArticleTabTypes } from '@/features/ArticleTabTypes';
 
 interface ArticlesPageFiltersProps {
   className?: string;
