@@ -843,6 +843,12 @@
       "userId": "2",
       "text": "Cool",
       "id": 10
+    },
+    {
+      "articleId": "4",
+      "userId": "1",
+      "text": "Hi, 👋 ",
+      "id": 11
     }
   ],
   "users": [
@@ -881,8 +887,8 @@
       "first": "Ilya",
       "lastname": "Kolchin",
       "age": 26,
-      "currency": "RUB",
-      "country": "Russia",
+      "currency": "USD",
+      "country": "Kazakhstan",
       "city": "Saint-Petersburg",
       "avatar": "https://assets.bigcartel.com/product_images/231461297/28429F45-8E4F-464B-A361-969364A10FC0.jpeg?auto=format&fit=max&w=1300"
     },

@@ -1,6 +1,9 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
+import { buildSelector } from '@/shared/lib/store';
 
-export const getArticleDetailsCommentIsLoading = (state: StateSchema) =>
-  state.articleDetailsPage?.comments?.isLoading;
-export const getArticleDetailsCommentError = (state: StateSchema) =>
-  state.articleDetailsPage?.comments?.error;
+export const [
+  useArticleDetailsCommentIsLoading,
+  getArticleDetailsCommentIsLoading
+] = buildSelector(
+  (state: StateSchema) => state.articleDetailsPage?.comments?.isLoading
+);

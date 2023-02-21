@@ -1,12 +1,13 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
-import { UserSchema, User } from '../types/user';
+import { buildSlice } from '@/shared/lib/store';
+import { PayloadAction } from '@reduxjs/toolkit';
+import { User, UserSchema } from '../types/user';
 
 const initialState: UserSchema = {
   _inited: false
 };
 
-export const userSlice = createSlice({
+export const userSlice = buildSlice({
   name: 'user',
   initialState,
   reducers: {
@@ -27,6 +28,8 @@ export const userSlice = createSlice({
   }
 });
 
-// Action creators are generated for each case reducer function
-export const { actions: userActions } = userSlice;
-export const { reducer: userReducer } = userSlice;
+export const {
+  actions: userActions,
+  reducer: userReducer,
+  useActions: useUserActions
+} = userSlice;

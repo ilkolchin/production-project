@@ -1,18 +1,18 @@
-import AppRouter from './providers/router/ui/AppRouter';
-import { getUserInited, userActions } from '@/entities/User';
-import { Suspense, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { getUserInited, useUserActions } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
+import { Suspense, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import AppRouter from './providers/router/ui/AppRouter';
 
 export const App = () => {
-  const dispatch = useDispatch();
   const inited = useSelector(getUserInited);
+  const { initAuthData } = useUserActions();
 
   useEffect(() => {
-    dispatch(userActions.initAuthData());
-  }, [dispatch]);
+    initAuthData();
+  }, [initAuthData]);
 
   return (
     <Suspense fallback={''}>
