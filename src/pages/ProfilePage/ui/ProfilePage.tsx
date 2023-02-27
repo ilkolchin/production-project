@@ -9,7 +9,7 @@ const ProfilePage = memo(() => {
   const { id } = useParams<{ id: string }>();
 
   return (
-    <Page>
+    <Page data-testid="ProfilePage">
       <VStack gap="16" align="stretch">
         <EditableProfileCard id={id} />
         <ProfileRating profileId={id} />

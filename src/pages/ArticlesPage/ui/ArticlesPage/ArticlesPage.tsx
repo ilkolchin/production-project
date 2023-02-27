@@ -1,6 +1,9 @@
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList
+} from '@/shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
@@ -27,7 +30,11 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <Page onScrollEnd={onLoadNextPart} className={classNames('', {}, [className])}>
+      <Page
+        data-testid="ArticlesPage"
+        onScrollEnd={onLoadNextPart}
+        className={classNames('', {}, [className])}
+      >
         <VStack tag="section" gap="32">
           <ArticlesPageFilters />
           <ArticleInfiniteList />

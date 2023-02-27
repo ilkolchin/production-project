@@ -7,7 +7,7 @@ const MainPage = memo(() => {
   const { t } = useTranslation();
 
   return (
-    <Page>
+    <Page data-testid="MainPage">
       <VStack gap="32">
         <div>{t('Main Page')}</div>
       </VStack>
