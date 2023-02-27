@@ -3,7 +3,6 @@ import { componentRender } from '@/shared/config/tests/componentRender';
 import {
   getRouteAbout,
   getRouteAdminPanel,
-  getRouteArticles,
   getRouteProfile
 } from '@/shared/const/router';
 import { screen } from '@testing-library/react';
@@ -21,7 +20,7 @@ describe('AppRouter', () => {
 
   test('should redirect to MainPage', async () => {
     componentRender(<AppRouter />, {
-      route: getRouteArticles(),
+      route: getRouteProfile('1'),
       initialState: { user: { _inited: true, authData: undefined } }
     });
 
