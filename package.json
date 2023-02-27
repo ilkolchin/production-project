@@ -26,6 +26,10 @@
     "storybook:build": "build-storybook -c ./config/storybook",
     "postinstall": "rm -rf ./node_modules/.cache"
   },
+  "lint-staged": {
+    "**/*.{ts,tsx}": "eslint",
+    "**/*.scss": "stylelint"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -83,6 +87,7 @@
     "jest": "^27.5.1",
     "jest-html-reporters": "^3.0.10",
     "json-server": "^0.17.1",
+    "lint-staged": "^13.1.2",
     "loki": "^0.30.3",
     "mini-css-extract-plugin": "^2.5.3",
     "prettier": "^2.8.0",
