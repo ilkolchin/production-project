@@ -45,7 +45,7 @@ export const UserBarDropdown = memo(({ user }: UserBarDropdownProps) => {
     <Dropdown
       trigger={
         <div className={cls.UserBarDropdown}>
-          <Avatar src={user?.avatar} alt="avatar" size={35} />
+          <Avatar src={user?.avatar} alt="avatar" size={35} fallbackInverted />
           <Text text={user?.username} theme={TextTheme.INVERTED} />
         </div>
       }

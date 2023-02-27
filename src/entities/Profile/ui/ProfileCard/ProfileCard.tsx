@@ -75,7 +75,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
       className={classNames(cls.ProfileCard, mods, [className])}
     >
       <HStack gap="32" max>
-        {data?.avatar && <Avatar src={data.avatar} />}
+        {data?.avatar && <Avatar src={data.avatar} fallbackBigSize />}
         <VStack gap="8">
           <Input
             readonly={readonly}

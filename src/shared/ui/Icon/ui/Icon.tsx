@@ -3,7 +3,8 @@ import cls from './Icon.module.scss';
 
 export enum IconSize {
   M = 'size_M',
-  L = 'size_L'
+  L = 'size_L',
+  XXL = 'size_XXL'
 }
 
 export enum IconTheme {
