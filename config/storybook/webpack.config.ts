@@ -21,11 +21,20 @@ export default ({ config }: { config: webpack.Configuration }) => {
   //@ts-ignore
   config!.module!.rules = config.module!.rules!.map((rule: RuleSetRule) => {
     if (/svg/.test(rule.test as string)) {
-      return { ...rule, exclude: /\.svg$/i };
+      return { ...rule, exclude: /\.(png|svg|jpe?g|gif)$/i };
     }
 
     return rule;
   });
+
+  config!.module!.rules.push({
+    test: /\.(png|jpe?g|gif)$/i,
+    loader: 'file-loader',
+    options: {
+      name: '[path][name].[ext]'
+    }
+  });
+
   config!.module!.rules.push({
     test: /\.svg$/,
     use: ['@svgr/webpack']
