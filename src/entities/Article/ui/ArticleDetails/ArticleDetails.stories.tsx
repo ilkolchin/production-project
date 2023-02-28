@@ -26,7 +26,7 @@ const article: Article = {
   user: { id: '1', username: 'Waze' },
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
-  img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+  img: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png',
   views: 1022,
   createdAt: '26.02.2022',
   type: [ArticleType.IT],

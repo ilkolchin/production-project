@@ -24,7 +24,9 @@ const data = {
   age: 22,
   country: Country.Russia,
   city: 'Saint-Petersburg',
-  currency: Currency.RUB
+  currency: Currency.RUB,
+  avatar:
+    'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png'
 };
 
 export const Light = Template.bind({});
