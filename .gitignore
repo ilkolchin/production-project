@@ -2,5 +2,5 @@
 node_modules
 .vscode
 /storybook-static
-/reports
+/reports/unit
 /coverage
