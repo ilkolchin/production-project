@@ -10,7 +10,8 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/jsx-runtime',
     'plugin:i18next/recommended',
-    'prettier'
+    'prettier',
+    'plugin:storybook/recommended'
   ],
   overrides: [
     {
@@ -58,8 +59,10 @@ module.exports = {
         ]
       }
     ],
-    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
-    'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+    'react-hooks/rules-of-hooks': 'error',
+    // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'error',
+    // Checks effect dependencies
     'react/display-name': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
@@ -82,7 +85,10 @@ module.exports = {
     ],
     'fsd-stable/fsd-layer-imports': [
       'error',
-      { alias: '@', ignoreImportPatterns: ['**/StoreProvider', '**/testing'] }
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+      }
     ]
   },
   settings: {
