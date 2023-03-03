@@ -841,6 +841,12 @@
       "password": "123",
       "roles": ["MANAGER"],
       "avatar": "https://static.bangkokpost.com/media/content/20210823/c1_2169843_700.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testUser",
+      "password": "123",
+      "roles": ["USER"]
     }
   ],
   "profile": [
@@ -865,6 +871,17 @@
       "country": "Russia",
       "city": "Saint-Petersburg",
       "avatar": "https://mobimg.b-cdn.net/v3/fetch/ef/ef1a150a151d666c3ddd6222b12998b5.jpeg"
+    },
+    {
+      "id": "4",
+      "username": "testUser",
+      "first": "testUser",
+      "lastname": "testUser",
+      "age": 32,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Saint-testUser",
+      "avatar": ""
     }
   ],
   "article-ratings": [
