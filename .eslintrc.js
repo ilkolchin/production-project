@@ -55,7 +55,8 @@ module.exports = {
           'role',
           'tag',
           'as',
-          'border'
+          'border',
+          'testid'
         ]
       }
     ],

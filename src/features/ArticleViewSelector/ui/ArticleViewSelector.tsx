@@ -16,11 +16,13 @@ interface ArticleViewSelectorProps {
 const viewTypes = [
   {
     view: ArticleView.BIG,
-    icon: BigViewIcon
+    icon: BigViewIcon,
+    testID: 'ArticleView.BIG'
   },
   {
     view: ArticleView.SMALL,
-    icon: SmallViewIcon
+    icon: SmallViewIcon,
+    testID: 'ArticleView.SMALL'
   }
 ];
 
@@ -32,12 +34,16 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
   };
 
   return (
-    <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
+    <div
+      data-testid="ArticleViewSelector"
+      className={classNames(cls.ArticleViewSelector, {}, [className])}
+    >
       {viewTypes.map((viewType) => (
         <Button
           key={viewType.view}
           theme={ButtonTheme.CLEAR}
           onClick={onClick(viewType.view)}
+          data-testid={viewType.testID}
         >
           <Icon
             Svg={viewType.icon}

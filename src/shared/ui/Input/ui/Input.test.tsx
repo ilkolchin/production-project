@@ -4,13 +4,13 @@ import { Input } from './Input';
 
 describe('Input', () => {
   test('should render', () => {
-    componentRender(<Input />);
+    componentRender(<Input data-testid="CustomInput" />);
 
     expect(screen.getByTestId('CustomInput')).toBeInTheDocument();
   });
   test('should have readonly class', () => {
-    componentRender(<Input readonly />);
+    componentRender(<Input data-testid="CustomInput" readonly />);
 
-    expect(screen.getByTestId('CustomInput')).toHaveClass('readonly');
+    expect(screen.getByTestId('CustomInput')).toHaveAttribute('readonly');
   });
 });

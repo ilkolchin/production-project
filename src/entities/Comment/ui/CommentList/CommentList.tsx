@@ -17,7 +17,10 @@ export const CommentList = memo((props: CommentListProps) => {
 
   if (isLoading) {
     return (
-      <div data-testid="CommentListLoading" className={classNames('', {}, [className])}>
+      <div
+        data-testid="CommentList.isLoading"
+        className={classNames('', {}, [className])}
+      >
         <CommentCard isLoading />
         <CommentCard isLoading />
         <CommentCard isLoading />
@@ -26,10 +29,15 @@ export const CommentList = memo((props: CommentListProps) => {
   }
 
   return (
-    <VStack gap="16" align="stretch" className={classNames('', {}, [className])}>
+    <VStack
+      gap="16"
+      align="stretch"
+      className={classNames('', {}, [className])}
+      data-testid="CommentList"
+    >
       {comments?.length ? (
         comments.map((comment) => (
-          <div key={comment.id} data-testid="CommentListItem">
+          <div key={comment.id} data-testid="CommentList.Item">
             <CommentCard isLoading={isLoading} comment={comment} />
           </div>
         ))

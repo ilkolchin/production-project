@@ -32,6 +32,7 @@ export const ArticleTabTypes = memo((props: ArticleTabTypesProps) => {
 
   return (
     <Tabs
+      testID="ArticleTabTypes"
       tabs={typeTabs}
       value={value}
       onTabClick={onTabClick}

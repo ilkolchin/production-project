@@ -50,7 +50,10 @@ const AddNewComment = memo((props: AddNewCommentProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.AddNewComment, {}, [className])}>
+      <div
+        data-testid="AddNewComment"
+        className={classNames(cls.AddNewComment, {}, [className])}
+      >
         {error && <Text text={t('Ooops')} />}
         <Input
           className={cls.input}
@@ -58,8 +61,11 @@ const AddNewComment = memo((props: AddNewCommentProps) => {
           placeholderType={PlaceholderType.INSIDE}
           value={text}
           onChange={onCommentTextChange}
+          data-testid="AddNewComment.Input"
         />
-        <Button onClick={onSendHandler}>{t('Send')}</Button>
+        <Button data-testid="AddNewComment.Button" onClick={onSendHandler}>
+          {t('Send')}
+        </Button>
       </div>
     </DynamicModuleLoader>
   );

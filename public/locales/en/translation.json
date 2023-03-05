@@ -64,5 +64,6 @@
   "Your review": "Your feedback",
   "Close": "Сlose",
   "Error while profile loading": "Error loading profile",
-  "go back to main page": "Go back to main page"
+  "go back to main page": "Go back to main page",
+  "Error while loading page": "An error occurred while loading the article"
 }

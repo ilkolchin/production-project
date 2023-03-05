@@ -15,80 +15,87 @@ import { Text } from '@/shared/ui/Text';
 interface EditableProfileCardHeaderProps {
   className?: string;
 }
-export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderProps) => {
-  const { className } = props;
-  const { t } = useTranslation();
-  const dispatch = useAppDispatch();
+export const EditableProfileCardHeader = memo(
+  (props: EditableProfileCardHeaderProps) => {
+    const { className } = props;
+    const { t } = useTranslation();
+    const dispatch = useAppDispatch();
 
-  const readonly = useSelector(getProfileReadonly);
-  const profileData = useSelector(getProfileData);
-  const authData = useSelector(getUserAuthData);
-  const canEdit = profileData?.id === authData?.id;
+    const readonly = useSelector(getProfileReadonly);
+    const profileData = useSelector(getProfileData);
+    const authData = useSelector(getUserAuthData);
+    const canEdit = profileData?.id === authData?.id;
 
-  const onEdit = useCallback(() => {
-    dispatch(profileActions.setReadonly(false));
-  }, [dispatch]);
+    const onEdit = useCallback(() => {
+      dispatch(profileActions.setReadonly(false));
+    }, [dispatch]);
 
-  const onCancelEdit = useCallback(() => {
-    dispatch(profileActions.cancelEdit());
-  }, [dispatch]);
+    const onCancelEdit = useCallback(() => {
+      dispatch(profileActions.cancelEdit());
+    }, [dispatch]);
 
-  const onSave = useCallback(() => {
-    dispatch(updateProfileData());
-  }, [dispatch]);
+    const onSave = useCallback(() => {
+      dispatch(updateProfileData());
+    }, [dispatch]);
 
-  const onKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === 'Enter') {
-        onSave();
-      } else if (e.key === 'Escape') {
-        onCancelEdit();
-      }
-    },
-    [onCancelEdit, onSave]
-  );
+    const onKeyDown = useCallback(
+      (e: KeyboardEvent) => {
+        if (e.key === 'Enter') {
+          onSave();
+        } else if (e.key === 'Escape') {
+          onCancelEdit();
+        }
+      },
+      [onCancelEdit, onSave]
+    );
 
-  useEffect(() => {
-    window.addEventListener('keydown', onKeyDown);
+    useEffect(() => {
+      window.addEventListener('keydown', onKeyDown);
 
-    return () => {
-      window.removeEventListener('keydown', onKeyDown);
-    };
-  }, [onKeyDown]);
+      return () => {
+        window.removeEventListener('keydown', onKeyDown);
+      };
+    }, [onKeyDown]);
 
-  return (
-    <HStack gap="16" justify="between" max className={classNames('', {}, [className])}>
-      <Text title={t('Profile')} />
-      {canEdit && (
-        <>
-          {readonly ? (
-            <Button
-              theme={ButtonTheme.OUTLINED}
-              onClick={onEdit}
-              data-testid={'EditableProfileCardHeader.EditButton'}
-            >
-              {t('Edit')}
-            </Button>
-          ) : (
-            <HStack gap="16">
-              <Button
-                theme={ButtonTheme.CANCEL}
-                onClick={onCancelEdit}
-                data-testid={'EditableProfileCardHeader.CancelButton'}
-              >
-                {t('Cancel')}
-              </Button>
+    return (
+      <HStack
+        gap="16"
+        justify="between"
+        max
+        className={classNames('', {}, [className])}
+      >
+        <Text title={t('Profile')} />
+        {canEdit && (
+          <>
+            {readonly ? (
               <Button
                 theme={ButtonTheme.OUTLINED}
-                onClick={onSave}
-                data-testid={'EditableProfileCardHeader.SaveButton'}
+                onClick={onEdit}
+                data-testid="EditableProfileCardHeader.EditButton"
               >
-                {t('Save')}
+                {t('Edit')}
               </Button>
-            </HStack>
-          )}
-        </>
-      )}
-    </HStack>
-  );
-});
+            ) : (
+              <HStack gap="16">
+                <Button
+                  theme={ButtonTheme.CANCEL}
+                  onClick={onCancelEdit}
+                  data-testid="EditableProfileCardHeader.CancelButton"
+                >
+                  {t('Cancel')}
+                </Button>
+                <Button
+                  theme={ButtonTheme.OUTLINED}
+                  onClick={onSave}
+                  data-testid="EditableProfileCardHeader.SaveButton"
+                >
+                  {t('Save')}
+                </Button>
+              </HStack>
+            )}
+          </>
+        )}
+      </HStack>
+    );
+  }
+);

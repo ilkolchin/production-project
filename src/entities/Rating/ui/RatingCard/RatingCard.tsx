@@ -65,14 +65,18 @@ export const RatingCard = memo((props: RatingCardProps) => {
         value={feedback}
         onChange={setFeedback}
         placeholder={t('Your review')}
+        data-testid="RatingCard.Input"
       />
     </>
   );
 
   return (
-    <Card className={classNames('', {}, [className])}>
+    <Card data-testid="RatingCard" className={classNames('', {}, [className])}>
       <VStack align="center" gap="8">
-        <Text title={starsCount ? t('Спасибо за оценку!') : title} />
+        <Text
+          data-testid="RatingCard.Text"
+          title={starsCount ? t('Спасибо за оценку!') : title}
+        />
         <StarRating selectedStars={starsCount} onSelect={onSelectStars} />
       </VStack>
 
@@ -81,10 +85,16 @@ export const RatingCard = memo((props: RatingCardProps) => {
           <VStack gap="32" max>
             {modalContent}
             <HStack gap="16">
-              <Button theme={ButtonTheme.CANCEL} onClick={cancelHandle}>
+              <Button
+                data-testid="RatingCard.Close"
+                theme={ButtonTheme.CANCEL}
+                onClick={cancelHandle}
+              >
                 {t('Close')}
               </Button>
-              <Button onClick={acceptHandle}>{t('Send')}</Button>
+              <Button data-testid="RatingCard.Send" onClick={acceptHandle}>
+                {t('Send')}
+              </Button>
             </HStack>
           </VStack>
         </Modal>
@@ -94,7 +104,12 @@ export const RatingCard = memo((props: RatingCardProps) => {
         <Drawer isOpen={isModalOpen} onClose={cancelHandle}>
           <VStack gap="32">
             {modalContent}
-            <Button fullWidth size={ButtonSize.L} onClick={acceptHandle}>
+            <Button
+              data-testid="RatingCard.Send"
+              fullWidth
+              size={ButtonSize.L}
+              onClick={acceptHandle}
+            >
               {t('Send')}
             </Button>
           </VStack>

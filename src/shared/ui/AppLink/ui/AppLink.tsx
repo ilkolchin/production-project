@@ -12,6 +12,7 @@ interface AppLinkProps extends LinkProps {
   className?: string;
   theme?: AppLinkTheme;
   children?: ReactNode;
+  testID?: string;
 }
 
 export const AppLink = memo((props: AppLinkProps) => {
@@ -19,6 +20,7 @@ export const AppLink = memo((props: AppLinkProps) => {
     className,
     children,
     to,
+    testID = 'AppLink',
     theme = AppLinkTheme.PRIMARY,
     ...otherProps
   } = props;
@@ -28,7 +30,7 @@ export const AppLink = memo((props: AppLinkProps) => {
       {...otherProps}
       to={to}
       className={classNames(cls.AppLink, {}, [className, cls[theme]])}
-      data-testid="AppLink"
+      data-testid={testID}
     >
       {children}
     </Link>

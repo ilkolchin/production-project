@@ -17,11 +17,11 @@ const comment: Comment[] = [
 describe('CommentList.test', () => {
   test('should render', () => {
     componentRender(<CommentList comments={comment} />);
-    expect(screen.getByTestId('CommentListItem')).toBeInTheDocument();
+    expect(screen.getByTestId('CommentList.Item')).toBeInTheDocument();
   });
 
   test('should render while loading', () => {
     componentRender(<CommentList isLoading={true} />);
-    expect(screen.getByTestId('CommentListLoading')).toBeInTheDocument();
+    expect(screen.getByTestId('CommentList.isLoading')).toBeInTheDocument();
   });
 });

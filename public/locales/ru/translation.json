@@ -65,5 +65,6 @@
   "Close": "Закрыть",
   "Error while profile loading": "Ошибка при загрузке профиля",
   "Back": "Назад",
-  "go back to main page": "Вернуться на главную страницу"
+  "go back to main page": "Вернуться на главную страницу",
+  "Error while loading page": "Произошла ошибка при загрузке статьи"
 }

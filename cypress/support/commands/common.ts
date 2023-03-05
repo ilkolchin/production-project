@@ -24,7 +24,7 @@ declare global {
   namespace Cypress {
     interface Chainable {
       login(username?: string, password?: string): Chainable<User>;
-      getByTestId(testId: string): ReturnType<typeof cy.get>;
+      getByTestId(testId: string): Chainable<JQuery<HTMLElement>>;
     }
   }
 }

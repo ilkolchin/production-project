@@ -26,7 +26,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
       >
         <HStack gap="8">
           <Skeleton
-            testID="CommentCardLoading"
+            testID="CommentCard.isLoading"
             width={42}
             height={42}
             border={'50%'}
@@ -44,7 +44,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
   return (
     <VStack
-      testID="CommentCardElement"
+      data-testid="CommentCard.Content"
       gap="16"
       align="stretch"
       className={classNames(cls.CommentCard, {}, [className])}

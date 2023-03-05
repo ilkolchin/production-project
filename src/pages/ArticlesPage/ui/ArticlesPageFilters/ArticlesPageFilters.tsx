@@ -102,6 +102,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         value={search}
         onChange={onChangeSearch}
         widthMax
+        data-testid="PageFiltersInput"
       />
       <HStack max justify="start">
         <ArticleTabTypes onChangeType={onChangeType} value={type} />

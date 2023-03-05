@@ -1,19 +1,22 @@
-import { ArticleCodeBlockComponent } from '../ArticleComponents/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
-import { ArticleImageBlockComponent } from '../ArticleComponents/ArticleImageBlockComponent/ArticleImageBlockComponent';
-import { ArticleTextBlockComponent } from '../ArticleComponents/ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { memo, useCallback, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import TimeIcon from '@/shared/assets/icons/time.svg';
 import { classNames } from '@/shared/lib/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList
+} from '@/shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Icon } from '@/shared/ui/Icon';
 import { Skeleton } from '@/shared/ui/Skeleton';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
 import { TextAlign, TextSize } from '@/shared/ui/Text/ui/Text';
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { ArticleBlockType } from '../../model/consts/articleConsts';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -22,8 +25,9 @@ import {
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { ArticleBlock } from '../../model/types/article';
-import { HStack, VStack } from '@/shared/ui/Stack';
-import { ArticleBlockType } from '../../model/consts/articleConsts';
+import { ArticleCodeBlockComponent } from '../ArticleComponents/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleComponents/ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleTextBlockComponent } from '../ArticleComponents/ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -57,11 +61,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     }
   }, []);
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticleById(id));
-    }
-  }, [dispatch, id]);
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(id));
+  });
 
   let content;
 
@@ -70,7 +72,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       <>
         <HStack max justify="center">
           <Skeleton width={200} height={200} border={'50%'} />
-          <div style={{ display: 'none' }} data-testid="ArticleDetailsComponent"></div>
         </HStack>
         <Skeleton width={300} height={24} />
         <Skeleton width={'100%'} height={24} />
@@ -79,15 +80,21 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       </>
     );
   } else if (error) {
-    content = <Text align={TextAlign.CENTER} title={t('Error while loading page')} />;
+    content = (
+      <Text align={TextAlign.CENTER} title={t('Error while loading page')} />
+    );
   } else {
     content = (
       <>
         <HStack max justify="center">
           <Avatar size={200} src={article?.img} />
         </HStack>
-        <Text title={article?.title} text={article?.subtitle} size={TextSize.L} />
-        <div>
+        <Text
+          title={article?.title}
+          text={article?.subtitle}
+          size={TextSize.L}
+        />
+        <div data-testid="ArticleDetails.Info">
           <HStack gap="8">
             <Icon Svg={EyeIcon} />
             <Text text={String(article?.views)} />
@@ -104,7 +111,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <VStack gap="32" align="stretch" className={classNames('', {}, [className])}>
+      <VStack
+        gap="32"
+        align="stretch"
+        className={classNames('', {}, [className])}
+      >
         {content}
       </VStack>
     </DynamicModuleLoader>

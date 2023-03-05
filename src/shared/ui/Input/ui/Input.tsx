@@ -46,7 +46,7 @@ export const Input = memo((props: InputProps) => {
   switch (placeholderType) {
     case PlaceholderType.OUTSIDE:
       return (
-        <div data-testid="CustomInput" className={classNames(cls.InputWrapper, mods, [className])}>
+        <div className={classNames(cls.InputWrapper, mods, [className])}>
           <span className={cls.placeholder}>{placeholder}</span>
           <input
             type={type}
@@ -58,11 +58,10 @@ export const Input = memo((props: InputProps) => {
           />
         </div>
       );
-      break;
 
     case PlaceholderType.INSIDE:
       return (
-        <div data-testid="CustomInput" className={classNames(cls.InputWrapper, mods, [className])}>
+        <div className={classNames(cls.InputWrapper, mods, [className])}>
           <input
             type={type}
             value={value}

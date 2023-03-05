@@ -15,11 +15,11 @@ const comment: Comment = {
 describe('CommentCard.test', () => {
   test('should render', () => {
     componentRender(<CommentCard comment={comment} />);
-    expect(screen.getByTestId('CommentCardElement')).toBeInTheDocument();
+    expect(screen.getByTestId('CommentCard.Content')).toBeInTheDocument();
   });
 
   test('should render while loading', () => {
     componentRender(<CommentCard comment={comment} isLoading={true} />);
-    expect(screen.getByTestId('CommentCardLoading')).toBeInTheDocument();
+    expect(screen.getByTestId('CommentCard.isLoading')).toBeInTheDocument();
   });
 });

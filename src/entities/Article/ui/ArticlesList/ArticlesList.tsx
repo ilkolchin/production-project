@@ -27,7 +27,14 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
   const { t } = useTranslation();
 
   const renderArticles = (article: Article) => {
-    return <ArticlesListItem target={target} view={view} article={article} key={article.id} />;
+    return (
+      <ArticlesListItem
+        target={target}
+        view={view}
+        article={article}
+        key={article.id}
+      />
+    );
   };
 
   if (!isLoading && !articles.length) {
@@ -39,7 +46,13 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
   }
 
   return (
-    <HStack gap="16" wrap max className={classNames('', {}, [className])}>
+    <HStack
+      data-testid="ArticlesList"
+      gap="16"
+      wrap
+      max
+      className={classNames('', {}, [className])}
+    >
       {articles.length > 0 ? articles.map(renderArticles) : null}
       {isLoading && getSkeletons(view)}
     </HStack>
