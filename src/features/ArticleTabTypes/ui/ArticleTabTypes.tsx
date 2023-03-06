@@ -18,16 +18,16 @@ export const ArticleTabTypes = memo((props: ArticleTabTypesProps) => {
       { content: t('All'), value: ArticleType.ALL },
       { content: t('ECONOMICS'), value: ArticleType.ECONOMICS },
       { content: t('IT'), value: ArticleType.IT },
-      { content: t('SCIENCE'), value: ArticleType.SCIENCE }
+      { content: t('SCIENCE'), value: ArticleType.SCIENCE },
     ],
-    [t]
+    [t],
   );
 
   const onTabClick = useCallback(
     (tab: TabItem) => {
       onChangeType(tab.value as ArticleType);
     },
-    [onChangeType]
+    [onChangeType],
   );
 
   return (

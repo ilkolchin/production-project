@@ -28,7 +28,7 @@ export function TestProvider(props: TestProviderProps) {
     route = '/',
     initialState,
     asyncReducers,
-    theme = Theme.DARK
+    theme = Theme.DARK,
   } = options;
 
   return (
@@ -49,7 +49,7 @@ export function TestProvider(props: TestProviderProps) {
 
 export function componentRender(
   component: ReactNode,
-  options: componentRenderOptions = {}
+  options: componentRenderOptions = {},
 ) {
   return render(<TestProvider options={options}>{component}</TestProvider>);
 }

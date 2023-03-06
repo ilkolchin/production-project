@@ -6,14 +6,14 @@ import svgr from 'vite-plugin-svgr';
 export default defineConfig({
   plugins: [svgr({ exportAsDefault: true }), react()],
   resolve: {
-    alias: [{ find: '@', replacement: '/src' }]
+    alias: [{ find: '@', replacement: '/src' }],
   },
   define: {
     __IS_DEV__: JSON.stringify(true),
     __API__: JSON.stringify('http://localhost:8000'),
-    __PROJECT__: JSON.stringify('frontend')
+    __PROJECT__: JSON.stringify('frontend'),
   },
   css: {
-    devSourcemap: true
-  }
+    devSourcemap: true,
+  },
 });

@@ -22,12 +22,12 @@ export const Modal = (props: ModalProps) => {
   const { close, isClosing, isMounted, isOpening } = useModal({
     animationDelay: ANIMATION_DELAY,
     onClose,
-    isOpen
+    isOpen,
   });
 
   const mods: Mods = {
     [cls.opened]: isOpening,
-    [cls.isClosing]: isClosing
+    [cls.isClosing]: isClosing,
   };
 
   if (lazy && !isMounted) {

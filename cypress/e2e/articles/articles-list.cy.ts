@@ -21,7 +21,7 @@ describe('Пользователь заходит на страницу со с�
     cy.getByTestId('ArticleTabTypes').contains('НАУКА').click();
     cy.get('[data-testid="ArticlesListItem"]', { timeout: 2000 }).should(
       'have.length',
-      1
+      1,
     );
   });
 
@@ -30,7 +30,7 @@ describe('Пользователь заходит на страницу со с�
     cy.getByTestId('PageFiltersInput').type('kotlin');
     cy.get('[data-testid="ArticlesListItem"]', { timeout: 2000 }).should(
       'have.length',
-      5
+      5,
     );
   });
 
@@ -39,7 +39,7 @@ describe('Пользователь заходит на страницу со с�
     cy.getByTestId('ArticleView.BIG').click();
     cy.get('[data-testid="ArticlesListItem.BIG"]', { timeout: 2000 }).should(
       'have.length.at.least',
-      5
+      5,
     );
   });
 });

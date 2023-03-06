@@ -3,7 +3,7 @@ import TimeIcon from '@/shared/assets/icons/time.svg';
 import { classNames } from '@/shared/lib/classNames';
 import {
   DynamicModuleLoader,
-  ReducersList
+  ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
@@ -20,7 +20,7 @@ import { ArticleBlockType } from '../../model/consts/articleConsts';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
-  getArticleDetailsIsLoading
+  getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
@@ -42,7 +42,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const article = useSelector(getArticleDetailsData);
 
   const reducers: ReducersList = {
-    articleDetails: articleDetailsReducer
+    articleDetails: articleDetailsReducer,
   };
 
   const renderBlock = useCallback((block: ArticleBlock) => {

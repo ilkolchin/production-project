@@ -3,7 +3,7 @@ import { memo, ReactNode, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames';
 import {
   AnimationProvider,
-  useAnimationLibs
+  useAnimationLibs,
 } from '@/shared/lib/components/AnimationProvider';
 import { Overlay } from '../../Overlay';
 import { Portal } from '../../Portal';
@@ -40,7 +40,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
       y: height,
       immediate: false,
       config: { ...Spring.config.stiff, velocity },
-      onResolve: onClose
+      onResolve: onClose,
     });
   };
 
@@ -50,7 +50,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
       velocity: [, vy],
       direction: [, dy],
       movement: [, my],
-      cancel
+      cancel,
     }) => {
       if (my < -70) cancel();
 
@@ -68,8 +68,8 @@ export const DrawerContent = memo((props: DrawerProps) => {
       from: () => [0, y.get()],
       filterTaps: true,
       bounds: { top: 0 },
-      rubberband: true
-    }
+      rubberband: true,
+    },
   );
 
   if (!isOpen) {

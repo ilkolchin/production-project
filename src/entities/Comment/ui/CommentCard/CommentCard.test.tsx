@@ -8,8 +8,8 @@ const comment: Comment = {
   text: '',
   user: {
     id: '1',
-    username: ''
-  }
+    username: '',
+  },
 };
 
 describe('CommentCard.test', () => {

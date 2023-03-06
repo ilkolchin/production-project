@@ -12,13 +12,13 @@ export function buildPlugins({
   paths,
   isDev,
   apiUrl,
-  project
+  project,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
   const isProd = !isDev;
 
   const plugins = [
     new HTMLWebpackPlugin({
-      template: paths.html
+      template: paths.html,
     }),
 
     new webpack.ProgressPlugin(),
@@ -26,31 +26,31 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiUrl),
-      __PROJECT__: JSON.stringify(project)
+      __PROJECT__: JSON.stringify(project),
     }),
 
     new CircularDependencyPlugin({
       exclude: /node_modules/,
-      failOnError: true
+      failOnError: true,
     }),
 
     new ForkTsCheckerWebpackPlugin({
       typescript: {
         diagnosticOptions: {
           semantic: true,
-          syntactic: true
+          syntactic: true,
         },
-        mode: 'write-references'
-      }
-    })
+        mode: 'write-references',
+      },
+    }),
   ];
 
   if (isDev) {
     plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
     plugins.push(
       new BundleAnalyzerPlugin({
-        openAnalyzer: false
-      })
+        openAnalyzer: false,
+      }),
     );
   }
 
@@ -58,13 +58,13 @@ export function buildPlugins({
     plugins.push(
       new MiniCssExtractPlugin({
         filename: 'css/[name].[contenthash:8].css',
-        chunkFilename: 'css/[name].[contenthash:8].css'
-      })
+        chunkFilename: 'css/[name].[contenthash:8].css',
+      }),
     );
     plugins.push(
       new CopyPlugin({
-        patterns: [{ from: paths.locales, to: paths.buildLocales }]
-      })
+        patterns: [{ from: paths.locales, to: paths.buildLocales }],
+      }),
     );
   }
 

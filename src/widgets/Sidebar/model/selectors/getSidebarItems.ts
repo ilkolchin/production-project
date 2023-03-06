@@ -7,7 +7,7 @@ import {
   getRouteAbout,
   getRouteArticles,
   getRouteMain,
-  getRouteProfile
+  getRouteProfile,
 } from '@/shared/const/router';
 import { createSelector } from '@reduxjs/toolkit';
 import { SidebarItemType } from '../types/sidebar';
@@ -17,13 +17,13 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
     {
       path: getRouteMain(),
       text: 'Main Page',
-      Icon: HomeIcon
+      Icon: HomeIcon,
     },
     {
       path: getRouteAbout(),
       text: 'About',
-      Icon: AboutIcon
-    }
+      Icon: AboutIcon,
+    },
   ];
 
   if (userData) {
@@ -32,14 +32,14 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
         path: getRouteProfile(userData.id),
         text: 'Profile',
         Icon: ProfileIcon,
-        authOnly: true
+        authOnly: true,
       },
       {
         path: getRouteArticles(),
         text: 'Articles',
         Icon: BookIcon,
-        authOnly: true
-      }
+        authOnly: true,
+      },
     );
   }
 

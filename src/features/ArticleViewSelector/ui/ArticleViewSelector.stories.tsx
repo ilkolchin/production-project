@@ -7,8 +7,8 @@ export default {
   title: 'entities/Article/ArticleViewSelector',
   component: ArticleViewSelector,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof ArticleViewSelector>;
 
 const Template: ComponentStory<typeof ArticleViewSelector> = (args) => (

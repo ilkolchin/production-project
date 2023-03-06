@@ -8,7 +8,7 @@ export const login = (username = 'testUser', password = '123') => {
     .request({
       method: 'POST',
       url: 'http://localhost:8000/login',
-      body: { username, password }
+      body: { username, password },
     })
     .then(({ body }) => {
       window.localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(body));

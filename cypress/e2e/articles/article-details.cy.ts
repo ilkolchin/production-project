@@ -19,7 +19,7 @@ describe('Пользователь заходит на страницу стат
 
   it('И видит список рекомендаций', () => {
     cy.getByTestId('ArticleRecommendationsList').scrollIntoView({
-      duration: 1000
+      duration: 1000,
     });
     cy.getByTestId('ArticleRecommendationsList').should('exist');
   });

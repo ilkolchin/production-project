@@ -12,26 +12,26 @@ const justifyClasses: Record<FlexJustify, string> = {
   start: cls.justifyStart,
   end: cls.justifyEnd,
   center: cls.justifyCenter,
-  between: cls.justifyBetween
+  between: cls.justifyBetween,
 };
 
 const alignClasses: Record<FlexAlign, string> = {
   start: cls.alignStart,
   center: cls.alignCenter,
   end: cls.alignEnd,
-  stretch: cls.alignStretch
+  stretch: cls.alignStretch,
 };
 
 const directionClasses: Record<FlexDirection, string> = {
   row: cls.directionRow,
-  column: cls.directionColumn
+  column: cls.directionColumn,
 };
 
 const gapClasses: Record<FlexGap, string> = {
   '4': cls.gap4,
   '8': cls.gap8,
   '16': cls.gap16,
-  '32': cls.gap32
+  '32': cls.gap32,
 };
 
 type DivProps = DetailedHTMLProps<
@@ -69,14 +69,14 @@ export const Flex = (props: FlexProps) => {
     justifyClasses[justify],
     alignClasses[align],
     directionClasses[direction],
-    gap && gapClasses[gap]
+    gap && gapClasses[gap],
   ];
 
   const FlexTag = tag;
 
   const mods: Mods = {
     [cls.max]: max,
-    [cls.wrap]: wrap
+    [cls.wrap]: wrap,
   };
 
   return (

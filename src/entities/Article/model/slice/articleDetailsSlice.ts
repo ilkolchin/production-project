@@ -6,7 +6,7 @@ import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 const initialState: ArticleDetailsSchema = {
   isLoading: false,
   data: undefined,
-  error: undefined
+  error: undefined,
 };
 
 export const articleDetailsSlice = createSlice({
@@ -24,13 +24,13 @@ export const articleDetailsSlice = createSlice({
         (state, action: PayloadAction<Article>) => {
           state.isLoading = false;
           state.data = action.payload;
-        }
+        },
       )
       .addCase(fetchArticleById.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       });
-  }
+  },
 });
 
 // Action creators are generated for each case reducer function

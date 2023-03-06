@@ -17,13 +17,13 @@ const viewTypes = [
   {
     view: ArticleView.BIG,
     icon: BigViewIcon,
-    testID: 'ArticleView.BIG'
+    testID: 'ArticleView.BIG',
   },
   {
     view: ArticleView.SMALL,
     icon: SmallViewIcon,
-    testID: 'ArticleView.SMALL'
-  }
+    testID: 'ArticleView.SMALL',
+  },
 ];
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
@@ -49,7 +49,7 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
             Svg={viewType.icon}
             size={IconSize.L}
             className={classNames('', {
-              [cls.Selected]: viewType.view === view
+              [cls.Selected]: viewType.view === view,
             })}
           />
         </Button>

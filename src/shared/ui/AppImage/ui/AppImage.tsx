@@ -3,7 +3,7 @@ import {
   memo,
   ReactElement,
   useLayoutEffect,
-  useState
+  useState,
 } from 'react';
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {

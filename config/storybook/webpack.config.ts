@@ -11,7 +11,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
     html: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
     locales: '',
-    buildLocales: ''
+    buildLocales: '',
   };
 
   config!.resolve!.modules! = [paths.src, 'node_modules'];
@@ -31,13 +31,13 @@ export default ({ config }: { config: webpack.Configuration }) => {
     test: /\.(png|jpe?g|gif)$/i,
     loader: 'file-loader',
     options: {
-      name: '[path][name].[ext]'
-    }
+      name: '[path][name].[ext]',
+    },
   });
 
   config!.module!.rules.push({
     test: /\.svg$/,
-    use: ['@svgr/webpack']
+    use: ['@svgr/webpack'],
   });
 
   config!.module!.rules.push(buildCssLoader(true));
@@ -46,8 +46,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(true),
       __API__: JSON.stringify('https://testapi.ru'),
-      __PROJECT__: JSON.stringify('storybook')
-    })
+      __PROJECT__: JSON.stringify('storybook'),
+    }),
   );
 
   return config;

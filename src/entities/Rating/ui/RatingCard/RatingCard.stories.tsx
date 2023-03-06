@@ -7,8 +7,8 @@ export default {
   title: 'entities/Rating/RatingCard',
   component: RatingCard,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof RatingCard>;
 
 const Template: ComponentStory<typeof RatingCard> = (args) => (

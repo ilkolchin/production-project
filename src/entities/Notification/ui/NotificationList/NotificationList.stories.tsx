@@ -8,7 +8,7 @@ export default {
   title: 'entities/Notification/NotificationList',
   component: NotificationList,
   argTypes: {
-    backgroundColor: { control: 'color' }
+    backgroundColor: { control: 'color' },
   },
   decorators: [StoreDecorator({})],
   parameters: {
@@ -21,22 +21,22 @@ export default {
           {
             id: '1',
             title: 'Title 1',
-            description: 'Description'
+            description: 'Description',
           },
           {
             id: '2',
             title: 'Title 2',
-            description: 'Description'
+            description: 'Description',
           },
           {
             id: '3',
             title: 'Title 3',
-            description: 'Description'
-          }
-        ]
-      }
-    ]
-  }
+            description: 'Description',
+          },
+        ],
+      },
+    ],
+  },
 } as ComponentMeta<typeof NotificationList>;
 
 const Template: ComponentStory<typeof NotificationList> = (args) => (

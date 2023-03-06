@@ -8,7 +8,7 @@ describe('Text', () => {
 
     expect(screen.getByTestId('TextComponent')).toBeInTheDocument();
     expect(screen.getByTestId('TextComponent')).toHaveClass(
-      'default size_M left'
+      'default size_M left',
     );
   });
 
@@ -17,7 +17,7 @@ describe('Text', () => {
 
     expect(screen.getByTestId('TextComponent')).toBeInTheDocument();
     expect(screen.getByTestId('TextComponent')).toHaveClass(
-      'error size_M left'
+      'error size_M left',
     );
   });
 
@@ -26,7 +26,7 @@ describe('Text', () => {
 
     expect(screen.getByTestId('TextComponent')).toBeInTheDocument();
     expect(screen.getByTestId('TextComponent')).toHaveClass(
-      'default size_M center'
+      'default size_M center',
     );
   });
 
@@ -35,7 +35,7 @@ describe('Text', () => {
 
     expect(screen.getByTestId('TextComponent')).toBeInTheDocument();
     expect(screen.getByTestId('TextComponent')).toHaveClass(
-      'default size_L left'
+      'default size_L left',
     );
   });
 });

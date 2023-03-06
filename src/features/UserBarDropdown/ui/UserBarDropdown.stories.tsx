@@ -9,8 +9,8 @@ export default {
   title: 'widgets/UserBarDropdown',
   component: UserBarDropdown,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof UserBarDropdown>;
 
 const Template: ComponentStory<typeof UserBarDropdown> = (args) => (

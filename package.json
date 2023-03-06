@@ -13,6 +13,7 @@
     "lint:ts:fix": "npx eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
+    "prettier": "npx prettier --write *",
     "jest:init": "jest --init",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:unit:coverage": "jest --config ./config/jest/jest.config.ts --coverage",
@@ -28,7 +29,10 @@
     "postinstall": "rm -rf ./node_modules/.cache"
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": "eslint",
+    "**/*.{ts,tsx}": [
+      "prettier --list-different",
+      "eslint"
+    ],
     "**/*.scss": "stylelint"
   },
   "keywords": [],

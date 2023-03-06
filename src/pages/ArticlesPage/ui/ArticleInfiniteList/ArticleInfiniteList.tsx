@@ -9,7 +9,7 @@ import { ErrorReload } from '@/widgets/ErrorReload';
 import {
   getArticlesPageError,
   getArticlesPageIsLoading,
-  getArticlesPageView
+  getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { getArticles } from '../../model/slices/articlesPageSlice';

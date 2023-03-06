@@ -11,7 +11,7 @@ describe('EditableProfileCard.cy.tsx', () => {
         options={{ initialState: { user: { authData: { id: USER_ID } } } }}
       >
         <EditableProfileCard id={USER_ID} />
-      </TestProvider>
+      </TestProvider>,
     );
     cy.getByTestId('EditableProfileCardHeader.EditButton').click();
     cy.getByTestId('ProfileCard.FirstName').clear();

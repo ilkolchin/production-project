@@ -17,14 +17,14 @@ const article = {
       id: '1',
       type: ArticleBlockType.TEXT,
       title: 'Заголовок этого блока',
-      paragraphs: []
+      paragraphs: [],
     },
     {
       id: '4',
       type: ArticleBlockType.CODE,
-      code: ''
-    }
-  ]
+      code: '',
+    },
+  ],
 };
 
 describe('fetchArticleById.test', () => {

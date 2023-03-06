@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames';
 import {
   DynamicModuleLoader,
-  ReducersList
+  ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader';
 import { Button } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
@@ -11,11 +11,11 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   useAddNewCommentError,
-  useAddNewCommentText
+  useAddNewCommentText,
 } from '../../model/selectors/addNewCommentSelectors';
 import {
   addNewCommentReducer,
-  useAddNewCommentActions
+  useAddNewCommentActions,
 } from '../../model/slice/addNewCommentSlice';
 import cls from './AddNewComment.module.scss';
 
@@ -25,7 +25,7 @@ export interface AddNewCommentProps {
 }
 
 const reducers: ReducersList = {
-  addNewComment: addNewCommentReducer
+  addNewComment: addNewCommentReducer,
 };
 
 const AddNewComment = memo((props: AddNewCommentProps) => {
@@ -40,7 +40,7 @@ const AddNewComment = memo((props: AddNewCommentProps) => {
     (value: string) => {
       setText(value);
     },
-    [setText]
+    [setText],
   );
 
   const onSendHandler = useCallback(() => {

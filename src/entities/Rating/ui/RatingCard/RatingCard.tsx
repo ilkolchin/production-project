@@ -28,7 +28,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
     onAccept,
     onCancel,
     title,
-    rate = 0
+    rate = 0,
   } = props;
   const { t } = useTranslation();
 
@@ -45,7 +45,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
         onAccept?.(selectedStarsCount);
       }
     },
-    [hasFeedback, onAccept]
+    [hasFeedback, onAccept],
   );
 
   const acceptHandle = useCallback(() => {

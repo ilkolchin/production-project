@@ -11,12 +11,12 @@ export default {
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg$': '<rootDir>/config/jest/jestEmptyComponent.tsx',
-    '^@/(.*)$': '<rootDir>/src/$1'
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
   globals: {
     __IS_DEV__: true,
     __API__: '',
-    __PROJECT__: 'jest'
+    __PROJECT__: 'jest',
   },
   reporters: [
     'default',
@@ -27,10 +27,10 @@ export default {
         filename: 'report.html',
         // openReport: true,
         inlineSource: true,
-        darkTheme: true
-      }
-    ]
-  ]
+        darkTheme: true,
+      },
+    ],
+  ],
 };
 
 // Indicates whether the coverage information should be collected while executing the test

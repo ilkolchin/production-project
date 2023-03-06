@@ -8,8 +8,8 @@ export default {
   title: 'entities/Comment/CommentCard',
   component: CommentCard,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof CommentCard>;
 
 const Template: ComponentStory<typeof CommentCard> = (args) => (
@@ -21,8 +21,8 @@ Light.args = {
   comment: {
     id: '1',
     user: { id: '1', username: 'Waze', avatar: Avatar },
-    text: 'Comment'
-  }
+    text: 'Comment',
+  },
 };
 Light.decorators = [];
 
@@ -31,8 +31,8 @@ Dark.args = {
   comment: {
     id: '1',
     user: { id: '1', username: 'Waze', avatar: Avatar },
-    text: 'Comment'
-  }
+    text: 'Comment',
+  },
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
@@ -41,8 +41,8 @@ IsLoading.args = {
   comment: {
     id: '1',
     user: { id: '1', username: 'Waze', avatar: Avatar },
-    text: 'Comment'
+    text: 'Comment',
   },
-  isLoading: true
+  isLoading: true,
 };
 IsLoading.decorators = [];

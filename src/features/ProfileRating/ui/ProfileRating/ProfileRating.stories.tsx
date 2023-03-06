@@ -8,7 +8,7 @@ export default {
   title: 'features/ProfileRating',
   component: ProfileRating,
   argTypes: {
-    backgroundColor: { control: 'color' }
+    backgroundColor: { control: 'color' },
   },
   decorators: [StoreDecorator({})],
   parameters: {
@@ -17,10 +17,10 @@ export default {
         url: __API__ + '/profile-ratings?userId=1&profileId=1',
         method: 'GET',
         status: 200,
-        response: []
-      }
-    ]
-  }
+        response: [],
+      },
+    ],
+  },
 } as ComponentMeta<typeof ProfileRating>;
 
 const Template: ComponentStory<typeof ProfileRating> = (args) => (
@@ -47,7 +47,7 @@ WithRate.parameters = {
       url: __API__ + '/profile-ratings?userId=1&profileId=1',
       method: 'GET',
       status: 200,
-      response: [{ rate: 4 }]
-    }
-  ]
+      response: [{ rate: 4 }],
+    },
+  ],
 };

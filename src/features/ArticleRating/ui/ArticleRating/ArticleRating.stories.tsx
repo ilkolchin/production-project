@@ -8,7 +8,7 @@ export default {
   title: 'features/ArticleRating',
   component: ArticleRating,
   argTypes: {
-    backgroundColor: { control: 'color' }
+    backgroundColor: { control: 'color' },
   },
   decorators: [StoreDecorator({})],
   parameters: {
@@ -17,10 +17,10 @@ export default {
         url: __API__ + '/article-ratings?userId=&articleId=',
         method: 'GET',
         status: 200,
-        response: []
-      }
-    ]
-  }
+        response: [],
+      },
+    ],
+  },
 } as ComponentMeta<typeof ArticleRating>;
 
 const Template: ComponentStory<typeof ArticleRating> = (args) => (
@@ -47,7 +47,7 @@ WithRate.parameters = {
       url: __API__ + '/article-ratings?userId=&articleId=',
       method: 'GET',
       status: 200,
-      response: [{ rate: 4 }]
-    }
-  ]
+      response: [{ rate: 4 }],
+    },
+  ],
 };

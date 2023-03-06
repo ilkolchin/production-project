@@ -1,7 +1,7 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 import {
   getScrollSavingByPath,
-  scrollSavingActions
+  scrollSavingActions,
 } from '@/features/ScrollSaving';
 import { memo, MutableRefObject, ReactNode, useRef, UIEvent } from 'react';
 import { useSelector } from 'react-redux';
@@ -30,11 +30,11 @@ export const Page = memo((props: PageProps) => {
   useInfiniteScroll({
     wrapperRef,
     triggerRef,
-    callback: onScrollEnd
+    callback: onScrollEnd,
   });
 
   const scrollPosition = useSelector((state: StateSchema) =>
-    getScrollSavingByPath(state, pathname)
+    getScrollSavingByPath(state, pathname),
   );
 
   useInitialEffect(() => {
@@ -45,8 +45,8 @@ export const Page = memo((props: PageProps) => {
     dispatch(
       scrollSavingActions.setScrollPosition({
         position: e.currentTarget.scrollTop,
-        path: pathname
-      })
+        path: pathname,
+      }),
     );
   }, 500);
 

@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
   useGetProfileRating,
-  useRateProfile
+  useRateProfile,
 } from '../../api/profileRatingApi';
 
 export interface ProfileRatingProps {
@@ -23,7 +23,7 @@ export const ProfileRating = memo((props: ProfileRatingProps) => {
 
   const { data, isLoading } = useGetProfileRating({
     profileId,
-    userId: userData?.id ?? ''
+    userId: userData?.id ?? '',
   });
   const rating = data?.[0];
 
@@ -34,27 +34,27 @@ export const ProfileRating = memo((props: ProfileRatingProps) => {
           profileId,
           userId: userData?.id ?? '',
           rate: starsCount,
-          feedback
+          feedback,
         });
       } catch (e) {
         console.log(e);
       }
     },
-    [profileId, profileMutation, userData?.id]
+    [profileId, profileMutation, userData?.id],
   );
 
   const onCancel = useCallback(
     (starsCount: number) => {
       handleRateProfile(starsCount);
     },
-    [handleRateProfile]
+    [handleRateProfile],
   );
 
   const onAccept = useCallback(
     (starsCount: number, feedback?: string) => {
       handleRateProfile(starsCount, feedback);
     },
-    [handleRateProfile]
+    [handleRateProfile],
   );
 
   if (isLoading) {

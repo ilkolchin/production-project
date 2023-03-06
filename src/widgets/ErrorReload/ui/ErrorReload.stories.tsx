@@ -7,8 +7,8 @@ export default {
   title: 'widgets/ErrorReload',
   component: ErrorReload,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof ErrorReload>;
 
 const Template: ComponentStory<typeof ErrorReload> = (args) => (

@@ -6,16 +6,16 @@ describe('getUserAuthData.test', () => {
   test('should return data', () => {
     const data: User = {
       id: '',
-      username: ''
+      username: '',
     };
     const state: DeepPartial<StateSchema> = {
-      user: { authData: data }
+      user: { authData: data },
     };
     expect(getUserAuthData(state as StateSchema)).toEqual(data);
   });
   test('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {
-      user: {}
+      user: {},
     };
     expect(getUserAuthData(state as StateSchema)).toEqual(undefined);
   });

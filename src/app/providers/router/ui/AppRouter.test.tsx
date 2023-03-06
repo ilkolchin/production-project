@@ -3,7 +3,7 @@ import { componentRender } from '@/shared/config/tests/componentRender';
 import {
   getRouteAbout,
   getRouteAdminPanel,
-  getRouteProfile
+  getRouteProfile,
 } from '@/shared/const/router';
 import { screen } from '@testing-library/react';
 import AppRouter from './AppRouter';
@@ -11,7 +11,7 @@ import AppRouter from './AppRouter';
 describe('AppRouter', () => {
   test('should render', async () => {
     componentRender(<AppRouter />, {
-      route: getRouteAbout()
+      route: getRouteAbout(),
     });
 
     const page = await screen.findByTestId('AboutPage');
@@ -21,7 +21,7 @@ describe('AppRouter', () => {
   test('should redirect to MainPage', async () => {
     componentRender(<AppRouter />, {
       route: getRouteProfile('1'),
-      initialState: { user: { _inited: true, authData: undefined } }
+      initialState: { user: { _inited: true, authData: undefined } },
     });
 
     const page = await screen.findByTestId('MainPage');
@@ -31,7 +31,7 @@ describe('AppRouter', () => {
   test('should render ProfilePage', async () => {
     componentRender(<AppRouter />, {
       route: getRouteProfile('1'),
-      initialState: { user: { _inited: true, authData: {} } }
+      initialState: { user: { _inited: true, authData: {} } },
     });
 
     const page = await screen.findByTestId('ProfilePage');
@@ -41,7 +41,7 @@ describe('AppRouter', () => {
   test('should redirect to ForbiddenPage', async () => {
     componentRender(<AppRouter />, {
       route: getRouteAdminPanel(),
-      initialState: { user: { _inited: true, authData: {} } }
+      initialState: { user: { _inited: true, authData: {} } },
     });
 
     const page = await screen.findByTestId('ForbiddenPage');
@@ -52,8 +52,8 @@ describe('AppRouter', () => {
     componentRender(<AppRouter />, {
       route: getRouteAdminPanel(),
       initialState: {
-        user: { _inited: true, authData: { roles: [UserRole.ADMIN] } }
-      }
+        user: { _inited: true, authData: { roles: [UserRole.ADMIN] } },
+      },
     });
 
     const page = await screen.findByTestId('AdminPanelPage');
@@ -64,8 +64,8 @@ describe('AppRouter', () => {
     componentRender(<AppRouter />, {
       route: getRouteAdminPanel(),
       initialState: {
-        user: { _inited: true, authData: { roles: [UserRole.MANAGER] } }
-      }
+        user: { _inited: true, authData: { roles: [UserRole.MANAGER] } },
+      },
     });
 
     const page = await screen.findByTestId('AdminPanelPage');
@@ -74,7 +74,7 @@ describe('AppRouter', () => {
 
   test('should return to NotFoundPage', async () => {
     componentRender(<AppRouter />, {
-      route: '/invalidRoute123214'
+      route: '/invalidRoute123214',
     });
 
     const page = await screen.findByTestId('NotFoundPage');

@@ -8,8 +8,8 @@ export default {
   title: 'entities/Notification/NotificationItem',
   component: NotificationItem,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof NotificationItem>;
 
 const Template: ComponentStory<typeof NotificationItem> = (args) => (
@@ -20,7 +20,7 @@ const data: Notification = {
   id: '1',
   title: 'Title',
   description: 'Description',
-  userId: '1'
+  userId: '1',
 };
 
 export const Light = Template.bind({});

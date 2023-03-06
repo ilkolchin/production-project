@@ -35,7 +35,11 @@ export function Dropdown(props: DropdownProps) {
           const content = ({ active }: { active: boolean }) => (
             <button
               onClick={item.onClick}
-              className={classNames(cls.item, { [popupCls.active]: active }, [])}
+              className={classNames(
+                cls.item,
+                { [popupCls.active]: active },
+                [],
+              )}
               disabled={item.disabled}
             >
               {item.content}
@@ -44,7 +48,12 @@ export function Dropdown(props: DropdownProps) {
 
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled} key={index}>
+              <Menu.Item
+                as={AppLink}
+                to={item.href}
+                disabled={item.disabled}
+                key={index}
+              >
                 {content}
               </Menu.Item>
             );

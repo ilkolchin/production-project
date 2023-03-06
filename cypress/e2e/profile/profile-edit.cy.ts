@@ -18,7 +18,7 @@ describe('Пользователь заходит на страницу проф
     cy.get(selectByTestId('ProfilePage')).should('exist');
     cy.get(selectByTestId('ProfileCard.FirstName')).should(
       'have.value',
-      'testUser'
+      'testUser',
     );
   });
 

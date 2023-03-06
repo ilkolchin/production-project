@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames';
 import {
   DynamicModuleLoader,
-  ReducersList
+  ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
@@ -29,7 +29,7 @@ interface EditableProfileCardProps {
 }
 
 const reducers: ReducersList = {
-  profile: profileReducer
+  profile: profileReducer,
 };
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
@@ -48,9 +48,9 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     [ValidateProfileError.INCORRECT_AGE]: t('Please add your age'),
     [ValidateProfileError.INCORRECT_CITY]: t('Please add your city'),
     [ValidateProfileError.INCORRECT_USER_DATA]: t(
-      'Please add your name and surname'
+      'Please add your name and surname',
     ),
-    [ValidateProfileError.NO_DATA]: t('Empty spaces')
+    [ValidateProfileError.NO_DATA]: t('Empty spaces'),
   };
 
   useInitialEffect(() => {
@@ -63,56 +63,56 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     (value?: string) => {
       dispatch(profileActions.updateProfile({ first: value || '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeLastName = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ lastname: value || '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeAge = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeCity = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ city: value || '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeUsername = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ username: value || '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeAvatar = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ avatar: value || '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeCurrency = useCallback(
     (currency: Currency) => {
       dispatch(profileActions.updateProfile({ currency }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeCountry = useCallback(
     (country: Country) => {
       dispatch(profileActions.updateProfile({ country }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   return (

@@ -5,19 +5,19 @@ import cls from './Text.module.scss';
 export enum TextTheme {
   DEFAULT = 'default',
   ERROR = 'error',
-  INVERTED = 'inverted'
+  INVERTED = 'inverted',
 }
 
 export enum TextAlign {
   LEFT = 'left',
   RIGHT = 'right',
-  CENTER = 'center'
+  CENTER = 'center',
 }
 
 export enum TextSize {
   S = 'size_S',
   M = 'size_M',
-  L = 'size_L'
+  L = 'size_L',
 }
 
 interface TextProps {
@@ -36,7 +36,7 @@ type HeaderTagType = 'h1' | 'h2' | 'h3';
 const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
   [TextSize.L]: 'h1',
   [TextSize.M]: 'h2',
-  [TextSize.S]: 'h3'
+  [TextSize.S]: 'h3',
 };
 
 export const Text = memo((props: TextProps) => {
@@ -47,7 +47,7 @@ export const Text = memo((props: TextProps) => {
     size = TextSize.M,
     title,
     text,
-    'data-testid': dataTestId = 'Text'
+    'data-testid': dataTestId = 'Text',
   } = props;
 
   const HeaderTag = mapSizeToHeaderTag[size];
@@ -55,11 +55,14 @@ export const Text = memo((props: TextProps) => {
   const mods: Mods = {
     [cls[theme]]: true,
     [cls[align]]: true,
-    [cls[size]]: true
+    [cls[size]]: true,
   };
 
   return (
-    <div data-testid="TextComponent" className={classNames(cls.text, mods, [className])}>
+    <div
+      data-testid="TextComponent"
+      className={classNames(cls.text, mods, [className])}
+    >
       {title && (
         <HeaderTag data-testid={`${dataTestId}.Header`} className={cls.title}>
           {title}

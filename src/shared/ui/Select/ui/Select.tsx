@@ -29,13 +29,18 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
           {opt.content}
         </option>
       )),
-    [options]
+    [options],
   );
 
   return (
     <div className={classNames(cls.SelectWrapper, {}, [className])}>
       {label && <span className={cls.label}>{label}</span>}
-      <select disabled={readonly} className={cls.select} value={value} onChange={onChangeHandler}>
+      <select
+        disabled={readonly}
+        className={cls.select}
+        value={value}
+        onChange={onChangeHandler}
+      >
         {optionsList}
       </select>
     </div>

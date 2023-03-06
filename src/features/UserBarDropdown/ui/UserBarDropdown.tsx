@@ -34,11 +34,11 @@ export const UserBarDropdown = memo(({ user }: UserBarDropdownProps) => {
       {
         content: t('Profile'),
         href: getRouteProfile(user.id),
-        key: '2'
+        key: '2',
       },
-      { content: t('Log Out'), onClick: onLogOut, key: '3' }
+      { content: t('Log Out'), onClick: onLogOut, key: '3' },
     ],
-    [isAdminPanelAvailable, onLogOut, t, user.id]
+    [isAdminPanelAvailable, onLogOut, t, user.id],
   );
 
   return (

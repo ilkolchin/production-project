@@ -5,11 +5,11 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     'storybook-addon-mock',
-    'storybook-addon-themes'
+    'storybook-addon-themes',
   ],
   framework: '@storybook/react',
   core: {
-    builder: '@storybook/builder-webpack5'
+    builder: '@storybook/builder-webpack5',
   },
-  staticDirs: ['../../public']
+  staticDirs: ['../../public'],
 };

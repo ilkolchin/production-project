@@ -7,15 +7,15 @@ export default {
   title: 'shared/ListBox',
   component: ListBox,
   argTypes: {
-    backgroundColor: { control: 'color' }
+    backgroundColor: { control: 'color' },
   },
   decorators: [
     (Story) => (
       <div style={{ padding: '100px' }}>
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 } as ComponentMeta<typeof ListBox>;
 
 const Template: ComponentStory<typeof ListBox> = (args) => (
@@ -28,17 +28,17 @@ Light.args = {
   items: [
     {
       content: 'First',
-      value: '1th'
+      value: '1th',
     },
     {
       content: 'Second',
-      value: '2nd'
+      value: '2nd',
     },
     {
       content: 'Third',
-      value: '3rd'
-    }
-  ]
+      value: '3rd',
+    },
+  ],
 };
 Light.decorators = [];
 
@@ -48,17 +48,17 @@ Dark.args = {
   items: [
     {
       content: 'First',
-      value: '1th'
+      value: '1th',
     },
     {
       content: 'Second',
-      value: '2nd'
+      value: '2nd',
     },
     {
       content: 'Third',
-      value: '3rd'
-    }
-  ]
+      value: '3rd',
+    },
+  ],
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
@@ -68,17 +68,17 @@ Orange.args = {
   items: [
     {
       content: 'First',
-      value: '1th'
+      value: '1th',
     },
     {
       content: 'Second',
-      value: '2nd'
+      value: '2nd',
     },
     {
       content: 'Third',
-      value: '3rd'
-    }
-  ]
+      value: '3rd',
+    },
+  ],
 };
 Orange.decorators = [ThemeDecorator(Theme.ORANGE)];
 
@@ -89,17 +89,17 @@ TopLeft.args = {
   items: [
     {
       content: 'First',
-      value: '1th'
+      value: '1th',
     },
     {
       content: 'Second',
-      value: '2nd'
+      value: '2nd',
     },
     {
       content: 'Third',
-      value: '3rd'
-    }
-  ]
+      value: '3rd',
+    },
+  ],
 };
 TopLeft.decorators = [];
 
@@ -110,17 +110,17 @@ BottomLeft.args = {
   items: [
     {
       content: 'First',
-      value: '1th'
+      value: '1th',
     },
     {
       content: 'Second',
-      value: '2nd'
+      value: '2nd',
     },
     {
       content: 'Third',
-      value: '3rd'
-    }
-  ]
+      value: '3rd',
+    },
+  ],
 };
 BottomLeft.decorators = [];
 
@@ -131,17 +131,17 @@ TopRight.args = {
   items: [
     {
       content: 'First',
-      value: '1th'
+      value: '1th',
     },
     {
       content: 'Second',
-      value: '2nd'
+      value: '2nd',
     },
     {
       content: 'Third',
-      value: '3rd'
-    }
-  ]
+      value: '3rd',
+    },
+  ],
 };
 TopRight.decorators = [];
 
@@ -152,16 +152,16 @@ BottomRight.args = {
   items: [
     {
       content: 'First',
-      value: '1th'
+      value: '1th',
     },
     {
       content: 'Second',
-      value: '2nd'
+      value: '2nd',
     },
     {
       content: 'Third',
-      value: '3rd'
-    }
-  ]
+      value: '3rd',
+    },
+  ],
 };
 BottomRight.decorators = [];

@@ -34,7 +34,7 @@ export function ListBox(props: ListBoxProps) {
     onChange,
     readonly,
     direction = 'top right',
-    label
+    label,
   } = props;
 
   const optionsClasses = [mapDirectionClass[direction]];
@@ -54,7 +54,9 @@ export function ListBox(props: ListBoxProps) {
             {value ?? defaultValue}
           </Button>
         </HListBox.Button>
-        <HListBox.Options className={classNames(cls.options, {}, optionsClasses)}>
+        <HListBox.Options
+          className={classNames(cls.options, {}, optionsClasses)}
+        >
           {items?.map((item) => (
             <HListBox.Option
               key={item.value}
@@ -67,7 +69,7 @@ export function ListBox(props: ListBoxProps) {
                   className={classNames(cls.item, {
                     [popupCls.active]: active,
                     [popupCls.disabled]: item.disabled,
-                    [popupCls.selected]: selected
+                    [popupCls.selected]: selected,
                   })}
                 >
                   {item.content}

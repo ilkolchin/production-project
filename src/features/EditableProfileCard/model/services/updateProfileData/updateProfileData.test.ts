@@ -14,15 +14,15 @@ const data = {
   age: 22,
   country: Country.Russia,
   city: 'Saint-Petersburg',
-  currency: Currency.RUB
+  currency: Currency.RUB,
 };
 
 describe('updateProfileData.test', () => {
   test('should success', async () => {
     const thunk = new TestAsyncThunk(updateProfileData, {
       profile: {
-        form: data
-      }
+        form: data,
+      },
     });
 
     thunk.api.put.mockReturnValue(Promise.resolve({ data }));
@@ -36,8 +36,8 @@ describe('updateProfileData.test', () => {
   test('should return server error', async () => {
     const thunk = new TestAsyncThunk(updateProfileData, {
       profile: {
-        form: data
-      }
+        form: data,
+      },
     });
     thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
     const result = await thunk.callThunk();
@@ -49,8 +49,8 @@ describe('updateProfileData.test', () => {
   test('should return validate error', async () => {
     const thunk = new TestAsyncThunk(updateProfileData, {
       profile: {
-        form: { ...data, lastname: '' }
-      }
+        form: { ...data, lastname: '' },
+      },
     });
     const result = await thunk.callThunk();
 

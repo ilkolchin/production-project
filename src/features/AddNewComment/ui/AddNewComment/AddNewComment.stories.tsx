@@ -9,8 +9,8 @@ export default {
   title: 'features/AddNewComment',
   component: AddNewComment,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof AddNewComment>;
 
 const Template: ComponentStory<typeof AddNewComment> = (args) => (

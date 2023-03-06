@@ -2,7 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true
+    node: true,
   },
   extends: [
     'eslint:recommended',
@@ -10,21 +10,21 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/jsx-runtime',
     'plugin:i18next/recommended',
+    'plugin:storybook/recommended',
     'prettier',
-    'plugin:storybook/recommended'
   ],
   overrides: [
     {
       files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
       rules: {
-        'i18next/no-literal-string': 'off'
-      }
-    }
+        'i18next/no-literal-string': 'off',
+      },
+    },
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: [
     'react',
@@ -32,9 +32,10 @@ module.exports = {
     'i18next',
     'react-hooks',
     'prettier',
-    'fsd-stable'
+    'fsd-stable',
   ],
   rules: {
+    'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
     'i18next/no-literal-string': [
@@ -56,9 +57,9 @@ module.exports = {
           'tag',
           'as',
           'border',
-          'testid'
-        ]
-      }
+          'testid',
+        ],
+      },
     ],
     'react-hooks/rules-of-hooks': 'error',
     // Checks rules of Hooks
@@ -70,8 +71,8 @@ module.exports = {
     'fsd-stable/fsd-paths-checker': [
       'error',
       {
-        alias: '@'
-      }
+        alias: '@',
+      },
     ],
     'fsd-stable/public-api-imports-only': [
       'error',
@@ -80,21 +81,21 @@ module.exports = {
         testFilesPatterns: [
           '**/*.test.ts',
           '**/*.test.ts',
-          '**/StoreDecorator.tsx'
-        ]
-      }
+          '**/StoreDecorator.tsx',
+        ],
+      },
     ],
     'fsd-stable/fsd-layer-imports': [
       'error',
       {
         alias: '@',
-        ignoreImportPatterns: ['**/StoreProvider', '**/testing']
-      }
-    ]
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ],
   },
   settings: {
     react: {
-      version: 'detect'
-    }
-  }
+      version: 'detect',
+    },
+  },
 };

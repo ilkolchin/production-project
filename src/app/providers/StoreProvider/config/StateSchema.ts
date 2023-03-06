@@ -3,7 +3,7 @@ import {
   CombinedState,
   EnhancedStore,
   Reducer,
-  ReducersMapObject
+  ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsSchema } from '@/entities/Article';

@@ -8,8 +8,8 @@ export default {
   title: 'entities/Comment/CommentList',
   component: CommentList,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof CommentList>;
 
 const Template: ComponentStory<typeof CommentList> = (args) => (
@@ -22,14 +22,14 @@ Light.args = {
     {
       id: '1',
       user: { id: '1', username: 'Waze', avatar: Avatar },
-      text: 'comment'
+      text: 'comment',
     },
     {
       id: '2',
       user: { id: '2', username: 'Vasya', avatar: Avatar },
-      text: 'comment 2'
-    }
-  ]
+      text: 'comment 2',
+    },
+  ],
 };
 Light.decorators = [];
 
@@ -39,20 +39,20 @@ Dark.args = {
     {
       id: '1',
       user: { id: '1', username: 'Waze', avatar: Avatar },
-      text: 'comment'
+      text: 'comment',
     },
     {
       id: '2',
       user: { id: '2', username: 'Vasya', avatar: Avatar },
-      text: 'comment 2'
-    }
-  ]
+      text: 'comment 2',
+    },
+  ],
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const IsLoading = Template.bind({});
 IsLoading.args = {
   comments: [],
-  isLoading: true
+  isLoading: true,
 };
 IsLoading.decorators = [];

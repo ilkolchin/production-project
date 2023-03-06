@@ -3,7 +3,7 @@ import { buildSelector } from '@/shared/lib/store';
 
 export const [
   useArticleDetailsCommentIsLoading,
-  getArticleDetailsCommentIsLoading
+  getArticleDetailsCommentIsLoading,
 ] = buildSelector(
-  (state: StateSchema) => state.articleDetailsPage?.comments?.isLoading
+  (state: StateSchema) => state.articleDetailsPage?.comments?.isLoading,
 );

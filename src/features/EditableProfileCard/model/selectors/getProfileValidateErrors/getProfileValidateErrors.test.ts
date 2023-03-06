@@ -4,11 +4,14 @@ import { getProfileValidateErrors } from './getProfileValidateErrors';
 
 describe('getProfileValidateErrors .test', () => {
   test('should return isLoading', () => {
-    const errors = [ValidateProfileError.SERVER_ERROR, ValidateProfileError.INCORRECT_USER_DATA];
+    const errors = [
+      ValidateProfileError.SERVER_ERROR,
+      ValidateProfileError.INCORRECT_USER_DATA,
+    ];
     const state: DeepPartial<StateSchema> = {
       profile: {
-        validateErrors: errors
-      }
+        validateErrors: errors,
+      },
     };
     expect(getProfileValidateErrors(state as StateSchema)).toEqual(errors);
   });

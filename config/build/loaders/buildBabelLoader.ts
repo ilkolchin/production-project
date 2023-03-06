@@ -21,11 +21,11 @@ export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps) {
           isTsx &&
             isProd && [
               babelRemovePropsPlugin,
-              { props: ['data-testid', 'testID'] }
+              { props: ['data-testid', 'testID'] },
             ],
-          isDev && require.resolve('react-refresh/babel')
-        ].filter(Boolean)
-      }
-    }
+          isDev && require.resolve('react-refresh/babel'),
+        ].filter(Boolean),
+      },
+    },
   };
 }

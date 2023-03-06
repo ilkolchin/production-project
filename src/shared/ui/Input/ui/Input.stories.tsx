@@ -7,8 +7,8 @@ export default {
   title: 'shared/Input',
   component: Input,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof Input>;
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
@@ -16,12 +16,12 @@ const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 export const Light = Template.bind({});
 Light.args = {
   placeholder: 'Название',
-  value: 'Информация'
+  value: 'Информация',
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
   placeholder: 'Название',
-  value: 'Информация'
+  value: 'Информация',
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

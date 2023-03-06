@@ -9,8 +9,8 @@ export default {
   title: 'widgets/Navbar',
   component: Navbar,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof Navbar>;
 
 const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
@@ -31,6 +31,6 @@ export const Authed = Template.bind({});
 Authed.args = {};
 Authed.decorators = [
   StoreDecorator({
-    user: { authData: { id: '1', username: 'Waze', avatar: Avatar } }
-  })
+    user: { authData: { id: '1', username: 'Waze', avatar: Avatar } },
+  }),
 ];

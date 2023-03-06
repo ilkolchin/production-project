@@ -9,7 +9,12 @@ jest.mock('../fetchArticlesList/fetchArticlesList');
 describe('initArticlesPage.test', () => {
   test('should success', async () => {
     const thunk = new TestAsyncThunk(initArticlesPage, {
-      articlesPage: { _inited: false, order: 'asc', sort: ArticleSortField.VIEWS, search: '' }
+      articlesPage: {
+        _inited: false,
+        order: 'asc',
+        sort: ArticleSortField.VIEWS,
+        search: '',
+      },
     });
     await thunk.callThunk(new URLSearchParams());
 
@@ -19,8 +24,8 @@ describe('initArticlesPage.test', () => {
   test('should not be called -> hasMore = false', async () => {
     const thunk = new TestAsyncThunk(initArticlesPage, {
       articlesPage: {
-        _inited: true
-      }
+        _inited: true,
+      },
     });
     await thunk.callThunk(new URLSearchParams());
 

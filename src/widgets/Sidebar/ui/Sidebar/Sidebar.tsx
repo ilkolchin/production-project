@@ -24,7 +24,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       sidebarItemsList.map((item) => (
         <SidebarItem item={item} key={item.path} collapsed={collapsed} />
       )),
-    [collapsed, sidebarItemsList]
+    [collapsed, sidebarItemsList],
   );
 
   const toggleCollapsed = () => {
@@ -35,7 +35,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     <section
       data-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
-        className
+        className,
       ])}
     >
       <div className={cls.items}>

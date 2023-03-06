@@ -7,8 +7,8 @@ describe('userSlice.test', () => {
     expect(
       userReducer(
         state as UserSchema,
-        userActions.setAuthData({ id: '1', username: 'Waze' })
-      )
+        userActions.setAuthData({ id: '1', username: 'Waze' }),
+      ),
     ).toEqual({ authData: { id: '1', username: 'Waze' } });
   });
 
@@ -16,23 +16,23 @@ describe('userSlice.test', () => {
     // const user = "{ id: '1', username: 'Waze' }";
     const state: DeepPartial<UserSchema> = {
       // authData: user as unknown as User,
-      _inited: false
+      _inited: false,
     };
 
     expect(
-      userReducer(state as UserSchema, userActions.initAuthData())
+      userReducer(state as UserSchema, userActions.initAuthData()),
     ).toEqual({
       // authData: { id: '1', username: 'Waze' },
-      _inited: true
+      _inited: true,
     });
   });
 
   test('should log out', () => {
     const state: DeepPartial<UserSchema> = {
-      authData: { id: '1', username: 'Waze' }
+      authData: { id: '1', username: 'Waze' },
     };
     expect(userReducer(state as UserSchema, userActions.logout())).toEqual({
-      authData: undefined
+      authData: undefined,
     });
   });
 });

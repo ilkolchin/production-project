@@ -10,7 +10,7 @@ const defaultArticle = {
   createdAt: '03.02.2022',
   userId: '1',
   type: ['IT', 'ECONOMICS'],
-  blocks: []
+  blocks: [],
 };
 
 export const createArticle = (article?: Article) => {
@@ -19,7 +19,7 @@ export const createArticle = (article?: Article) => {
       method: 'POST',
       url: `http://localhost:8000/articles`,
       headers: { authorization: 'asdaw' },
-      body: article ?? defaultArticle
+      body: article ?? defaultArticle,
     })
     .then((resp) => resp.body);
 };
@@ -28,7 +28,7 @@ export const removeArticle = (articleId: string) => {
   return cy.request({
     method: 'DELETE',
     url: `http://localhost:8000/articles/${articleId}`,
-    headers: { authorization: 'asdaw' }
+    headers: { authorization: 'asdaw' },
   });
 };
 

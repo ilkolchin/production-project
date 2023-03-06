@@ -3,7 +3,7 @@ import { ArticleType, ArticleBlockType } from '../consts/articleConsts';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
-  getArticleDetailsIsLoading
+  getArticleDetailsIsLoading,
 } from './articleDetails';
 
 describe('articleDetails.test', () => {
@@ -21,17 +21,17 @@ describe('articleDetails.test', () => {
           id: '1',
           type: ArticleBlockType.TEXT,
           title: 'Заголовок этого блока',
-          paragraphs: []
+          paragraphs: [],
         },
         {
           id: '4',
           type: ArticleBlockType.CODE,
-          code: ''
-        }
-      ]
+          code: '',
+        },
+      ],
     };
     const state: DeepPartial<StateSchema> = {
-      articleDetails: { data: article }
+      articleDetails: { data: article },
     };
     expect(getArticleDetailsData(state as StateSchema)).toEqual(article);
   });
@@ -39,8 +39,8 @@ describe('articleDetails.test', () => {
   test('should return IsLoading', () => {
     const state: DeepPartial<StateSchema> = {
       articleDetails: {
-        isLoading: true
-      }
+        isLoading: true,
+      },
     };
     expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(true);
   });
@@ -48,8 +48,8 @@ describe('articleDetails.test', () => {
   test('should return error', () => {
     const state: DeepPartial<StateSchema> = {
       articleDetails: {
-        error: '123'
-      }
+        error: '123',
+      },
     };
     expect(getArticleDetailsError(state as StateSchema)).toEqual('123');
   });

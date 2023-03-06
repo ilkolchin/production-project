@@ -7,8 +7,8 @@ export default {
   title: 'entities/Article/ArticleTabTypes',
   component: ArticleTabTypes,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof ArticleTabTypes>;
 
 const Template: ComponentStory<typeof ArticleTabTypes> = (args) => (

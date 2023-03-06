@@ -6,12 +6,12 @@ describe('articleDetails.test', () => {
     const state: DeepPartial<StateSchema> = {
       articleDetailsPage: {
         comments: {
-          isLoading: true
-        }
-      }
+          isLoading: true,
+        },
+      },
     };
     expect(getArticleDetailsCommentIsLoading(state as StateSchema)).toEqual(
-      true
+      true,
     );
   });
 });

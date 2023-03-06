@@ -12,7 +12,7 @@ const data = {
   age: 22,
   country: Country.Russia,
   city: 'Saint-Petersburg',
-  currency: Currency.RUB
+  currency: Currency.RUB,
 };
 
 describe('fetchProfileData.test', () => {

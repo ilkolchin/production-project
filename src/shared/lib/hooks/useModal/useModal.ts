@@ -30,7 +30,7 @@ export function useModal(props: UseModalProps) {
         close();
       }
     },
-    [close]
+    [close],
   );
 
   useEffect(() => {
@@ -58,6 +58,6 @@ export function useModal(props: UseModalProps) {
     isClosing,
     isMounted,
     isOpening,
-    close
+    close,
   };
 }

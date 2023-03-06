@@ -9,7 +9,7 @@ type HTMLInputProps = Omit<
 
 export enum PlaceholderType {
   INSIDE = 'inside',
-  OUTSIDE = 'outside'
+  OUTSIDE = 'outside',
 }
 
 interface InputProps extends HTMLInputProps {
@@ -40,7 +40,7 @@ export const Input = memo((props: InputProps) => {
 
   const mods: Mods = {
     [cls.readonly]: readonly,
-    [cls.widthMax]: widthMax
+    [cls.widthMax]: widthMax,
   };
 
   switch (placeholderType) {

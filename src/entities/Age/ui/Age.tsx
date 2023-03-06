@@ -20,7 +20,7 @@ interface AgeProps extends HTMLInputProps {
 enum validKeyboardKeys {
   BACKSPACE = 'Backspace',
   ARROWRIGHT = 'ArrowRight',
-  ARROWLEFT = 'ArrowLeft'
+  ARROWLEFT = 'ArrowLeft',
 }
 
 export const Age = memo((props: AgeProps) => {
@@ -30,7 +30,10 @@ export const Age = memo((props: AgeProps) => {
   const [ageError, setAgeError] = useState(false);
 
   const onKeyPress = (event: React.KeyboardEvent) => {
-    if (!/\d/.test(event.key) && !Object.values(validKeyboardKeys).some((v) => v === event.key)) {
+    if (
+      !/\d/.test(event.key) &&
+      !Object.values(validKeyboardKeys).some((v) => v === event.key)
+    ) {
       event.preventDefault();
       setAgeError(true);
     } else {
@@ -41,7 +44,12 @@ export const Age = memo((props: AgeProps) => {
   return (
     <VStack align="start" className={classNames('', {}, [className])}>
       <span>{t('Age')}</span>
-      <Input onChange={onChange} value={value} readonly={readonly} onKeyDown={onKeyPress} />
+      <Input
+        onChange={onChange}
+        value={value}
+        readonly={readonly}
+        onKeyDown={onKeyPress}
+      />
       {ageError && <Text theme={TextTheme.ERROR} text={t('Только цифры')} />}
     </VStack>
   );

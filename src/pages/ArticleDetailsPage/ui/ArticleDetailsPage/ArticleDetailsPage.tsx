@@ -5,7 +5,7 @@ import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsLis
 import { classNames } from '@/shared/lib/classNames';
 import {
   DynamicModuleLoader,
-  ReducersList
+  ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
@@ -22,7 +22,7 @@ interface ArticleDetailsPageProps {
 }
 
 const reducers: ReducersList = {
-  articleDetailsPage: articleDetailsPageReducer
+  articleDetailsPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {

@@ -4,12 +4,12 @@ import cls from './Icon.module.scss';
 export enum IconSize {
   M = 'size_M',
   L = 'size_L',
-  XXL = 'size_XXL'
+  XXL = 'size_XXL',
 }
 
 export enum IconTheme {
   DEFAULT = 'default',
-  INVERTED = 'inverted'
+  INVERTED = 'inverted',
 }
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {

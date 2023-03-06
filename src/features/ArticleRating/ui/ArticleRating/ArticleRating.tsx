@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
   useGetArticleRating,
-  useRateArtical
+  useRateArtical,
 } from '../../api/articleRatingApi';
 
 export interface ArticleRatingProps {
@@ -21,7 +21,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
 
   const { data, isLoading } = useGetArticleRating({
     articleId,
-    userId: userData?.id ?? ''
+    userId: userData?.id ?? '',
   });
   const rating = data?.[0];
 
@@ -32,27 +32,27 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
           userId: userData?.id ?? '',
           articleId,
           rate: starsCount,
-          feedback
+          feedback,
         });
       } catch (e) {
         console.log(e);
       }
     },
-    [articleId, rateArticalMutation, userData?.id]
+    [articleId, rateArticalMutation, userData?.id],
   );
 
   const onCancel = useCallback(
     (starsCount: number) => {
       handleRateArticle(starsCount);
     },
-    [handleRateArticle]
+    [handleRateArticle],
   );
 
   const onAccept = useCallback(
     (starsCount: number, feedback?: string) => {
       handleRateArticle(starsCount, feedback);
     },
-    [handleRateArticle]
+    [handleRateArticle],
   );
 
   if (isLoading) {
@@ -63,7 +63,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     <RatingCard
       title={t('Оцените статью')}
       feedbackTitle={t(
-        'Оставьте свой отзыв о статье. Это поможет улучшить качество контента'
+        'Оставьте свой отзыв о статье. Это поможет улучшить качество контента',
       )}
       className={className}
       hasFeedback

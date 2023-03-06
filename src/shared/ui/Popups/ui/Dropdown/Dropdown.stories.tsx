@@ -8,8 +8,8 @@ export default {
   title: 'shared/Dropdown',
   component: Dropdown,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof Dropdown>;
 
 const Template: ComponentStory<typeof Dropdown> = (args) => (
@@ -21,15 +21,15 @@ Light.args = {
   trigger: <Button>Open!</Button>,
   items: [
     {
-      content: 'first'
+      content: 'first',
     },
     {
-      content: 'second'
+      content: 'second',
     },
     {
-      content: 'third'
-    }
-  ]
+      content: 'third',
+    },
+  ],
 };
 Light.decorators = [];
 
@@ -38,15 +38,15 @@ Dark.args = {
   trigger: <Button>Open!</Button>,
   items: [
     {
-      content: 'first'
+      content: 'first',
     },
     {
-      content: 'second'
+      content: 'second',
     },
     {
-      content: 'third'
-    }
-  ]
+      content: 'third',
+    },
+  ],
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
@@ -55,14 +55,14 @@ Orange.args = {
   trigger: <Button>Open!</Button>,
   items: [
     {
-      content: 'first'
+      content: 'first',
     },
     {
-      content: 'second'
+      content: 'second',
     },
     {
-      content: 'third'
-    }
-  ]
+      content: 'third',
+    },
+  ],
 };
 Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

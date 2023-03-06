@@ -22,8 +22,8 @@ export const resetProfile = (profileId: string) => {
       country: 'Russia',
       city: 'Saint-testUser',
       avatar:
-        'https://www.pngitem.com/pimgs/m/421-4213053_default-avatar-icon-hd-png-download.png'
-    }
+        'https://www.pngitem.com/pimgs/m/421-4213053_default-avatar-icon-hd-png-download.png',
+    },
   });
 };
 

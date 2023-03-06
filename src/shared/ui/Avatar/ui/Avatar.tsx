@@ -24,15 +24,15 @@ export const Avatar = (props: AvatarProps) => {
     alt,
     rounded = true,
     fallbackInverted,
-    fallbackBigSize
+    fallbackBigSize,
   } = props;
 
   const styles = useMemo<CSSProperties>(
     () => ({
       width: size,
-      height: size
+      height: size,
     }),
-    [size]
+    [size],
   );
 
   const errorFallback = (

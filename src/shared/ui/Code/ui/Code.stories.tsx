@@ -7,8 +7,8 @@ export default {
   title: 'shared/Code',
   component: Code,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof Code>;
 
 const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;
@@ -26,7 +26,7 @@ Light.args = {
     '\n' +
     'const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;\n' +
     '\n' +
-    'export const Normal = Template.bind({});'
+    'export const Normal = Template.bind({});',
 };
 
 export const Dark = Template.bind({});
@@ -42,7 +42,7 @@ Dark.args = {
     '\n' +
     'const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;\n' +
     '\n' +
-    'export const Normal = Template.bind({});'
+    'export const Normal = Template.bind({});',
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
@@ -59,6 +59,6 @@ Orange.args = {
     '\n' +
     'const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;\n' +
     '\n' +
-    'export const Normal = Template.bind({});'
+    'export const Normal = Template.bind({});',
 };
 Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

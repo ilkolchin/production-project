@@ -12,7 +12,7 @@ const data = {
   age: 22,
   country: Country.Russia,
   city: 'Saint-Petersburg',
-  currency: Currency.RUB
+  currency: Currency.RUB,
 };
 
 describe('validateProfileData.test', () => {
@@ -53,7 +53,7 @@ describe('validateProfileData.test', () => {
     expect(result).toEqual([
       ValidateProfileError.INCORRECT_USER_DATA,
       ValidateProfileError.INCORRECT_AGE,
-      ValidateProfileError.INCORRECT_CITY
+      ValidateProfileError.INCORRECT_CITY,
     ]);
   });
 });

@@ -15,22 +15,22 @@ const form = {
   country: Country.Russia,
   city: 'Saint-Petersburg',
   currency: Currency.RUB,
-  avatar: Avatar
+  avatar: Avatar,
 };
 
 export default {
   title: 'pages/ProfilePage',
   component: ProfilePage,
   argTypes: {
-    backgroundColor: { control: 'color' }
+    backgroundColor: { control: 'color' },
   },
   decorators: [
     StoreDecorator({
       profile: {
         form: form,
-        readonly: true
-      }
-    })
+        readonly: true,
+      },
+    }),
   ],
   parameters: {
     mockData: [
@@ -38,10 +38,10 @@ export default {
         url: __API__ + '/profile-ratings?userId=&profileId=',
         method: 'GET',
         status: 200,
-        response: []
-      }
-    ]
-  }
+        response: [],
+      },
+    ],
+  },
 } as ComponentMeta<typeof ProfilePage>;
 
 const Template: ComponentStory<typeof ProfilePage> = (args) => (
@@ -56,8 +56,8 @@ export const Editable = Template.bind({});
 Editable.args = {};
 Editable.decorators = [
   StoreDecorator({
-    profile: { form: form, readonly: false }
-  })
+    profile: { form: form, readonly: false },
+  }),
 ];
 
 export const Dark = Template.bind({});

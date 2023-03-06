@@ -1,5 +1,3 @@
-const jestEmptyComponent = () => (
-  <></>
-);
+const jestEmptyComponent = () => <></>;
 
 export default jestEmptyComponent;

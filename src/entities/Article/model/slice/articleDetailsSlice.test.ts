@@ -17,40 +17,45 @@ const article = {
       id: '1',
       type: ArticleBlockType.TEXT,
       title: 'Заголовок этого блока',
-      paragraphs: []
+      paragraphs: [],
     },
     {
       id: '4',
       type: ArticleBlockType.CODE,
-      code: ''
-    }
-  ]
+      code: '',
+    },
+  ],
 };
 
 describe('articleDetailsSlice.test', () => {
   test('should fetch article service pending', () => {
     const state: DeepPartial<ArticleDetailsSchema> = {
       isLoading: false,
-      error: ''
+      error: '',
     };
-    expect(articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.pending)).toEqual({
+    expect(
+      articleDetailsReducer(
+        state as ArticleDetailsSchema,
+        fetchArticleById.pending,
+      ),
+    ).toEqual({
       isLoading: true,
-      error: undefined
+      error: undefined,
     });
   });
 
   test('should fetch article service fulfilled', () => {
     const state: DeepPartial<ArticleDetailsSchema> = {
-      isLoading: true
+      isLoading: true,
     };
     expect(
       articleDetailsReducer(
         state as ArticleDetailsSchema,
-        fetchArticleById.fulfilled(article as Article, '', '')
-      )
+        fetchArticleById.fulfilled(article as Article, '', ''),
+      ),
     ).toEqual({
       isLoading: false,
-      data: article
+      data: article,
     });
   });
 });

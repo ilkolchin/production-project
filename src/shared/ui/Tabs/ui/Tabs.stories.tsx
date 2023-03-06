@@ -8,8 +8,8 @@ export default {
   title: 'shared/Tabs',
   component: Tabs,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof Tabs>;
 
 const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
@@ -19,10 +19,10 @@ Light.args = {
   tabs: [
     { value: 'tab 1', content: 'tab 1' },
     { value: 'tab 2', content: 'tab 2' },
-    { value: 'tab 3', content: 'tab 3' }
+    { value: 'tab 3', content: 'tab 3' },
   ],
   value: 'tab 2',
-  onTabClick: action('onTabClick')
+  onTabClick: action('onTabClick'),
 };
 Light.decorators = [];
 
@@ -31,10 +31,10 @@ Dark.args = {
   tabs: [
     { value: 'tab 1', content: 'tab 1' },
     { value: 'tab 2', content: 'tab 2' },
-    { value: 'tab 3', content: 'tab 3' }
+    { value: 'tab 3', content: 'tab 3' },
   ],
   value: 'tab 2',
-  onTabClick: action('onTabClick')
+  onTabClick: action('onTabClick'),
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
@@ -43,9 +43,9 @@ Orange.args = {
   tabs: [
     { value: 'tab 1', content: 'tab 1' },
     { value: 'tab 2', content: 'tab 2' },
-    { value: 'tab 3', content: 'tab 3' }
+    { value: 'tab 3', content: 'tab 3' },
   ],
   value: 'tab 2',
-  onTabClick: action('onTabClick')
+  onTabClick: action('onTabClick'),
 };
 Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

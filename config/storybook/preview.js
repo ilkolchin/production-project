@@ -11,8 +11,8 @@ export const parameters = {
   controls: {
     matchers: {
       color: /(background|color)$/i,
-      date: /Date$/
-    }
+      date: /Date$/,
+    },
   },
   backgrounds: { disable: true },
   themes: {
@@ -20,9 +20,9 @@ export const parameters = {
     list: [
       { name: 'light', class: Theme.LIGHT, color: '#00aced' },
       { name: 'dark', class: Theme.DARK, color: '#3b5998' },
-      { name: 'orange', class: Theme.ORANGE, color: '#3b5998' }
-    ]
-  }
+      { name: 'orange', class: Theme.ORANGE, color: '#3b5998' },
+    ],
+  },
 };
 
 addDecorator(RouterDecorator);

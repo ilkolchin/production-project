@@ -7,8 +7,8 @@ export default {
   title: 'entities/CurrencySelect',
   component: CurrencySelect,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof CurrencySelect>;
 
 const Template: ComponentStory<typeof CurrencySelect> = (args) => (

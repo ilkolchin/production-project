@@ -5,8 +5,8 @@ export default {
   title: 'shared/Select',
   component: Select,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof Select>;
 
 const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
@@ -17,11 +17,11 @@ Primary.args = {
   options: [
     {
       value: '123',
-      content: 'Hello'
+      content: 'Hello',
     },
     {
       value: '456',
-      content: 'goodbye'
-    }
-  ]
+      content: 'goodbye',
+    },
+  ],
 };

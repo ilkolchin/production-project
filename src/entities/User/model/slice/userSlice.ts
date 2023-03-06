@@ -4,7 +4,7 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { User, UserSchema } from '../types/user';
 
 const initialState: UserSchema = {
-  _inited: false
+  _inited: false,
 };
 
 export const userSlice = buildSlice({
@@ -24,12 +24,12 @@ export const userSlice = buildSlice({
     logout: (state) => {
       state.authData = undefined;
       localStorage.removeItem(USER_LOCALSTORAGE_KEY);
-    }
-  }
+    },
+  },
 });
 
 export const {
   actions: userActions,
   reducer: userReducer,
-  useActions: useUserActions
+  useActions: useUserActions,
 } = userSlice;

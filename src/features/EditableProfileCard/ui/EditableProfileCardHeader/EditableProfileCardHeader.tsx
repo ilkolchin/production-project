@@ -46,7 +46,7 @@ export const EditableProfileCardHeader = memo(
           onCancelEdit();
         }
       },
-      [onCancelEdit, onSave]
+      [onCancelEdit, onSave],
     );
 
     useEffect(() => {
@@ -97,5 +97,5 @@ export const EditableProfileCardHeader = memo(
         )}
       </HStack>
     );
-  }
+  },
 );

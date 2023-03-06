@@ -18,7 +18,10 @@ export interface ArticleCodeBlock extends ArticleBlockBase {
   type: ArticleBlockType.CODE;
   code: string;
 }
-export type ArticleBlock = ArticleTextBlock | ArticleImgBlock | ArticleCodeBlock;
+export type ArticleBlock =
+  | ArticleTextBlock
+  | ArticleImgBlock
+  | ArticleCodeBlock;
 
 export interface Article {
   id: string;

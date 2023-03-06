@@ -8,9 +8,9 @@ export default {
   title: 'shared/Icon',
   component: Icon,
   argTypes: {
-    backgroundColor: { control: 'color' }
+    backgroundColor: { control: 'color' },
   },
-  args: { Svg: Svg }
+  args: { Svg: Svg },
 } as ComponentMeta<typeof Icon>;
 
 const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;

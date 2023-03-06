@@ -12,7 +12,7 @@ export const rtkApi = createApi({
         headers.set('Authorization', token);
       }
       return headers;
-    }
+    },
   }),
-  endpoints: () => ({})
+  endpoints: () => ({}),
 });

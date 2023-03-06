@@ -7,7 +7,7 @@ export {
   ArticleView,
   ArticleSortField,
   ArticleType,
-  ArticleBlockType
+  ArticleBlockType,
 } from './model/consts/articleConsts';
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 export type { Article } from './model/types/article';
@@ -16,5 +16,5 @@ export type { Article } from './model/types/article';
 export {
   getArticleDetailsData,
   getArticleDetailsError,
-  getArticleDetailsIsLoading
+  getArticleDetailsIsLoading,
 } from './model/selectors/articleDetails';

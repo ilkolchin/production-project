@@ -8,12 +8,12 @@ export { getUserInited } from './model/selectors/getUserInited/getUserInited';
 export {
   isUserAdmin,
   isUserManager,
-  getUserRoles
+  getUserRoles,
 } from './model/selectors/roleSelectors';
 
 //Slice
 export {
   userReducer,
   userActions,
-  useUserActions
+  useUserActions,
 } from './model/slice/userSlice';

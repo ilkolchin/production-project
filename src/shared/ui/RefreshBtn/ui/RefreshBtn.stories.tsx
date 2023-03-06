@@ -7,8 +7,8 @@ export default {
   title: 'shared/RefreshBtn',
   component: RefreshBtn,
   argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof RefreshBtn>;
 
 const Template: ComponentStory<typeof RefreshBtn> = (args) => (

@@ -3,7 +3,7 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { AddNewCommentSchema } from '../types/addNewComment';
 
 const initialState: AddNewCommentSchema = {
-  text: ''
+  text: '',
 };
 
 export const addNewCommentSlice = buildSlice({
@@ -12,12 +12,12 @@ export const addNewCommentSlice = buildSlice({
   reducers: {
     setText: (state, action: PayloadAction<string>) => {
       state.text = action.payload;
-    }
-  }
+    },
+  },
 });
 
 export const {
   actions: addNewCommentActions,
   reducer: addNewCommentReducer,
-  useActions: useAddNewCommentActions
+  useActions: useAddNewCommentActions,
 } = addNewCommentSlice;
