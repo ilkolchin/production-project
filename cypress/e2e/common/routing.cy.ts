@@ -30,5 +30,10 @@ describe('Роутинг', () => {
       cy.visit('/articles');
       cy.getByTestId('ArticlesPage').should('exist');
     });
+
+    it.skip('Пример с пропуском теста', () => {
+      cy.visit('/adaawdasd');
+      cy.getByTestId('ArticlesPage').should('exist');
+    });
   });
 });

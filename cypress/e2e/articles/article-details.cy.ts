@@ -13,7 +13,7 @@ describe('Пользователь заходит на страницу стат
     cy.removeArticle(currentArticleId);
   });
 
-  it('И страница успешно загружается', () => {
+  it('И видит её содержимое', () => {
     cy.getByTestId('ArticleDetails.Info').should('exist');
   });
 
@@ -38,13 +38,15 @@ describe('Пользователь заходит на страницу стат
   });
 
   it('И оcтавляет оценку', () => {
+    cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
+    cy.getByTestId('ArticleDetails.Info');
     cy.getByTestId('RatingCard')
       .scrollIntoView({ duration: 1000 })
       .should('exist');
     cy.setRate(4, 'Test feedback');
     cy.getByTestId('RatingCard.Text.Header')
-      .scrollIntoView({ duration: 1000 })
+      .scrollIntoView({ duration: 500 })
       .should('have.text', 'Спасибо за оценку!');
-    cy.get('[data-selected=true').should('have.length', 4);
+    cy.get('[data-selected=true]').should('have.length', 4);
   });
 });

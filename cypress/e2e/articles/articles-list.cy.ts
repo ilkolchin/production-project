@@ -10,6 +10,12 @@ describe('Пользователь заходит на страницу со с�
     cy.getByTestId('ArticlesListItem').should('have.length.greaterThan', 3);
   });
 
+  it('и статьи успешно подгружаются (на стабах/фикстурах)', () => {
+    cy.intercept('GET', '**/articles/?*', { fixture: 'articles.json' });
+    cy.getByTestId('ArticlesList').should('exist');
+    cy.getByTestId('ArticlesListItem').should('have.length.greaterThan', 3);
+  });
+
   it('пользователь выбирает фильтр "Наука"', () => {
     cy.getByTestId('ArticleTabTypes').should('exist');
     cy.getByTestId('ArticleTabTypes').contains('НАУКА').click();
