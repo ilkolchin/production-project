@@ -54,10 +54,7 @@
       "views": 102,
       "createdAt": "03.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "ECONOMICS"
-      ],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -104,9 +101,7 @@
       "views": 1026,
       "createdAt": "04.03.2022",
       "userId": "1",
-      "type": [
-        "SCIENCE"
-      ],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -153,9 +148,7 @@
       "views": 2210,
       "createdAt": "14.04.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -202,9 +195,7 @@
       "views": 6737,
       "createdAt": "27.04.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -251,9 +242,7 @@
       "views": 3618,
       "createdAt": "02.06.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -300,9 +289,7 @@
       "views": 9119,
       "createdAt": "14.07.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -349,9 +336,7 @@
       "views": 8346,
       "createdAt": "02.08.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -398,9 +383,7 @@
       "views": 9699,
       "createdAt": "28.09.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -447,9 +430,7 @@
       "views": 514,
       "createdAt": "06.10.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -496,9 +477,7 @@
       "views": 4927,
       "createdAt": "15.11.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -545,9 +524,7 @@
       "views": 6782,
       "createdAt": "24.11.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -594,9 +571,7 @@
       "views": 4767,
       "createdAt": "28.11.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -643,9 +618,7 @@
       "views": 6641,
       "createdAt": "22.12.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -692,9 +665,7 @@
       "views": 6538,
       "createdAt": "28.12.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -741,9 +712,7 @@
       "views": 6278,
       "createdAt": "29.12.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -856,36 +825,28 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "avatar": "https://gogotraining.com/blog/wp-content/uploads/2016/10/Become-a-Computer-Programmer.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "avatar": "https://mobimg.b-cdn.net/v3/fetch/ef/ef1a150a151d666c3ddd6222b12998b5.jpeg"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": [
-        "MANAGER"
-      ],
+      "roles": ["MANAGER"],
       "avatar": "https://static.bangkokpost.com/media/content/20210823/c1_2169843_700.jpg"
     },
     {
       "id": "4",
       "username": "testUser",
       "password": "123",
-      "roles": [
-        "USER"
-      ]
+      "roles": ["USER"]
     }
   ],
   "profile": [
@@ -908,7 +869,7 @@
       "age": 30,
       "currency": "RUB",
       "country": "Russia",
-      "city": "Saint-Petersburg",
+      "city": "Moscow",
       "avatar": "https://mobimg.b-cdn.net/v3/fetch/ef/ef1a150a151d666c3ddd6222b12998b5.jpeg"
     },
     {
@@ -1001,6 +962,13 @@
       "userId": "2",
       "rate": 3,
       "id": 3
+    },
+    {
+      "profileId": "1",
+      "userId": "2",
+      "rate": 5,
+      "feedback": "",
+      "id": 4
     }
   ]
 }

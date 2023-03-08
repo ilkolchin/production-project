@@ -1,14 +1,13 @@
 import { Age } from '@/entities/Age';
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
-import { classNames, Mods } from '@/shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Input } from '@/shared/ui/Input';
 import { RefreshBtn } from '@/shared/ui/RefreshBtn';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { HStack, VStack } from '@/shared/ui/Stack';
-import { Text, TextTheme } from '@/shared/ui/Text';
-import { TextAlign } from '@/shared/ui/Text/ui/Text';
+import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text';
 import { useTranslation } from 'react-i18next';
 import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
@@ -48,7 +47,58 @@ export const ProfileCard = (props: ProfileCardProps) => {
   const { t } = useTranslation();
 
   if (isLoading) {
-    return <Skeleton width={'100%'} height={400} border={12} />;
+    return (
+      <VStack gap="16" max className="cls.ProfileCard">
+        <HStack gap="32" max>
+          <Skeleton height={200} width={200} border={'50%'} />
+          <VStack gap="8">
+            <VStack gap="4" align={'start'}>
+              <Text title={t('Username')} size={TextSize.S} />
+              <Skeleton height={40} width={217} border={12} />
+            </VStack>
+            <VStack gap="4" align={'start'}>
+              <Text title={t('Profile avatar link')} size={TextSize.S} />
+              <Skeleton height={40} width={217} border={12} />
+            </VStack>
+          </VStack>
+        </HStack>
+
+        <VStack gap="16" max align="start">
+          <HStack gap="16">
+            <VStack gap="4" align={'start'}>
+              <Text title={t('First Name')} size={TextSize.S} />
+              <Skeleton height={40} width={217} border={12} />
+            </VStack>
+            <VStack gap="4" align={'start'}>
+              <Text title={t('Last Name')} size={TextSize.S} />
+              <Skeleton height={40} width={217} border={12} />
+            </VStack>
+          </HStack>
+
+          <HStack gap="16">
+            <VStack gap="4" align={'start'}>
+              <Text title={t('Age')} size={TextSize.S} />
+              <Skeleton height={40} width={217} border={12} />
+            </VStack>
+            <VStack gap="4" align={'start'}>
+              <Text title={t('City')} size={TextSize.S} />
+              <Skeleton height={40} width={217} border={12} />
+            </VStack>
+          </HStack>
+
+          <HStack gap="32">
+            <HStack gap="16" align="center">
+              <Text title={t('Country')} size={TextSize.S} />
+              <Skeleton height={42} width={130} border={12} />
+            </HStack>
+            <HStack gap="16" align="center">
+              <Text title={t('Currency')} size={TextSize.S} />
+              <Skeleton height={42} width={70} border={12} />
+            </HStack>
+          </HStack>
+        </VStack>
+      </VStack>
+    );
   }
 
   if (error) {
@@ -64,18 +114,12 @@ export const ProfileCard = (props: ProfileCardProps) => {
     );
   }
 
-  const mods: Mods = {
-    [cls.editing]: !readonly,
-  };
-
   return (
-    <VStack
-      gap="16"
-      max
-      className={classNames(cls.ProfileCard, mods, [className])}
-    >
+    <VStack gap="16" max className={classNames('', {}, [className])}>
       <HStack gap="32" max>
-        {data?.avatar && <Avatar src={data.avatar} fallbackBigSize />}
+        {data?.avatar && (
+          <Avatar size={200} src={data.avatar} fallbackBigSize />
+        )}
         <VStack gap="8">
           <Input
             readonly={readonly}
@@ -95,7 +139,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
       </HStack>
 
       <VStack gap="16" max align="start">
-        <HStack gap="8">
+        <HStack gap="16">
           <Input
             readonly={readonly}
             placeholder={t('First Name')}
@@ -113,7 +157,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
             data-testid={'ProfileCard.LastName'}
           />
         </HStack>
-        <HStack gap="8">
+        <HStack gap="16">
           <Age readonly={readonly} value={data?.age} onChange={onChangeAge} />
           <Input
             readonly={readonly}
@@ -123,7 +167,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
             onChange={onChangeCity}
           />
         </HStack>
-        <HStack gap="8" align="stretch" justify="center">
+        <HStack gap="32" align="stretch" justify="center">
           <CountrySelect
             className={cls.input}
             value={data?.country}

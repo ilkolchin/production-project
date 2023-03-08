@@ -22,6 +22,7 @@ import { getProfileValidateErrors } from '../../model/selectors/getProfileValida
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
+import cls from './EditableProfileCard.module.scss';
 
 interface EditableProfileCardProps {
   className?: string;
@@ -126,6 +127,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
               text={validateErrorsTranslate[err]}
               key={err}
               data-testid={'EditableProfileCard.Error'}
+              className={cls.TextError}
             />
           ))}
         <ProfileCard

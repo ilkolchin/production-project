@@ -62,6 +62,7 @@ export const EditableProfileCardHeader = memo(
         gap="16"
         justify="between"
         max
+        height={42}
         className={classNames('', {}, [className])}
       >
         <Text title={t('Profile')} />

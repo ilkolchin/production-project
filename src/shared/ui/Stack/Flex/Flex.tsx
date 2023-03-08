@@ -1,4 +1,9 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
+import {
+  CSSProperties,
+  DetailedHTMLProps,
+  HTMLAttributes,
+  ReactNode,
+} from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames';
 import cls from './Flex.module.scss';
 
@@ -49,6 +54,8 @@ export interface FlexProps extends DivProps {
   gap?: FlexGap;
   max?: boolean;
   wrap?: boolean;
+  height?: string | number;
+  width?: string | number;
 }
 export const Flex = (props: FlexProps) => {
   const {
@@ -58,11 +65,18 @@ export const Flex = (props: FlexProps) => {
     justify = 'start',
     align = 'center',
     direction = 'row',
+    height,
+    width,
     max,
     gap,
     wrap,
     ...otherProps
   } = props;
+
+  const styles: CSSProperties = {
+    height,
+    width,
+  };
 
   const classes = [
     className,
@@ -80,7 +94,11 @@ export const Flex = (props: FlexProps) => {
   };
 
   return (
-    <FlexTag className={classNames(cls.Flex, mods, classes)} {...otherProps}>
+    <FlexTag
+      style={styles}
+      className={classNames(cls.Flex, mods, classes)}
+      {...otherProps}
+    >
       {children}
     </FlexTag>
   );

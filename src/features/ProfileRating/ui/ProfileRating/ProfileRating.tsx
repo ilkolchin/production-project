@@ -58,7 +58,7 @@ export const ProfileRating = memo((props: ProfileRatingProps) => {
   );
 
   if (isLoading) {
-    return <Skeleton width={'100%'} height={110} border={'12px'} />;
+    return <Skeleton width={'100%'} height={94} border={'12px'} />;
   }
 
   if (error) {

@@ -3,7 +3,14 @@ import {
   getScrollSavingByPath,
   scrollSavingActions,
 } from '@/features/ScrollSaving';
-import { memo, MutableRefObject, ReactNode, useRef, UIEvent } from 'react';
+import {
+  memo,
+  MutableRefObject,
+  ReactNode,
+  useRef,
+  UIEvent,
+  CSSProperties,
+} from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames';
@@ -18,10 +25,11 @@ interface PageProps extends TestProps {
   className?: string;
   children: ReactNode;
   onScrollEnd?: () => void;
+  style?: CSSProperties;
 }
 
 export const Page = memo((props: PageProps) => {
-  const { className, children, onScrollEnd } = props;
+  const { className, children, onScrollEnd, style } = props;
   const wrapperRef = useRef() as MutableRefObject<HTMLElement>;
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
   const dispatch = useAppDispatch();
@@ -55,6 +63,7 @@ export const Page = memo((props: PageProps) => {
       ref={wrapperRef}
       onScroll={onScroll}
       className={classNames(cls.Page, {}, [className])}
+      style={style}
       data-testid={props['data-testid'] ?? 'Page'}
     >
       {children}

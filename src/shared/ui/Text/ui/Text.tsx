@@ -60,7 +60,7 @@ export const Text = memo((props: TextProps) => {
 
   return (
     <div
-      data-testid="TextComponent"
+      data-testid={`${dataTestId}.Component`}
       className={classNames(cls.text, mods, [className])}
     >
       {title && (
