@@ -10,6 +10,7 @@ import { $api } from '@/shared/api/api';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 import { StateSchema } from './StateSchema';
+import { articlesPageReducer } from '@/pages/ArticlesPage';
 
 export function createReduxStore(
   initialState?: StateSchema,
@@ -18,6 +19,7 @@ export function createReduxStore(
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     user: userReducer,
+    articlesPage: articlesPageReducer,
     scrollSaving: scrollSavingReducer,
     [rtkApi.reducerPath]: rtkApi.reducer,
   };

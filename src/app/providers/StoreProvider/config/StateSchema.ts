@@ -18,6 +18,7 @@ import { rtkApi } from '@/shared/api/rtkApi';
 
 export interface StateSchema {
   user: UserSchema;
+  articlesPage: ArticlesPageSchema;
   scrollSaving: ScrollSavingSchema;
   [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
@@ -27,7 +28,6 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema;
   articleDetailsPage?: ArticleDetailsPageSchema;
   addNewComment?: AddNewCommentSchema;
-  articlesPage?: ArticlesPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
