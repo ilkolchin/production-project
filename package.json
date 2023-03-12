@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"webpack serve --env port=3000\" \"npm run start:server\"",
-    "start:vite": "concurrently \"vite\" \"npm run start:server\"",
+    "start": "concurrently \"vite --open\" \"npm run start:server\"",
+    "start:webpack": "concurrently \"webpack serve --env port=3000\" \"npm run start:server\"",
     "start:server": "node ./json-server/index.js",
     "build:prod": "webpack --env mode=production apiUrl=https://production-server-sepia.vercel.app/",
     "build:dev": "webpack --env mode=development",
@@ -133,8 +133,7 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^11.15.5",
     "react-redux": "^8.0.5",
-    "react-router-dom": "^6.2.1",
-    "react-virtuoso": "^4.1.0"
+    "react-router-dom": "^6.2.1"
   },
   "loki": {
     "configurations": {

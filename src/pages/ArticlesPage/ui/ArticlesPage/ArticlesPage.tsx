@@ -25,7 +25,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
       onScrollEnd={onLoadNextPart}
       className={classNames('', {}, [className])}
     >
-      <VStack tag="section" gap="32">
+      <VStack tag="section" gap="32" align="stretch">
         <ArticlesPageFilters />
         <ArticleInfiniteList />
       </VStack>
